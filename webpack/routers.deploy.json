@@ -12,5 +12,17 @@
     "template": "./livelist/templates/zh-cn.html",
     "filename": "livelist_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "search",
+    "entry": "./search/index",
+    "template": "./search/templates/zh-cn.html",
+    "filename": "search_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "request",
+    "entry": "./request/index",
+    "template": "./request/templates/zh-cn.html",
+    "filename": "request_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
