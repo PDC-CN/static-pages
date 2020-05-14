@@ -1,0 +1,49 @@
+div,
+input,
+button {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  background: #03BEBF;
+  outline: none;
+  transition: all ease 0.15s;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 3px 12px;
+  color: #fff;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+a {
+  color: #03BEBF;
+  text-decoration: none;
+  transition: all ease 0.15s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+input {
+  outline: none;
+  border: #ddd solid 1px;
+  padding: 14px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+
+  &.padding {
+    padding: 0 120px;
+  }
+}

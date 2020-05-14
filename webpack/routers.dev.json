@@ -1,0 +1,10 @@
+{
+  "index": "en.html",
+  "routers": [{
+    "name": "home",
+    "entry": "./index/index",
+    "template": "./index/templates/zh-cn.html",
+    "filename": "index_zh-cn.html",
+    "layout": ["header", "footer"]
+  }]
+}
