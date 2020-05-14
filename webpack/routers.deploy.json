@@ -6,5 +6,11 @@
     "template": "./index/templates/zh-cn.html",
     "filename": "index_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "livelist",
+    "entry": "./livelist/index",
+    "template": "./livelist/templates/zh-cn.html",
+    "filename": "livelist_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
