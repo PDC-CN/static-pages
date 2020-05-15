@@ -24,5 +24,11 @@
     "template": "./request/templates/zh-cn.html",
     "filename": "request_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "live",
+    "entry": "./live/index",
+    "template": "./live/templates/zh-cn.html",
+    "filename": "live_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
