@@ -65,45 +65,103 @@ textarea {
     background: #fff;
     margin-bottom: 24px;
     padding: 55px 73px 87px;
-
-    .row {
-      color: #4A4A4A;
-      margin-bottom: 24px;
-      display: flex;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      input,
-      textarea {
-        flex-grow: 1;
-        flex-shrink: 1;
-        width: 100%;
-      }
-
-      &>* {
-        margin-right: 40px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-
-      &.submit {
-        margin-top: 54px;
-        justify-content: center;
-
-        button {
-          width: 255px;
-          height: 54px;
-        }
-      }
-    }
   }
   .desc {
     font-size: 12px;
     color: #67687C;
     text-align: center;
+  }
+}
+
+.easy-form {
+  .row {
+    color: #4A4A4A;
+    margin-bottom: 24px;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input,
+    textarea {
+      flex-grow: 1;
+      flex-shrink: 1;
+      width: 100%;
+    }
+
+    &>* {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &.submit {
+      margin-top: 54px;
+      justify-content: center;
+
+      button {
+        width: 255px;
+        height: 54px;
+      }
+    }
+  }
+}
+
+.switch {
+  border-radius: 50px;
+  font-size: 12px;
+  padding: 2px;
+  width: 40px;
+  color: #b3b3b3;
+  background: #e8e8e8;
+  transition: all ease 0.15s;
+  cursor: pointer;
+  
+  .dot {
+    background: #fff;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 10px;
+    transform: translate(0, 0);
+    transition: all ease 0.15s;
+  }
+  
+  &.active {
+    color: #03BEBF;
+    background: #03BEBF;
+    
+    .dot {
+      transform: translate(16px, 0);
+    }
+  }
+}
+
+.page-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding-left: 10px;
+
+  span {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    padding: 0 2px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    height: 24px;
+    width: 24px;
+    border: #03BEBF solid 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= LAYOUT.META %>
+</head>
+<body id="live">
+  <%= LAYOUT.HEADER['zh-cn'] %>
+  <!-- TODO: 直播间背景 -->
+  <div class="content container" style="background-image: url(https://assets.zjzsxhy.com/upload/e6432026-fb05-4720-859f-440b9624ea2b.jpg);">
+    <div class="block top-block">
+      <!-- TODO: 直播间信息，标题，用户名，在线人数 -->
+      <div class="b1 video-block">
+        <div class="info">
+          <div class="icon" style="background-image: url(https://assets.zjzsxhy.com/upload/ed8d2b77-b9fd-4cb7-bcad-e357b750e0de.png);"></div>
+          <div class="text">
+            <div class="t1">**冠名 · PDC设计智汇</div>
+            <div class="t2">CGB · PDC设计智汇</div>
+            <div class="t3">在线人数 131,222</div>
+          </div>
+          <div class="sub">
+            <img src="https://assets.zjzsxhy.com/upload/710e36e7-818d-4251-9857-9d2ea79a4a29.svg" alt="">
+            <span>订阅</span>
+            <span class="div">|</span>
+            <span>367</span>
+          </div>
+        </div>
+        <div class="video-container"></div>
+        <div class="video-comment">
+          <div class="switch active">
+            <div class="dot">弹</div>
+          </div>
+          <div class="input">
+            <input type="text">
+            <button>发送</button>
+          </div>
+        </div>
+      </div>
+      <div class="b2">
+        <div class="file-block">
+          <div class="header">
+            <div class="t1">文件</div>
+            <div class="t2">更新时间</div>
+          </div>
+          <!-- TODO: 下载文件列表，文件类型icon，文件名，时间，下载地址 -->
+          <div class="content" data-simplebar>
+            <div class="row">
+              <img class="icon" src="https://assets.zjzsxhy.com/upload/ed8d2b77-b9fd-4cb7-bcad-e357b750e0de.png" alt="">
+              <div class="filename">xxxx.xxxx.xxx.xxxx.doc</div>
+              <div class="time">2018-01-01 13:28</div>
+              <a class="download" href="#" download><img src="https://assets.zjzsxhy.com/upload/97baa8ee-bfe3-4434-82ba-36d3d81ef208.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="video-comment-block" data-simplebar>
+          <!-- TODO: 弹幕，可能用JS载入 -->
+          <div class="comment">
+            <span class="user">用户1：</span>弹幕文字
+          </div>
+          <div class="comment">
+            <span class="user">用户1：</span>弹幕文字
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block bottom-block">
+      <div class="b1">
+        <!-- 列表和评论有ajax获得，可以做翻页，列表一页4个，每次点击查看更多多一行，评论做翻页即可 -->
+        <div class="list-block">
+          <div class="tabs">
+            <span class="tab active" data-tab="live">直播列表</span>
+            <span class="tab" data-tab="replay">回看列表</span>
+            <span class="tab" data-tab="product">产品列表</span>
+            <span class="tab" data-tab="guest">嘉宾列表</span>
+          </div>
+          <div class="content">
+            <div class="grid"></div>
+            <div class="more"><button>查看更多</button></div>
+          </div>
+        </div>
+        <div class="comment-block">
+          <div class="title page-subtitle">
+            <span>评论</span>
+            <a href="#submitComment"><button>发帖</button></a>
+          </div>
+          <div class="comment-container">
+            <div class="content"></div>
+            <div class="form" id="submitComment">
+              <div class="avatar" style="background-image: url(https://assets.zjzsxhy.com/upload/ed8d2b77-b9fd-4cb7-bcad-e357b750e0de.png)"></div>
+              <div class="easy-form">
+                <div class="row">
+                  <textarea name="" id="" cols="30" rows="5" placeholder="文本域"></textarea>
+                </div>
+                <div class="row">
+                  <button>提 交</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b2 ad-block-1">
+        <!-- TODO: 广告图1 -->
+        <img src="https://assets.zjzsxhy.com/upload/4d00b292-83ce-4ad8-87fa-3020c51f496e.jpg" alt="">
+      </div>
+    </div>
+    <!-- TODO: 广告图2 -->
+    <div class="ad-block-2">
+      <img src="https://assets.zjzsxhy.com/upload/d961276d-64fa-4937-a6e1-9cc2f2641cb1.jpg" alt="">
+    </div>
+  </div>
+  <%= LAYOUT.FOOTER['zh-cn'] %>
+</body>
+</html>

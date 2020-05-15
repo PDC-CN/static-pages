@@ -22,6 +22,7 @@ var devEntry = [{
 
 var templateParameters = {
   LAYOUT: {
+    META: fs.readFileSync(path.join(__dirname, '../src/_layout/meta.html')),
     HEADER: {
       en: fs.readFileSync(path.join(__dirname, '../src/_layout/header/templates/en.html')),
       'zh-cn': fs.readFileSync(path.join(__dirname, '../src/_layout/header/templates/zh-cn.html')),

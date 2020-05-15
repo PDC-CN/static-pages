@@ -5,3 +5,4 @@ import '../index/style.scss';
 import '../livelist/style.scss';
 import '../search/style.scss';
 import '../request/style.scss';
+import '../live/style.scss';
