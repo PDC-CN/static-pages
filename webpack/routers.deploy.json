@@ -30,5 +30,11 @@
     "template": "./live/templates/zh-cn.html",
     "filename": "live_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "week",
+    "entry": "./week/index",
+    "template": "./week/templates/zh-cn.html",
+    "filename": "week_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }

@@ -1,0 +1,69 @@
+#week {
+  .ad {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+  }
+  .events {
+    display: flex;
+    margin: 40px 0;
+
+    .live {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      width: 900px;
+      height: 506px;
+      margin-right: 20px;
+    }
+    .list {
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      span {
+        display: inline-block;
+      }
+      .time,
+      .name {
+        width: 50%;
+      }
+
+      .name {
+        text-align: right;
+      }
+    }
+  }
+  .brands {
+    margin-bottom: 40px;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+
+      &>a {
+        display: block;
+      }
+
+      .i {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 225px;
+        margin-bottom: 14px;
+      }
+      .t {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        line-height: 1.8;
+        color: #000;
+      }
+    }
+  }
+  .news {
+    margin-bottom: 80px;
+  }
+}
