@@ -48,5 +48,11 @@
     "template": "./company/templates/zh-cn.html",
     "filename": "company_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "companyList",
+    "entry": "./companyList/index",
+    "template": "./companyList/templates/zh-cn.html",
+    "filename": "company_list_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }

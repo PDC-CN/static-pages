@@ -9,3 +9,4 @@ import '../live/style.scss';
 import '../week/style.scss';
 import '../editor/style.scss';
 import '../company/style.scss';
+import '../companyList/style.scss';
