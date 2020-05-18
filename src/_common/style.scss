@@ -41,6 +41,10 @@ textarea {
   resize: none;
 }
 
+textarea {
+  box-sizing: border-box;
+}
+
 p {
   margin-top: 30px;
   margin-bottom: 15px;

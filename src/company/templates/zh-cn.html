@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= LAYOUT.META %>
+  <script>
+    window.PAGE_DATA = {
+      time: 1589770998513,
+      blocks: [
+        {
+          type: 'Header',
+          data: {
+            text: 'asfsaf',
+            level: 2,
+          },
+        },
+        {
+          type: 'paragraph',
+          data: {
+            text: '214124',
+          },
+        },
+        {
+          type: 'Header2',
+          data: {
+            header: 'asfas222555',
+            sub: '222',
+          },
+        },
+        {
+          type: 'Album',
+          data: {
+            count: 3,
+            images: [
+              {
+                url: 'https://assets.zjzsxhy.com/upload/05e0e5d0-08df-4553-9a8d-efd9158ac8cc.jpg',
+                link: 'www.baidu.com',
+              },
+              {
+                url: 'https://assets.zjzsxhy.com/upload/05e0e5d0-08df-4553-9a8d-efd9158ac8cc.jpg',
+                link: 'www.126.com',
+              },
+              {
+                url: '',
+                link: '',
+              },
+            ],
+          },
+        },
+        {
+          type: 'Album2',
+          data: {
+            count: 2,
+            images: [
+              {
+                url: 'https://assets.zjzsxhy.com/upload/05e0e5d0-08df-4553-9a8d-efd9158ac8cc.jpg',
+                link: 'www.baidu.com',
+                title: '标题',
+                desc: '描述',
+              },
+              {
+                url: '',
+                link: '',
+                title: '',
+                desc: '',
+              },
+            ],
+          },
+        },
+      ],
+      version: '2.18.0',
+    }
+  </script>
+</head>
+<body id="company">
+  <%= LAYOUT.HEADER['zh-cn'] %>
+  <div class="container padding">
+    <div id="holder"></div>
+  </div>
+  <div id="hiddenHolder" style="display: none;"></div>
+  <%= LAYOUT.FOOTER['zh-cn'] %>
+</body>
+</html>

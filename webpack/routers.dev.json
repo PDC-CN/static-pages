@@ -1,6 +1,12 @@
 {
   "index": "en.html",
   "routers": [{
+    "name": "editor",
+    "entry": "./editor/index",
+    "template": "./editor/templates/zh-cn.html",
+    "filename": "editor.html",
+    "layout": ["header", "footer"]
+  }, {
     "name": "home",
     "entry": "./index/index",
     "template": "./index/templates/zh-cn.html",
@@ -35,6 +41,12 @@
     "entry": "./week/index",
     "template": "./week/templates/zh-cn.html",
     "filename": "week_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "company",
+    "entry": "./company/index",
+    "template": "./company/templates/zh-cn.html",
+    "filename": "company_zh-cn.html",
     "layout": ["header", "footer"]
   }]
 }

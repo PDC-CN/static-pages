@@ -1,0 +1,24 @@
+// Fix origin ui style
+#editor {
+  .ce-block__content {
+    max-width: 100%;
+  }
+  .ce-toolbar__content {
+    max-width: 100%;
+  }
+}
+
+// Own style
+#editor {
+  .ce-header {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .ce-header[contentEditable=true][data-placeholder]::before {
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

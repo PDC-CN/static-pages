@@ -7,3 +7,5 @@ import '../search/style.scss';
 import '../request/style.scss';
 import '../live/style.scss';
 import '../week/style.scss';
+import '../editor/style.scss';
+import '../company/style.scss';
