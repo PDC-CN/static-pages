@@ -1,0 +1,118 @@
+#news {
+  .b1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 14px;
+    grid-row-gap: 12px;
+
+    &>a {
+      position: relative;
+      display: block;
+      height: 161px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
+      }
+
+      .cover {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .title {
+        position: absolute;
+        bottom: 6px;
+        left: 6px;
+        width: calc(100% - 12px);
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &:first-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: auto;
+
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .b2 {
+    margin-bottom: 40px;
+
+    .content {
+      display: flex;
+
+      .articles {
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 42px;
+        grid-row-gap: 40px;
+
+        .article {
+          display: block;
+
+          .cover {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 12px;
+          }
+    
+          .title {
+            font-size: 18px;
+            line-height: 1.5;
+            height: 54px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-bottom: 8px;
+            color: #000;
+          }
+
+          .desc {
+            font-size: 12px;
+            line-height: 1.5;
+            height: 36px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin-bottom: 8px;
+            color: #67687C;
+          }
+        }
+      }
+
+      .ad {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 280px;
+        margin-left: 20px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -72,5 +72,17 @@
     "template": "./event/templates/zh-cn.html",
     "filename": "event_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "news",
+    "entry": "./news/index",
+    "template": "./news/templates/zh-cn.html",
+    "filename": "news_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "newsDetail",
+    "entry": "./newsDetail/index",
+    "template": "./newsDetail/templates/zh-cn.html",
+    "filename": "news_detail_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
