@@ -1,0 +1,156 @@
+#sigin {
+  min-height: 100vh;
+
+  .alert {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: #ED625C;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .b1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100vh;
+    background: linear-gradient(to right, #00BCB4 0%, #009BDE 100%);
+    padding: 52px 26px;
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 120px;
+    }
+
+    .t1 {
+      line-height: 1.4;
+      font-size: 35px;
+    }
+    .t2 {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .b2 {
+    padding: 200px 0 200px 500px;
+    position: relative;
+
+    .opt {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+    }
+
+    form {
+      margin: auto;
+      width: 415px;
+      line-height: 1.5;
+
+      .t1 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 44px;
+      }
+
+      .label {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 8px;
+
+        a {
+          float: right;
+          font-size: 12px;
+          font-weight: 300;
+        }
+      }
+      .input {
+        margin-bottom: 24px;
+
+        input {
+          width: 100%;
+          padding: 10px 14px;
+        }
+
+        &.email {
+          display: flex;
+
+          input {
+            flex-grow: 1;
+            flex-shrink: 1;
+            margin-right: 14px;
+          }
+          button {
+            height: 38px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 130px;
+          }
+        }
+        &.agree {
+          display: flex;
+
+          input {
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin-right: 14px;
+            width: auto;
+            height: 20px;
+          }
+          .label {
+            flex-grow: 1;
+            flex-shrink: 1;
+            margin-left: 10px;
+          }
+        }
+        &.type {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-column-gap: 20px;
+          grid-row-gap: 5px;
+
+          &>div {
+            display: flex;
+            align-items: center;
+
+            input {
+              flex-grow: 0;
+              flex-shrink: 0;
+              width: auto;
+            }
+
+            input[type="radio"] {
+              margin-right: 4px;
+            }
+
+            label {
+              flex-grow: 1;
+              flex-shrink: 1;
+              span {
+                margin-right: 4px;
+              }
+
+              input {
+                width: 100px;
+              }
+            }
+          }
+        }
+      }
+      .submit {
+        button {
+          height: 38px;
+          width: 100%;
+          background: linear-gradient(to right, #00BCB4 0%, #009BDE 100%);
+        }
+      }
+    }
+  }
+}

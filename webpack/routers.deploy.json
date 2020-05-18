@@ -54,5 +54,17 @@
     "template": "./companyList/templates/zh-cn.html",
     "filename": "company_list_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "signin",
+    "entry": "./signin/index",
+    "template": "./signin/templates/zh-cn.html",
+    "filename": "signin_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "register",
+    "entry": "./register/index",
+    "template": "./register/templates/zh-cn.html",
+    "filename": "register_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
