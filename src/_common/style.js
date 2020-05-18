@@ -11,3 +11,4 @@ import '../editor/style.scss';
 import '../company/style.scss';
 import '../companyList/style.scss';
 import '../signin/style.scss';
+import '../event/style.scss';

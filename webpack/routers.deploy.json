@@ -66,5 +66,11 @@
     "template": "./register/templates/zh-cn.html",
     "filename": "register_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "event",
+    "entry": "./event/index",
+    "template": "./event/templates/zh-cn.html",
+    "filename": "event_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
