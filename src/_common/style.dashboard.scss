@@ -1,0 +1,53 @@
+body.dashboard {
+  background: #f4f5f8;
+
+  .main {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .menu {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 185px;
+    text-align: center;
+    background: #fff;
+    padding: 24px 0;
+    margin-right: 20px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+      line-height: 1.5;
+      margin-bottom: 12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: #19B7B7;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 12px 0;
+
+      &.active {
+        background: #03BEBF;
+        color: #fff;
+      }
+    }
+  }
+
+  .page {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 40px 24px;
+    background: #fff;
+  }
+}

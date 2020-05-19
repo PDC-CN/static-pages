@@ -1,4 +1,5 @@
 import './style.scss';
+import './style.dashboard.scss';
 import '../_layout/header/style.scss';
 import '../_layout/footer/style.scss';
 import '../index/style.scss';
@@ -15,3 +16,4 @@ import '../event/style.scss';
 import '../news/style.scss';
 import '../newsDetail/style.scss';
 import '../case/style.scss';
+import '../dashboardUser/style.scss';

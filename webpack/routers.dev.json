@@ -90,5 +90,11 @@
     "template": "./case/templates/zh-cn.html",
     "filename": "case_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "dashboardUser",
+    "entry": "./dashboardUser/index",
+    "template": "./dashboardUser/templates/zh-cn.html",
+    "filename": "dashboard_user_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
