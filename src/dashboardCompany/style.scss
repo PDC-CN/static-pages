@@ -1,0 +1,75 @@
+#dashboardCompany .page {
+  .row {
+    display: flex;
+    margin-bottom: 15px;
+
+    input {
+      padding: 11px 14px;
+    }
+
+    .label {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 150px;
+      text-align: right;
+      color: #616266;
+      margin-right: 14px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .input {
+      flex-grow: 1;
+      flex-shrink: 1;
+      position: relative;
+      max-width: 350px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+
+      input[type="text"] {
+        width: 100%;
+      }
+      
+      textarea {
+        width: 100%;
+      }
+
+      &>div {
+        width: 50%;
+      }
+
+      &::after {
+        content: attr(data-count);
+        position: absolute;
+        bottom: 14px;
+        right: 10px;
+        color: #616266;
+      }
+    }
+
+    .display {
+      min-height: 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      padding-top: 10px;
+      padding-bottom: 9px;
+      max-width: 350px;
+    }
+
+    &.submit button {
+      margin-left: 164px;
+      height: 40px;
+      width: 350px;
+    }
+
+    &.homepage {
+      .input {
+        .link {
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+      }
+    }
+  }
+}

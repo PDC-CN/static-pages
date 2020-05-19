@@ -102,5 +102,23 @@
     "template": "./dashboardChangePassword/templates/zh-cn.html",
     "filename": "dashboard_password_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "dashboardCompany",
+    "entry": "./dashboardCompany/index",
+    "template": "./dashboardCompany/templates/zh-cn.html",
+    "filename": "dashboard_company_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "dashboardCaseList",
+    "entry": "./dashboardCaseList/index",
+    "template": "./dashboardCaseList/templates/zh-cn.html",
+    "filename": "dashboard_case_list_zh-cn.html",
+    "layout": ["header", "footer"]
+  }, {
+    "name": "dashboardCase",
+    "entry": "./dashboardCase/index",
+    "template": "./dashboardCase/templates/zh-cn.html",
+    "filename": "dashboard_case_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }

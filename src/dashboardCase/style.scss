@@ -1,0 +1,120 @@
+#dashboardCase .page {
+  .row {
+    display: flex;
+    margin-bottom: 15px;
+
+    input {
+      padding: 11px 14px;
+    }
+
+    .label {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 150px;
+      text-align: right;
+      color: #616266;
+      margin-right: 14px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .input {
+      flex-grow: 1;
+      flex-shrink: 1;
+      position: relative;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+
+      input[type="text"] {
+        width: 100%;
+      }
+      
+      textarea {
+        width: 100%;
+      }
+
+      &>div {
+        width: 50%;
+      }
+
+      &::after {
+        content: attr(data-count);
+        position: absolute;
+        bottom: 14px;
+        right: 10px;
+        color: #616266;
+      }
+
+      .images-container {
+        width: 100%;
+        border: #ddd solid 1px;
+        padding: 6px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 6px;
+        grid-row-gap: 6px;
+
+        .img {
+          height: 130px;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          cursor: pointer;
+
+          &.add {
+            background: rgba($color: #CDCDCD, $alpha: 0.26);
+
+            input {
+              height: 100%;
+              width: 100%;
+              opacity: 0;
+            }
+          }
+
+          &:not(.add):hover {
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              background: rgba($color: #000000, $alpha: 0.5);
+            }
+            &::after {
+              content: "删除";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: #fff;
+            }
+          }
+
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    .display {
+      min-height: 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      padding-top: 10px;
+      padding-bottom: 9px;
+      max-width: 350px;
+    }
+
+    &.submit button {
+      margin-left: 164px;
+      height: 40px;
+      width: 350px;
+    }
+  }
+}

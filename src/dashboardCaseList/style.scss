@@ -1,0 +1,67 @@
+#dashboardCaseList .page {
+  .opt {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+  .th,
+  .tr {
+    .id {
+      width: 10%;
+    }
+    .name {
+      width: 15%;
+    }
+    .intro {
+      width: 25%;
+    }
+    .images {
+      width: 30%;
+    }
+    .link {
+      width: 10%;
+      text-align: center;
+    }
+    .edit {
+      width: 10%;
+      text-align: center;
+    }
+  }
+
+  .td {
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .th {
+    display: flex;
+
+    .td {
+      background: #eee;
+      color: #8A929F;
+      padding: 10px 24px;
+    }
+  }
+
+  .tr {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: #ddd solid 1px;
+
+    .td {
+      padding: 0 24px;
+    }
+
+    .images {
+      img {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+  }
+}
