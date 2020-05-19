@@ -39,6 +39,10 @@ textarea {
   border: #ddd solid 1px;
   padding: 14px;
   resize: none;
+
+  &:disabled {
+    background: #eee;
+  }
 }
 
 textarea {

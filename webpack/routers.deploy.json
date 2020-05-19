@@ -84,5 +84,11 @@
     "template": "./newsDetail/templates/zh-cn.html",
     "filename": "news_detail_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "case",
+    "entry": "./case/index",
+    "template": "./case/templates/zh-cn.html",
+    "filename": "case_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
