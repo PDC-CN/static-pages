@@ -96,5 +96,11 @@
     "template": "./dashboardUser/templates/zh-cn.html",
     "filename": "dashboard_user_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "dashboardChangePassword",
+    "entry": "./dashboardChangePassword/index",
+    "template": "./dashboardChangePassword/templates/zh-cn.html",
+    "filename": "dashboard_password_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }

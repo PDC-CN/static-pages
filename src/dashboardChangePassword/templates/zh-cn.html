@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= LAYOUT.META %>
+</head>
+<body id="dashboardChangePassword" class="dashboard">
+  <div class="main container padding">
+    <div class="menu">
+      <div class="title">个人中心</div>
+      <a href="#" class="active">我的信息</a>
+      <a href="#">找回密码</a>
+      <a href="#">公司管理</a>
+      <a href="#">案例管理</a>
+    </div>
+    <!-- 页面内容 -->
+    <div class="page">
+      <div class="icon"><img src="https://assets.zjzsxhy.com/upload/583c6cf1-1961-4db7-a53a-603c34458030.svg" alt=""></div>
+      <form action="">
+        <div class="row email" data-label="邮箱">
+          <span class="email">8888@111.com</span>
+          <button id="sendCode">发送验证码</button>
+        </div>
+        <div class="row" data-label="验证码">
+          <input type="text">
+        </div>
+        <div class="row" data-label="新密码">
+          <input type="password">
+        </div>
+        <div class="row" data-label="确认新密码" data-error="密码输入错误">
+          <input type="password">
+        </div>
+        <div class="row submit">
+          <button>确认修改</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

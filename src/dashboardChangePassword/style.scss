@@ -1,0 +1,66 @@
+#dashboardChangePassword .page {
+  .icon {
+    padding-top: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  form {
+    width: 300px;
+    margin: auto;
+  }
+
+  .row {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+
+    input {
+      width: 100%;
+      padding: 11px 14px;
+    }
+    button {
+      height: 40px;
+    }
+
+    &.email {
+      span {
+        flex-grow: 1;
+        flex-shrink: 1;
+        color: #03BEBF;
+      }
+      button {
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      white-space: nowrap;
+    }
+    &::before {
+      content: attr(data-label);
+      right: 314px;
+      color: #616266;
+    }
+    &::after {
+      content: attr(data-error);
+      left: 314px;
+      color: #FF6161;
+    }
+    &[data-error] input {
+      border-color: #FF6161;
+    }
+
+    &.submit button {
+      width: 100%;
+    }
+  }
+}

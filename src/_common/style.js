@@ -17,3 +17,4 @@ import '../news/style.scss';
 import '../newsDetail/style.scss';
 import '../case/style.scss';
 import '../dashboardUser/style.scss';
+import '../dashboardChangePassword/style.scss';
