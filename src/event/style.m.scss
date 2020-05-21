@@ -1,0 +1,65 @@
+@media screen and (max-width: 600px) {
+  #event {
+    .header-banner {
+      height: 280px;
+
+      .swiper-slide {
+        height: 280px;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+    .events {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: block;
+
+      .live {
+        width: 100%;
+        height: 56.25vw;
+      }
+      .list {
+        margin-top: 20px;
+        padding: 0 20px;
+      }
+    }
+    .page-subtitle {
+      padding-top: 10px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+    .guests .guest {
+      padding: 0 20px;
+
+      .avatar {
+        height: 120px;
+        width: 100px;
+      }
+      .info {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .name {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+        .desc {
+          line-height: 1.5;
+          font-size: 12px;
+        }
+      }
+    }
+    .detail .ad {
+      display: none;
+    }
+    .detail p {
+      padding: 0 20px;
+    }
+    .detail {
+      margin-bottom: 20px;
+    }
+  }
+}

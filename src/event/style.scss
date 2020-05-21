@@ -61,6 +61,8 @@
       }
 
       .avatar {
+        flex-grow: 0;
+        flex-shrink: 0;
         background-size: cover;
         background-position: center;
         height: 180px;
@@ -68,6 +70,8 @@
       }
 
       .info {
+        flex-grow: 1;
+        flex-shrink: 1;
         padding: 14px 0 14px 24px;
 
         .name {
@@ -115,3 +119,5 @@
     }
   }
 }
+
+@import './style.m.scss';

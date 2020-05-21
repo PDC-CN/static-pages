@@ -38,7 +38,6 @@ $ npm run release
 
 * [x] layout-header 有HTML改动
 * [x] layout-footer
-* [ ] editor
 * [x] home
 * [x] livelist
 * [x] search
@@ -49,10 +48,11 @@ $ npm run release
 * [x] companyList
 * [x] signin
 * [x] register
-* [ ] event
+* [x] event
 * [x] news 有HTML改动，.b1下的a元素，增加class="link"
 * [x] newsDetail
 * [ ] case
+* [ ] editor
 * [ ] dashboardUser
 * [ ] dashboardChangePassword
 * [ ] dashboardCompany
