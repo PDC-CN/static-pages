@@ -1,5 +1,7 @@
 const { $ } = window;
 
+const isMobile = window.innerWidth <= 600;
+
 function showCaseDetail(dom) {
   const $dom = $(dom);
   const $detial = $('.carousel .detail').empty();
@@ -28,9 +30,18 @@ $(() => {
 
   $('.owl-carousel').owlCarousel({
     loop: false,
-    margin: 20,
+    margin: isMobile ? 10 : 20,
     nav: true,
     autoWidth: true,
     dots: false,
   });
+
+  // 分离b2
+  if (isMobile) {
+    const $newb2 = $('<div class="b2"></div>');
+    const $b2 = $('.b2').first();
+    $('.page-title', $b2).first().appendTo($newb2);
+    $('.company', $b2).appendTo($newb2);
+    $newb2.prependTo($('.main'));
+  }
 });
