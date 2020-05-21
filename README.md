@@ -36,6 +36,8 @@ $ npm run release
 
 ## 移动端适配
 
+* [x] layout-header 有HTML改动
+* [x] layout-footer
 * [] editor
 * [x] home
 * [x] livelist
