@@ -38,23 +38,23 @@ $ npm run release
 
 * [x] layout-header 有HTML改动
 * [x] layout-footer
-* [] editor
+* [ ] editor
 * [x] home
 * [x] livelist
-* [] search
-* [] request
-* [] live
-* [] week
-* [] company
-* [] companyList
-* [] signin
-* [] register
-* [] event
-* [] news
-* [] newsDetail
-* [] case
-* [] dashboardUser
-* [] dashboardChangePassword
-* [] dashboardCompany
-* [] dashboardCaseList
-* [] dashboardCase
+* [ ] search
+* [ ] request
+* [ ] live
+* [ ] week
+* [ ] company
+* [ ] companyList
+* [ ] signin
+* [ ] register
+* [ ] event
+* [ ] news
+* [ ] newsDetail
+* [ ] case
+* [ ] dashboardUser
+* [ ] dashboardChangePassword
+* [ ] dashboardCompany
+* [ ] dashboardCaseList
+* [ ] dashboardCase
