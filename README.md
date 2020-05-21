@@ -41,7 +41,7 @@ $ npm run release
 * [ ] editor
 * [x] home
 * [x] livelist
-* [ ] search
+* [x] search
 * [x] request
 * [x] live
 * [ ] week
