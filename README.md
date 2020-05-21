@@ -38,7 +38,7 @@ $ npm run release
 
 * [] editor
 * [x] home
-* [] livelist
+* [x] livelist
 * [] search
 * [] request
 * [] live

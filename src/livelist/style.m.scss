@@ -1,0 +1,52 @@
+@media screen and (max-width: 600px) {
+  #livelist {
+    .tabs {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      white-space: nowrap;
+      padding: 0 14px;
+      overflow: hidden;
+      overflow-x: auto;
+      padding-bottom: 8px;
+
+      .tab {
+        padding: 0;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        margin-right: 40px;
+        position: relative;
+        padding-bottom: 4px;
+        border-bottom: transparent solid 2px;
+        cursor: pointer;
+        transition: all ease 0.15s;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          border-bottom-color: rgba($color: #03BEBF, $alpha: 0.5);
+        }
+
+        &.active {
+          background: transparent;
+          border-bottom-color: #03BEBF;
+          padding: 0;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .list .content {
+      padding: 0 14px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 15px;
+
+      .cover {
+        height: 94px;
+      }
+    }
+  }
+}
