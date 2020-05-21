@@ -50,7 +50,7 @@ $ npm run release
 * [ ] signin
 * [ ] register
 * [ ] event
-* [ ] news
+* [x] news 有HTML改动，.b1下的a元素，增加class="link"
 * [ ] newsDetail
 * [ ] case
 * [ ] dashboardUser
