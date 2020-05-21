@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+  #newsDetail {
+    .content {
+      display: block;
+      margin: 0;
+    }
+    .ad {
+      display: none;
+    }
+    .article {
+      padding: 20px;
+    }
+  }
+}
