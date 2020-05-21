@@ -83,7 +83,6 @@ footer.main-footer {
       display: inline-block;
       width: 24px;
       height: 22px;
-      list-style: 1;
       text-align: center;
       margin-right: 14px;
 
@@ -93,3 +92,5 @@ footer.main-footer {
     }
   }
 }
+
+@import './style.m.scss';
