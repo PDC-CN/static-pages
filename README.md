@@ -46,7 +46,7 @@ $ npm run release
 * [x] live
 * [x] week
 * [x] company
-* [ ] companyList
+* [x] companyList
 * [ ] signin
 * [ ] register
 * [ ] event

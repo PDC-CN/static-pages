@@ -1,0 +1,44 @@
+@media screen and (max-width: 600px) {
+  #companyList {
+    .header-banner {
+      height: 280px;
+
+      .swiper-slide {
+        height: 280px;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+    .list .tabs {
+      margin: 20px 0;
+    }
+    .content {
+      padding: 0 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 15px;
+      margin-bottom: 20px;
+
+      .company .cover {
+        height: 160px;
+      }
+      .company .name {
+        font-size: 14px;
+      }
+    }
+    .intro {
+      padding: 0 20px;
+
+      h1 {
+        font-size: 24px;
+      }
+      h2 {
+        font-size: 12px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
