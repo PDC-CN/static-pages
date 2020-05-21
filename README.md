@@ -47,8 +47,8 @@ $ npm run release
 * [x] week
 * [x] company
 * [x] companyList
-* [ ] signin
-* [ ] register
+* [x] signin
+* [x] register
 * [ ] event
 * [x] news 有HTML改动，.b1下的a元素，增加class="link"
 * [x] newsDetail

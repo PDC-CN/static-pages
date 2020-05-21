@@ -1,0 +1,37 @@
+@media screen and (max-width: 600px) {
+  #sigin {
+    .b1 {
+      position: relative;
+      width: auto;
+      height: auto;
+      text-align: center;
+      padding: 30px 0;
+
+      .t1, .t2 {
+        display: none;
+      }
+
+      .logo {
+        position: static;
+        transform: translate(0, 0);
+        height: 60px;
+      }
+    }
+    .b2 {
+      margin: 0 20px;
+      padding: 20px 0;
+
+      .opt {
+        right: 0;
+      }
+
+      form {
+        width: auto;
+
+        .input {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
