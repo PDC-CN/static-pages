@@ -1,0 +1,12 @@
+.m-only {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .m-only {
+    display: initial !important;
+  }
+  .m-hide {
+    display: none !important;
+  }
+}
