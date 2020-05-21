@@ -4,7 +4,39 @@ import Header from '@editorjs/header';
 import List from '@editorjs/list';
 import plugins from './plugins';
 
-const { $, PAGE_DATA } = window;
+const { $, PAGE_DATA, Swiper } = window;
+
+// function renderAlbum() {
+//   const { Swiper } = window;
+//   $('.ce-album').each((_, el) => {
+//     const $el = $(el);
+//     // 1. 去除留白
+//     $('a:empty', $el).remove();
+//     // 2. 渲染
+//     const $w = $('<div class="swiper-wrapper"></div>');
+//     $('a', $el).wrap('<div class="swiper-slide"></div>');
+//     $('.swiper-slide', $el).appendTo($w);
+//     $w.appendTo($el);
+//     $(el).append('<div class="swiper-pagination"></div>');
+//     $(el).addClass('ready-render');
+//   });
+
+//   new Swiper('.ready-render', {
+//     // loop: true,
+//     // If we need pagination
+//     pagination: {
+//       el: '.swiper-pagination',
+//     },
+//   });
+// }
+
+function renderAlbum() {
+  $('.ce-album').each((_, el) => {
+    const $el = $(el);
+    // 1. 去除留白
+    $('a:empty', $el).remove();
+  });
+}
 
 function init() {
   new EditorJS({
@@ -31,6 +63,11 @@ function init() {
       $holder.append(plugins[block.type](block.data));
     }
   });
+
+  if (window.innerWidth <= 600) {
+    // 渲染相册
+    renderAlbum();
+  }
 }
 
 $(() => {
