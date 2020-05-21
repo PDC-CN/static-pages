@@ -42,7 +42,7 @@ $ npm run release
 * [x] home
 * [x] livelist
 * [ ] search
-* [ ] request
+* [x] request
 * [x] live
 * [ ] week
 * [ ] company
