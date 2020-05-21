@@ -1,0 +1,34 @@
+@media screen and (max-width: 600px) {
+  #week {
+    .ad {
+      display: none;
+    }
+    .events {
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: block;
+
+      .live {
+        width: 100%;
+        height: 56.25vw;
+      }
+      .list {
+        margin-top: 20px;
+        padding: 0 20px;
+      }
+    }
+    .page-subtitle {
+      padding-top: 10px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+    .brands .content {
+      display: block;
+      padding: 0 20px;
+    }
+    .news {
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

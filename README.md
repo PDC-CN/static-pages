@@ -44,7 +44,7 @@ $ npm run release
 * [x] search
 * [x] request
 * [x] live
-* [ ] week
+* [x] week
 * [ ] company
 * [ ] companyList
 * [ ] signin
