@@ -1,0 +1,247 @@
+@media screen and (max-width: 600px) {
+  #index {
+    .header-banner {
+      height: 280px;
+
+      .swiper-slide {
+        height: 280px;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+    .pads {
+      margin-bottom: 20px;
+
+      .r1 .t1 {
+        font-size: 24px;
+      }
+      .r2 {
+        display: block;
+
+        .pad-banner {
+          height: 176px;
+          width: auto;
+        }
+        .nine-palaces {
+          width: auto;
+
+          .row a {
+            height: 82px;
+          }
+        }
+      }
+      .r3 {
+        position: relative;
+        display: block;
+        padding: 20px;
+        padding-bottom: 35px;
+
+        .b1 {
+          position: relative;
+          z-index: 10;
+        }
+
+        .b1 img {
+          height: 77px;
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+
+        .b1 button {
+          width: 120px;
+          height: 40px;
+        }
+
+        .b2 {
+          position: absolute;
+          bottom: 7px;
+          right: 7px;
+
+          img {
+            width: 175px;
+          }
+        }
+      }
+    }
+
+    .live {
+      .title {
+        padding: 15px;
+        line-height: 1.5;
+        height: 125px;
+
+        .t1 {
+          font-size: 24px;
+          margin-bottom: 6px;
+        }
+        .t2 {
+          font-size: 14px;
+        }
+      }
+      .content {
+        margin-top: -36px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 5px;
+        display: block;
+
+        .b1, .b2 {
+          width: auto;
+        }
+
+        .b1 {
+          height: 194px;
+        }
+      }
+    }
+
+    .events {
+      margin-bottom: 20px;
+
+      .content {
+        height: auto;
+      }
+
+      .event-title-img {
+        position: static;
+        text-align: center;
+
+        img {
+          height: 108px;
+        }
+      }
+      .swiper-slide {
+        .b1 {
+          height: 210px;
+          width: auto;
+          overflow: hidden;
+        }
+        .b2 {
+          position: static;
+          width: auto;
+          padding: 15px;
+          padding-bottom: 40px;
+          
+          .t1 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            height: 64px;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .swiper-pagination-bullet {
+        background: #000;
+      }
+    }
+
+    .live-ads {
+      margin-bottom: 20px;
+
+      .content {
+        height: 158px;
+
+        .swiper-slide span {
+          font-size: 18px;
+        }
+
+        .swiper-slide::after {
+          height: 90px;
+        }
+      }
+    }
+
+    .publish {
+      margin-bottom: 20px;
+
+      .title {
+        margin-bottom: 10px;
+  
+        .t1 {
+          font-size: 24px;
+          margin-bottom: 6px;
+        }
+      }
+
+      .content {
+        display: block;
+        padding: 0 20px;
+
+        .info {
+          position: static;
+        }
+
+        .b1 {
+          width: auto;
+          margin-right: 0;
+
+          .cover {
+            height: 375px;
+          }
+
+          .t1 {
+            font-size: 18px;
+            margin-top: 19px;
+            margin-bottom: 15px;
+            height: auto;
+          }
+          .desc {
+            height: auto;
+            margin-bottom: 20px;
+            font-size: 14px;
+          }
+          .info {
+            margin-bottom: 20px;
+          }
+        }
+
+        .b2 {
+          .cover {
+            width: 93px;
+            height: 80px;
+          }
+
+          .row {
+            margin-bottom: 20px;
+          }
+
+          .desc {
+            display: none;
+          }
+
+          .t1 {
+            font-size: 16px;
+            height: 50px;
+            margin-bottom: 15px;
+          }
+
+          .info {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .friends {
+      .t1 {
+        font-size: 24px;
+        margin-bottom: 6px;
+      }
+  
+      .t2 {
+        margin-bottom: 20px;
+      }
+
+      .content {
+        padding: 0 15px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 10px;
+      }
+    }
+  }
+}

@@ -33,3 +33,26 @@ $ npm run release
 ## passportSignin调试
 
 去`account-service`项目中，将js和css劫持。
+
+## 移动端适配
+
+* [] editor
+* [x] home
+* [] livelist
+* [] search
+* [] request
+* [] live
+* [] week
+* [] company
+* [] companyList
+* [] signin
+* [] register
+* [] event
+* [] news
+* [] newsDetail
+* [] case
+* [] dashboardUser
+* [] dashboardChangePassword
+* [] dashboardCompany
+* [] dashboardCaseList
+* [] dashboardCase

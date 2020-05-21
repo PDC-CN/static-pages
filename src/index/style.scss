@@ -144,8 +144,8 @@
       padding: 91px 0 0 131px;
       background-image: url(https://assets.zjzsxhy.com/upload/82127cdb-1cc8-434f-a284-bf9d353a78c2.jpg);
       background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      background-size: 100%;
+      background-position: top center;
       height: 488px;
 
       .t1 {
@@ -452,3 +452,5 @@
     }
   }
 }
+
+@import './style.m.scss';

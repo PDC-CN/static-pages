@@ -9,4 +9,9 @@
   .m-hide {
     display: none !important;
   }
+  .container {
+    &.padding {
+      padding: 0;
+    }
+  }
 }
