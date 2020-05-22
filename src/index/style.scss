@@ -116,6 +116,13 @@
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
           }
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            white-space: nowrap;
+          }
         }
       }
     }
@@ -172,11 +179,18 @@
     .content {
       margin-top: -283px;
       background: #fff;
-      padding: 12px;
       display: flex;
 
       .b1 {
         width: 60%;
+        overflow: hidden;
+        height: 405px;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
       }
       .b2 {
         width: 40%;
@@ -191,6 +205,8 @@
           }
   
           a {
+            flex-grow: 0;
+            flex-shrink: 0;
             display: block;
             width: 33.3333%;
             height: 100px;
@@ -208,6 +224,13 @@
               top: 50%;
               left: 50%;
               transform: translate3d(-50%, -50%, 0);
+            }
+            span {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate3d(-50%, -50%, 0);
+              white-space: nowrap;
             }
           }
         }

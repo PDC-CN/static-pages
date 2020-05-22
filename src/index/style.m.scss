@@ -23,6 +23,10 @@
         .nine-palaces {
           width: auto;
 
+          .row {
+            border-right: none;
+          }
+
           .row a {
             height: 82px;
           }
@@ -89,6 +93,10 @@
 
         .b1 {
           height: 194px;
+        }
+
+        .b2 .row {
+          border-left: rgba(0, 0, 0, 0.3) solid 1px;
         }
       }
     }
@@ -236,6 +244,10 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 15px;
         grid-row-gap: 10px;
+
+        &>a {
+          margin-bottom: 15px;
+        }
       }
     }
   }
