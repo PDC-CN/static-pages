@@ -39,7 +39,7 @@ class Config {
 
   render() {
     const { data } = this;
-    const $wrapper = createElement('div', ['ce-album-container']);
+    const $wrapper = createElement('div', ['ce-config-container']);
     const $editor = $(`<div class="ce-hidden-content">
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">全局配置</div>

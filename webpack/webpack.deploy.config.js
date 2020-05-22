@@ -98,6 +98,7 @@ var config = {
   externals: {
     lodash: "_",
     jquery: "jQuery",
+    '@editorjs/editorjs': "EditorJS",
   },
 };
 

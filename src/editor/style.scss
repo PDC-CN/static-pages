@@ -28,13 +28,17 @@
     height: 100vh;
     width: 100%;
     pointer-events: none;
-    box-shadow: inset 0 0 0 2px #ff5e00;
+    box-shadow: inset 0 0 0 2px #03BEBF;
     z-index: 10;
+
+    &.preview-mode {
+      box-shadow: none;
+    }
 
     .opt {
       position: absolute;
-      bottom: 2px;
-      left: 2px;
+      bottom: 0;
+      left: 0;
       pointer-events: all;
     }
 
@@ -42,13 +46,13 @@
       display: block;
       width: 80px;
       background: transparent;
-      border: #ff5e00 solid 2px;
-      color: #ff5e00;
+      border: #03BEBF solid 2px;
+      color: #03BEBF;
       font-size: 12px;
       cursor: pointer;
 
       &.active {
-        background: #ff5e00;
+        background: #03BEBF;
         color: #fff;
       }
     }
@@ -61,6 +65,18 @@
       .ce-album a:empty,
       .ce-hidden-content {
         display: none;
+      }
+      .image-tool__image {
+        margin-bottom: 0;
+      }
+      .image-tool__caption {
+        box-shadow: none;
+        border: none;
+        opacity: 0.6;
+
+        &:empty::before {
+          display: none;
+        }
       }
     }
   }
@@ -271,6 +287,25 @@
     .ce-quote-content {
       opacity: 0.6;
       outline: none;
+    }
+  }
+
+  .ce-config-container {
+    .ce-hidden-content {
+      margin-top: 20px;
+    }
+  }
+
+  .image-tool__image-picture {
+    margin: auto;
+  }
+  .image-tool__caption {
+    text-align: center;
+    font-size: 12px;
+
+    &[contentEditable="true"][data-placeholder]:empty::before {
+      margin: auto;
+      width: 100%;
     }
   }
 }

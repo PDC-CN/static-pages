@@ -61,6 +61,7 @@ const i18n = {
       HeaderWithSub: '标题带副标题',
       Album: '图集',
       AlbumWithTitle: '带说明图集',
+      Image: '图片',
     },
 
     /**

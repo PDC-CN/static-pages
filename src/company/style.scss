@@ -1,9 +1,35 @@
+// Own style
+#company {
+  .ce-header {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .ce-header[contentEditable=true][data-placeholder]::before {
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cdx-checklist__item-text {
+    line-height: 22px;
+  }
+  .tc-table__cell {
+    border-color: rgba($color: #999, $alpha: 0.6);
+  }
+  .tc-table__wrap {
+    border-color: rgba($color: #999, $alpha: 0.6);
+  }
+  .tc-table-renderer {
+    padding: 10px 0;
+  }
+}
+
 #company {
   h1,
   h2,
   h3 {
     text-align: center;
-    color: #000E48;
     font-weight: 500;
   }
 
@@ -20,18 +46,11 @@
     margin-bottom: 16px;
   }
 
-  .ce-header {
-    padding: 0;
-    margin: 0;
-    line-height: 1.5;
-  }
-
   .ce-header-with-sub {
     .t1 {
       margin-bottom: 10px;
     }
     .t2 {
-      color: #000E48;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -77,13 +96,13 @@
     &.with-title a {
       height: auto;
       border-radius: 0;
+      color: inherit;
 
       .img {
         height: 230px;
         margin-bottom: 20px;
       }
       .title {
-        color: #000;
         font-size: 18px;
         font-weight: 500;
         margin-bottom: 12px;
@@ -93,6 +112,59 @@
         text-align: center;
         color: #585A5C;
       }
+    }
+  }
+
+  .ce-quote-container {
+    padding: .4em 0;
+    line-height: 1.6em;
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba($color: #999, $alpha: 0.6);
+    }
+
+    .ce-quote-content {
+      opacity: 0.6;
+      outline: none;
+    }
+  }
+
+  .ce-config-container {
+    .ce-hidden-content {
+      margin-top: 20px;
+    }
+  }
+
+  .image-tool__image-picture {
+    margin: auto;
+  }
+  .image-tool__caption {
+    text-align: center;
+    font-size: 12px;
+
+    &[contentEditable="true"][data-placeholder]:empty::before {
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .image-tool__image {
+    margin-bottom: 0;
+  }
+  .image-tool__caption {
+    box-shadow: none;
+    border: none;
+    opacity: 0.6;
+
+    &:empty::before {
+      display: none;
     }
   }
 }

@@ -2,6 +2,9 @@ import '../_lib/editor';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
+import Checklist from '@editorjs/checklist';
+import Table from '@editorjs/table';
+import Image from '@editorjs/image';
 import plugins from './plugins';
 
 const { $, PAGE_DATA, Swiper } = window;
@@ -43,16 +46,10 @@ function init() {
     holderId: 'hiddenHolder',
     tools: {
       Header,
-      // image: {
-      //   class: Image,
-      //   config: {
-      //     endpoints: {
-      //       byFile: '/uploadFile', // Your backend file uploader endpoint
-      //       byUrl: '/fetchUrl', // Your endpoint that provides uploading by Url
-      //     },
-      //   },
-      // },
       List,
+      Checklist,
+      Table,
+      Image,
     },
   });
 
