@@ -2,10 +2,25 @@
   .page-subtitle {
     margin-top: 40px;
   }
-  .ad {
-    background-size: cover;
-    background-position: center;
-    height: 400px;
+  .header-banner {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+
+    .swiper-slide {
+      height: 300px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #03BEBF;
+    }
   }
   .events {
     display: flex;
