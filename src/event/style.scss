@@ -26,6 +26,8 @@
     margin-bottom: 80px;
 
     .live {
+      flex-grow: 0;
+      flex-shrink: 0;
       position: relative;
       background-size: cover;
       background-position: center;
@@ -36,17 +38,80 @@
     .list {
       flex-grow: 1;
       flex-shrink: 1;
+      height: 506px;
+      overflow: scroll;
+      
+      .node {
+        padding-bottom: 20px;
+        padding-left: 20px;
+        line-height: 1.5;
+        position: relative;
 
-      span {
-        display: inline-block;
-      }
-      .time,
-      .name {
-        width: 50%;
-      }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 6px;
+          width: 2px;
+          height: 100%;
+          background: #03BEBF;
+          // border-radius: 1px;
+        }
 
-      .name {
-        text-align: right;
+        &>div {
+          position: relative;
+        }
+        .time {
+          font-size: 12px;
+          font-weight: 500;
+          color: rgba($color: #000000, $alpha: 0.6);
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -22px;
+            height: 18px;
+            width: 18px;
+            background: #fff;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: -19px;
+            height: 12px;
+            width: 12px;
+            background: #fff;
+            border: #03BEBF solid 2px;
+            border-radius: 50%;
+            box-sizing: border-box;
+          }
+        }
+        .title {
+          font-weight: 500;
+          margin-bottom: 6px;
+
+          a {
+            color: #000;
+          }
+        }
+        .tags {
+          margin-bottom: 10px;
+          span {
+            display: inline-block;
+            background: rgba($color: #03BEBF, $alpha: 0.1);
+            color: #03BEBF;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-right: 4px;
+          }
+        }
+        .desc {
+          font-size: 12px;
+          opacity: 0.7;
+        }
       }
     }
   }

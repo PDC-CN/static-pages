@@ -15,11 +15,13 @@
       .list {
         margin-top: 20px;
         padding: 0 20px;
+        height: auto;
       }
     }
     .page-subtitle {
       padding-top: 10px;
       margin-bottom: 20px;
+      margin-left: 20px;
       padding-right: 20px;
     }
     .brands .content {
@@ -29,6 +31,10 @@
     .news {
       padding: 0 20px;
       margin-bottom: 20px;
+
+      .page-subtitle {
+        margin-left: 0;
+      }
     }
   }
 }
