@@ -14,6 +14,9 @@ function initBanner() {
     pagination: {
       el: '.swiper-pagination',
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
 }
 

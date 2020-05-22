@@ -13,40 +13,64 @@ function initBanner() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
 }
 
 // 9宫格banner
 function init9Banner() {
-  new Swiper('.pad-banner', {
+  const swiper = new Swiper('.pad-banner', {
     loop: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
+  swiper.autoplay.stop();
+  setTimeout(() => {
+    swiper.autoplay.start();
+  }, 700);
 }
 
 // 活动banner
 function initEvent() {
-  new Swiper('.events .content', {
+  const swiper = new Swiper('.events .content', {
     loop: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
+  swiper.autoplay.stop();
+  setTimeout(() => {
+    swiper.autoplay.start();
+  }, 1400);
 }
 
 // 直播广告banner
 function initLiveAds() {
-  new Swiper('.live-ads .content', {
+  const swiper = new Swiper('.live-ads .content', {
     loop: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
+    autoplay: {
+      delay: 3000,
+    },
   });
+  swiper.autoplay.stop();
+  setTimeout(() => {
+    swiper.autoplay.start();
+  }, 2100);
 }
 
 $(() => {
