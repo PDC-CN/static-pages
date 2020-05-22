@@ -1,14 +1,16 @@
 #event {
   .header-banner {
-    height: 400px;
+    height: 300px;
     position: relative;
     overflow: hidden;
 
     .swiper-slide {
-      height: 400px;
+      height: 300px;
       overflow: hidden;
 
       img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
       }
     }

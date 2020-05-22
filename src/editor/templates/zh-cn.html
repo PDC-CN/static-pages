@@ -7,6 +7,14 @@
       time: 1589770998513,
       blocks: [
         {
+          type: 'Config',
+          data: {
+            pageBackground: '#100e0f',
+            textColor: '#fcb141',
+            maxContainerWidth: 1200,
+          }
+        },
+        {
           type: 'Header',
           data: {
             text: 'asfsaf',
@@ -66,12 +74,34 @@
             ],
           },
         },
+        {
+          type: "Checklist",
+          data: {
+            items: [
+              {text: "124214", checked: false},
+              {text: "124124", checked: true},
+              {text: "1222", checked: false},
+            ]
+          },
+        },
+        {
+          type: 'Quote',
+          data: {
+            text: 'asfasf<br>asfasf<br>asfasfas',
+          },
+        }
       ],
       version: '2.18.0',
     }
   </script>
 </head>
 <body id="editor">
+  <div class="alert">
+    <div class="opt">
+      <button class="editor-btn active">编辑模式</button>
+      <button class="preview-btn">预览模式</button>
+    </div>
+  </div>
   <div id="editor-main" class="container padding">
     <div id="holder"></div>
   </div>

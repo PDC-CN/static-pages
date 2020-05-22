@@ -20,7 +20,14 @@ class AlbumWithTitle {
   static get toolbox() {
     return {
       title: 'AlbumWithTitle',
-      icon: '<svg width="10" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14"><path d="M7.6 8.15H2.25v4.525a1.125 1.125 0 0 1-2.25 0V1.125a1.125 1.125 0 1 1 2.25 0V5.9H7.6V1.125a1.125 1.125 0 0 1 2.25 0v11.55a1.125 1.125 0 0 1-2.25 0V8.15z"/></svg>',
+      icon: `<svg width="16" height="13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13">
+        <path class="st0" d="M1.4,9h1.1C3.4,9,4,8.4,4,7.6V1.4C4,0.6,3.4,0,2.6,0H1.4C0.6,0,0,0.6,0,1.4l0,6.1C0,8.4,0.6,9,1.4,9z"/>
+        <path class="st0" d="M7.4,9h1.1C9.4,9,10,8.4,10,7.6V1.4C10,0.6,9.4,0,8.6,0H7.4C6.6,0,6,0.6,6,1.4v6.1C6,8.4,6.6,9,7.4,9z"/>
+        <path class="st0" d="M13.4,9h1.1C15.4,9,16,8.4,16,7.6V1.4C16,0.6,15.4,0,14.6,0h-1.1C12.6,0,12,0.6,12,1.4v6.1 C12,8.4,12.6,9,13.4,9z"/>
+        <path class="st0" d="M13.4,13h1.1c0.8,0,1.4-0.6,1.4-1.4v0c0-0.8-0.6-1.4-1.4-1.4h-1.1c-0.8,0-1.4,0.6-1.4,1.4v0 C12,12.4,12.6,13,13.4,13z"/>
+        <path class="st0" d="M7.4,13h1.1c0.8,0,1.4-0.6,1.4-1.4v0c0-0.8-0.6-1.4-1.4-1.4H7.4c-0.8,0-1.4,0.6-1.4,1.4v0 C6,12.4,6.6,13,7.4,13z"/>
+        <path class="st0" d="M1.4,13h1.1C3.4,13,4,12.4,4,11.6v0c0-0.8-0.6-1.4-1.4-1.4H1.4c-0.8,0-1.4,0.6-1.4,1.4v0 C0,12.4,0.6,13,1.4,13z"/>
+      </svg>`,
     };
   }
 
@@ -44,7 +51,7 @@ class AlbumWithTitle {
   render() {
     const { data } = this;
     const $wrapper = createElement('div', ['ce-album-container']);
-    const $editor = $(`<div class="ce-album-editor with-title">
+    const $editor = $(`<div class="ce-album-editor with-title ce-hidden-content">
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">
         <div class="label">列数</div>

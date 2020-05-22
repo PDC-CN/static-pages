@@ -21,4 +21,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+  .cdx-checklist__item-text {
+    line-height: 22px;
+  }
+  .tc-table__cell {
+    border-color: rgba($color: #999, $alpha: 0.6);
+  }
 }

@@ -20,7 +20,11 @@ class Album {
   static get toolbox() {
     return {
       title: 'Album',
-      icon: '<svg width="10" height="14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 14"><path d="M7.6 8.15H2.25v4.525a1.125 1.125 0 0 1-2.25 0V1.125a1.125 1.125 0 1 1 2.25 0V5.9H7.6V1.125a1.125 1.125 0 0 1 2.25 0v11.55a1.125 1.125 0 0 1-2.25 0V8.15z"/></svg>',
+      icon: `<svg width="16" height="13" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13">
+      <rect class="cls-1" width="4" height="13" rx="1.4344" ry="1.4344" transform="translate(4 13) rotate(180)" />
+      <rect class="cls-1" x="6" width="4" height="13" rx="1.4344" ry="1.4344" transform="translate(16 13) rotate(180)" />
+      <rect class="cls-1" x="12" width="4" height="13" rx="1.4344" ry="1.4344" transform="translate(28 13) rotate(180)" />
+    </svg>`,
     };
   }
 
@@ -40,7 +44,7 @@ class Album {
   render() {
     const { data } = this;
     const $wrapper = createElement('div', ['ce-album-container']);
-    const $editor = $(`<div class="ce-album-editor">
+    const $editor = $(`<div class="ce-album-editor ce-hidden-content">
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">
         <div class="label">列数</div>

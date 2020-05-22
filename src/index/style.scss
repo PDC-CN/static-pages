@@ -1,14 +1,16 @@
 #index {
   .header-banner {
-    height: 400px;
+    height: 300px;
     position: relative;
     overflow: hidden;
 
     .swiper-slide {
-      height: 400px;
+      height: 300px;
       overflow: hidden;
 
       img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
       }
     }
@@ -88,12 +90,23 @@
 
       .nine-palaces .row {
         display: flex;
+        border-bottom: rgba($color: #000000, $alpha: 0.3) solid 1px;
+        border-right: rgba($color: #000000, $alpha: 0.3) solid 1px;
+
+        &:last-child {
+          border-bottom: none;
+        }
 
         a {
           display: block;
           width: 33.3333%;
           height: 154px;
           position: relative;
+          border-right: rgba($color: #000000, $alpha: 0.3) solid 1px;
+
+          &:last-child {
+            border-right: none;
+          }
 
           img {
             max-width: 60%;
@@ -170,13 +183,24 @@
 
         .row {
           display: flex;
+          border-bottom: rgba($color: #000000, $alpha: 0.3) solid 1px;
+          border-right: rgba($color: #000000, $alpha: 0.3) solid 1px;
+  
+          &:first-child {
+            border-top: rgba($color: #000000, $alpha: 0.3) solid 1px;
+          }
   
           a {
             display: block;
             width: 33.3333%;
             height: 100px;
             position: relative;
-  
+            border-right: rgba($color: #000000, $alpha: 0.3) solid 1px;
+
+            &:last-child {
+              border-right: none;
+            }
+
             img {
               max-width: 60%;
               max-height: 60%;
