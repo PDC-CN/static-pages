@@ -161,19 +161,24 @@
 
     .title {
       color: #fff;
-      padding: 91px 0 0 131px;
+      padding-top: 45px;
       background-image: url(https://assets.zjzsxhy.com/upload/82127cdb-1cc8-434f-a284-bf9d353a78c2.jpg);
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: top center;
       height: 488px;
+      text-align: center;
 
       .t1 {
         font-size: 38px;
         font-weight: 500;
+        color: #278ACC;
+        margin-bottom: 40px;
       }
       .t2 {
-        font-size: 20px;
+        font-size: 38px;
+        font-weight: 500;
+        color: #A7A9AC;
       }
     }
     .content {
