@@ -1,3 +1,5 @@
+import Uploader from '../lib/uploader';
+
 function createElement(type, className = []) {
   const $d = document.createElement(type);
   className.forEach((c) => {
@@ -67,13 +69,20 @@ class AlbumWithTitle {
         <div class="label">图片URL</div>
         <div class="links input">
           ${data.images.map(img => `<div class="row-with-title">
-            <div class="r1"><input class="url" type="text" placeholder="图片URL" value="${img.url}"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>
+            <div class="r1"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>
             <div class="r2"><input class="title" type="text" placeholder="图片标题" value="${img.title}" ></div>
             <div class="r3"><textarea class="desc" rows="4" placeholder="图片说明">${img.desc}</textarea></div>
           </div>`).reduce((a, b) => a + b, '')}
         </div>
       </div>
     </div>`);
+    $('.links .r1', $editor).each((i, row) => {
+      const uploader = new Uploader(data.images[i].url);
+      uploader.onChange(() => {
+        this._renderAlbum();
+      });
+      uploader.prependTo(row);
+    });
     const $album = $(`<div class="ce-album with-title" data-cols="${data.count}">
       ${repeat(data.count, '<a></a>')}
     </div>`);
@@ -89,11 +98,17 @@ class AlbumWithTitle {
       } else if ($links.length < count) {
         const add = count - $links.length;
         for (let i = 0; i < add; i += 1) {
-          $('.links', $editor).append(`<div class="row-with-title">
-          <div class="r1"><input class="url" type="text" placeholder="图片URL"><input type="text" class="link" placeholder="图片点击链接"></div>
-          <div class="r2"><input class="title" type="text" placeholder="图片标题"></div>
-          <div class="r3"><textarea class="desc" rows="4" placeholder="图片说明"></textarea></div>
-        </div>`);
+          const $row = $(`<div class="row-with-title">
+            <div class="r1"><input type="text" class="link" placeholder="图片点击链接"></div>
+            <div class="r2"><input class="title" type="text" placeholder="图片标题"></div>
+            <div class="r3"><textarea class="desc" rows="4" placeholder="图片说明"></textarea></div>
+          </div>`);
+          const uploader = new Uploader();
+          uploader.onChange(() => {
+            this._renderAlbum();
+          });
+          uploader.prependTo($('.r1', $row));
+          $('.links', $editor).append($row);
         }
       }
       const $pics = $album.children();
@@ -112,6 +127,9 @@ class AlbumWithTitle {
     $editor.delegate('input', 'change', () => {
       this._renderAlbum();
     });
+    $editor.delegate('textarea', 'change', () => {
+      this._renderAlbum();
+    });
     this._renderAlbum();
     $wrapper.appendChild($editor[0]);
     $wrapper.appendChild($album[0]);
@@ -122,7 +140,7 @@ class AlbumWithTitle {
     const count = parseInt($('select', this.$editor).val(), 10);
     const images = [];
     $('.links>div', this.$editor).each((i, el) => {
-      const url = $('input.url', $(el)).val();
+      const url = $('.inline-uploader', $(el)).attr('data-url');
       const link = $('input.link', $(el)).val();
       const title = $('input.title', $(el)).val();
       const desc = $('textarea.desc', $(el)).val();

@@ -1,0 +1,74 @@
+.inline-uploader {
+  position: relative;
+  height: 40px;
+  border: #ddd solid 1px;
+
+  input {
+    opacity: 0;
+    border: none;
+  }
+
+  &>span {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .inline-uploader-delete-btn {
+    right: 0;
+    width: 40px;
+    height: 38px;
+    display: inline-block;
+    cursor: pointer;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  .inline-uploader-preview {
+    left: 0;
+    width: calc(100% - 40px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    img {
+      display: inline-block;
+      height: 38px;
+      width: 60px;
+      object-fit: cover;
+      margin-right: 14px;
+    }
+  }
+
+  // mode
+  &[data-mode="uploaded"] {
+    input {
+      display: none;
+    }
+  }
+  &[data-mode="wait"] {
+    cursor: pointer;
+
+    .inline-uploader-delete-btn {
+      display: none;
+    }
+    .inline-uploader-preview {
+      padding-left: 10px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

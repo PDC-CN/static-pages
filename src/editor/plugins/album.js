@@ -1,3 +1,5 @@
+import Uploader from '../lib/uploader';
+
 function createElement(type, className = []) {
   const $d = document.createElement(type);
   className.forEach((c) => {
@@ -59,10 +61,19 @@ class Album {
       <div class="row">
         <div class="label">图片URL</div>
         <div class="links input">
-          ${data.images.map(img => `<div class="row"><input class="url" type="text" placeholder="图片URL" value="${img.url}"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>`).reduce((a, b) => a + b, '')}
+          ${data.images.map(img => `<div class="row"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>`).reduce((a, b) => a + b, '')}
         </div>
       </div>
     </div>`);
+
+    $('.links .row', $editor).each((i, row) => {
+      const uploader = new Uploader(data.images[i].url);
+      uploader.onChange(() => {
+        this._renderAlbum();
+      });
+      uploader.prependTo(row);
+    });
+
     const $album = $(`<div class="ce-album" data-cols="${data.count}">
       ${repeat(data.count, '<a></a>')}
     </div>`);
@@ -78,7 +89,13 @@ class Album {
       } else if ($links.length < count) {
         const add = count - $links.length;
         for (let i = 0; i < add; i += 1) {
-          $('.links', $editor).append('<div><input class="url" type="text" placeholder="图片URL"><input type="text" class="link" placeholder="图片点击链接"></div>');
+          const $row = $('<div class="row"><input type="text" class="link" placeholder="图片点击链接"></div>');
+          const uploader = new Uploader();
+          uploader.onChange(() => {
+            this._renderAlbum();
+          });
+          uploader.prependTo($row);
+          $('.links', $editor).append($row);
         }
       }
       const $pics = $album.children();
@@ -107,7 +124,7 @@ class Album {
     const count = parseInt($('select', this.$editor).val(), 10);
     const images = [];
     $('.links>div', this.$editor).each((i, el) => {
-      const url = $('input.url', $(el)).val();
+      const url = $('.inline-uploader', $(el)).attr('data-url');
       const link = $('input.link', $(el)).val();
       images.push({
         url,

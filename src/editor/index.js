@@ -32,6 +32,7 @@ if (!initData || !initData.version) {
 
 const editor = new EditorJS({
   holderId: 'holder',
+  placeholder: 'Let`s write an awesome story!',
   tools: {
     Config,
     Header,
@@ -55,7 +56,6 @@ const editor = new EditorJS({
            */
           uploadByFile(file) {
             // your own uploading logic here
-            console.log(file);
             const formData = new FormData();
             formData.append('image', file);
             return new Promise((resolve) => {

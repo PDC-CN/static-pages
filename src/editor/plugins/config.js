@@ -55,6 +55,7 @@ class Config {
         <div class="label">容器最大宽度</div>
         <input class="input max-width" value="${data.maxContainerWidth}" placeholder="像素，例如 1200" >
       </div>
+      <div class="tip">点击下方空白处开始编辑</div>
     </div>`);
     this.$editor = $editor;
     // 事件
