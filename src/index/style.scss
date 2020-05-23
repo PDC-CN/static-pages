@@ -283,9 +283,15 @@
 
         .t1 {
           color: #000E48;
-          font-size: 28px;
+          font-size: 18px;
           line-height: 2;
           margin-bottom: 50px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          height: 108px;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .more {
           text-align: right;
@@ -421,6 +427,7 @@
           margin-bottom: 16px;
           line-height: 1.5;
           height: 84px;
+          
         }
       }
 
