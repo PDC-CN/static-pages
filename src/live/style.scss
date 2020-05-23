@@ -244,6 +244,7 @@
     .content {
       background: #fff;
       padding: 20px 40px 24px;
+      min-height: 252px;
 
       .grid {
         display: grid;
@@ -251,6 +252,7 @@
         grid-column-gap: 24px;
         grid-row-gap: 20px;
         margin-bottom: 24px;
+        min-height: 157px;
 
         .live,
         .replay,
@@ -263,7 +265,7 @@
             height: 114px;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
             margin-bottom: 8px;
           }
           .title {

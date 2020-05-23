@@ -1,130 +1,93 @@
 const { $ } = window;
 const $grid = $('.list-block .grid');
 
+let livePage = 1;
 function initLive(page = 1) {
-  const data = [{
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }];
-  data.forEach((item) => {
-    const $dom = `<a href="${item.link}" class="live">
-      <div class="cover" style="background-image: url(${item.cover})"></div>
-      <div class="title">${item.title}</div>
-      <div class="info">
-        <div class="name">${item.name}</div>
-        <div class="time">${item.time}</div>
-      </div>
-    </a>`;
-    $grid.append($dom);
+  $.ajax({
+    url: window.location.pathname + '/lives?page=' + page,
+  }).done((data) => {
+    data.forEach((item) => {
+      const $dom = `<a href="${item.url}" class="live">
+        <div class="cover" style="background-image: url(${item.image})"></div>
+        <div class="title">${item.name}</div>
+        <div class="info">
+          <div class="name">${item.author || ''}</div>
+          <div class="time">${item.tag || ''}</div>
+        </div>
+      </a>`;
+      $grid.append($dom);
+    });
+    if (data.length > 0) {
+      livePage = page;
+    }
   });
 }
 
+let replayPage = 1;
 function initReplay(page = 1) {
-  const data = [{
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '视频标题',
-    name: '用户名',
-    time: '2019-01-01',
-    link: '#',
-  }];
-  data.forEach((item) => {
-    const $dom = `<a href="${item.link}" class="replay">
-      <div class="cover" style="background-image: url(${item.cover})"></div>
-      <div class="title">${item.title}</div>
-      <div class="info">
-        <div class="name">${item.name}</div>
-        <div class="time">${item.time}</div>
-      </div>
-    </a>`;
-    $grid.append($dom);
+  $.ajax({
+    url: window.location.pathname + '/history?page=' + page,
+  }).done((data) => {
+    data.forEach((item) => {
+      const $dom = `<a href="${item.url}" class="replay">
+        <div class="cover" style="background-image: url(${item.image})"></div>
+        <div class="title">${item.name}</div>
+        <div class="info">
+          <div class="name">${item.author || ''}</div>
+          <div class="time">${item.tag || ''}</div>
+        </div>
+      </a>`;
+      $grid.append($dom);
+    });
+    if (data.length > 0) {
+      replayPage = page;
+    }
   });
 }
 
+let productPage = 1;
 function initProduct(page = 1) {
-  const data = [{
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '产品标题',
-    desc: '中新网5月2日电 国家卫生健康委新闻发言人、宣传司副司长米锋2日表示，据世卫组织最新通报，疫情已扩散到213个国家和地区，日新增确诊病例连续一个月超过6万',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '产品标题',
-    desc: '中新网5月2日电 国家卫生健康委新闻发言人、宣传司副司长米锋2日表示，据世卫组织最新通报，疫情已扩散到213个国家和地区，日新增确诊病例连续一个月超过6万',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    title: '产品标题',
-    desc: '中新网5月2日电 国家卫生健康委新闻发言人、宣传司副司长米锋2日表示，据世卫组织最新通报，疫情已扩散到213个国家和地区，日新增确诊病例连续一个月超过6万，日新增确诊病例连续一个月超过6万，日新增确诊病例连续一个月超过6万，日新增确诊病例连续一个月超过6万，日新增确诊病例连续一个月超过6万',
-    link: '#',
-  }];
-  data.forEach((item) => {
-    const $dom = `<a href="${item.link}" class="product">
-      <div class="cover" style="background-image: url(${item.cover})"></div>
-      <div class="title">${item.title}</div>
-      <div class="desc">${item.desc}</div>
-    </a>`;
-    $grid.append($dom);
+  $.ajax({
+    url: window.location.pathname + '/cases?page=' + page,
+  }).done((data) => {
+    data.forEach((item) => {
+      const $dom = `<a href="${item.url}" class="product">
+        <div class="cover" style="background-image: url(${item.image})"></div>
+        <div class="title">${item.name}</div>
+        <div class="desc">${item.author}</div>
+      </a>`;
+      $grid.append($dom);
+    });
+    if (data.length > 0) {
+      productPage = page;
+    }
   });
 }
 
+let guestPage = 1;
 function initGuest(page = 1) {
-  const data = [{
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    name: '产品标题',
-    desc: '国家主席',
-    link: '#',
-  }, {
-    cover: 'https://assets.zjzsxhy.com/upload/94bfa214-bc31-4ff5-86f5-a488ac9b6696.jpg',
-    name: '产品标题',
-    desc: '国家主席',
-    link: '#',
-  }];
-  data.forEach((item) => {
-    const $dom = `<a href="${item.link}" class="guest">
-      <div class="cover" style="background-image: url(${item.cover})"></div>
-      <div class="name">${item.name}</div>
-      <div class="desc">${item.desc}</div>
-    </a>`;
-    $grid.append($dom);
+  $.ajax({
+    url: window.location.pathname + '/guests?page=' + page,
+  }).done((data) => {
+    console.log(data);
+    data.forEach((item) => {
+      const $dom = `<a class="guest">
+        <div class="cover" style="background-image: url(${item.image})"></div>
+        <div class="name">${item.name}</div>
+        <div class="desc">${item.author}</div>
+      </a>`;
+      $grid.append($dom);
+    });
+    if (data.length > 0) {
+      guestPage = page;
+    }
   });
-
 }
 
+let currentTab;
 
 function initTab(tab) {
+  currentTab = tab;
   $grid.empty();
   if (tab === 'live') initLive();
   if (tab === 'replay') initReplay();
@@ -139,6 +102,12 @@ function init() {
     $('.list-block .tabs .tab').removeClass('active');
     $this.addClass('active');
     initTab(tab);
+  });
+  $('.list-block .more').click(() => {
+    if (currentTab === 'live') initLive(livePage + 1);
+    if (currentTab === 'replay') initReplay(replayPage + 1);
+    if (currentTab === 'product') initProduct(productPage + 1);
+    if (currentTab === 'guest') initGuest(guestPage + 1);
   });
   initTab('live');
 }
