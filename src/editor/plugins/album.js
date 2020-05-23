@@ -18,6 +18,19 @@ function repeat(count, str) {
 
 const { $ } = window;
 
+const defaultData = {
+  count: 2,
+  images: [{
+    url: '',
+    link: '',
+  }, {
+    url: '',
+    link: '',
+  }],
+  background: '',
+  size: 'cover',
+};
+
 class Album {
   static get toolbox() {
     return {
@@ -31,16 +44,10 @@ class Album {
   }
 
   constructor({ data }) {
-    this.data = data.count ? data : {
-      count: 2,
-      images: [{
-        url: '',
-        link: '',
-      }, {
-        url: '',
-        link: '',
-      }],
-    };
+    this.data = data.count ? {
+      ...defaultData,
+      ...data,
+    } : defaultData;
   }
 
   render() {
@@ -50,7 +57,7 @@ class Album {
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">
         <div class="label">列数</div>
-        <select class="input">
+        <select class="input v-count">
           <option value="2" ${data.count === 2 ? 'selected' : ''}>2</option>
           <option value="3" ${data.count === 3 ? 'selected' : ''}>3</option>
           <option value="4" ${data.count === 4 ? 'selected' : ''}>4</option>
@@ -59,10 +66,21 @@ class Album {
         </select>
       </div>
       <div class="row">
-        <div class="label">图片URL</div>
+        <div class="label">图片信息</div>
         <div class="links input">
           ${data.images.map(img => `<div class="row"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>`).reduce((a, b) => a + b, '')}
         </div>
+      </div>
+      <div class="row">
+        <div class="label">样式</div>
+        <select class="input v-size">
+          <option value="cover" ${data.size === 'cover' ? 'selected' : ''}>图片覆盖整个容器</option>
+          <option value="contain" ${data.count === 'contain' ? 'selected' : ''}>容器包含整个图片</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="label">图片背景</div>
+        <input class="input v-background" placeholder="空缺为透明，RGB色值，例如 #3AFF22">
       </div>
     </div>`);
 
@@ -79,7 +97,7 @@ class Album {
     </div>`);
     this.$editor = $editor;
     this.$album = $album;
-    $('select', $editor).change((e) => {
+    $('.v-count', $editor).change((e) => {
       const count = parseInt(e.target.value, 10);
       const $links = $('.links', $editor).children();
       if ($links.length > count) {
@@ -111,6 +129,9 @@ class Album {
       }
       $album.attr('data-cols', count);
     });
+    $('.v-size', $editor).change(() => {
+      this._renderAlbum();
+    });
     $editor.delegate('input', 'change', () => {
       this._renderAlbum();
     });
@@ -121,7 +142,10 @@ class Album {
   }
 
   _getData() {
-    const count = parseInt($('select', this.$editor).val(), 10);
+    const count = parseInt($('.v-count', this.$editor).val(), 10);
+    const size = $('.v-size', this.$editor).val();
+    const background = $('.v-background', this.$editor).val();
+
     const images = [];
     $('.links>div', this.$editor).each((i, el) => {
       const url = $('.inline-uploader', $(el)).attr('data-url');
@@ -135,24 +159,35 @@ class Album {
     return {
       count,
       images,
+      size,
+      background,
     };
   }
 
   _renderAlbum() {
     const data = this._getData();
-    const { images } = data;
+    const { images, size, background } = data;
     images.forEach((image, i) => {
       const { url, link } = image;
       const $n = $(this.$album.children()[i]);
       $n.empty();
       $n.removeAttr('href');
       if (url && url.length > 0) {
-        $n.empty().append(`<div class="img" style="background-image: url(${url})"></div>`);
+        let css = `background-image: url(${url});`;
+        if (background && background.length) {
+          css += `background-color: ${background}`;
+        }
+        $n.empty().append(`<div class="img" style="${css}"></div>`);
         if (link && link.length > 0) {
           $n.attr('href', link);
         }
       }
     });
+    if (size === 'cover') {
+      this.$album.removeClass('size-contain');
+    } else if (size === 'contain') {
+      this.$album.addClass('size-contain');
+    }
   }
 
   save() {

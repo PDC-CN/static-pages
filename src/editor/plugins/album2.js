@@ -18,6 +18,23 @@ function repeat(count, str) {
 
 const { $ } = window;
 
+const defaultData = {
+  count: 2,
+  images: [{
+    url: '',
+    link: '',
+    title: '',
+    desc: '',
+  }, {
+    url: '',
+    link: '',
+    title: '',
+    desc: '',
+  }],
+  background: '',
+  size: 'cover',
+};
+
 class AlbumWithTitle {
   static get toolbox() {
     return {
@@ -34,20 +51,10 @@ class AlbumWithTitle {
   }
 
   constructor({ data }) {
-    this.data = data.count ? data : {
-      count: 2,
-      images: [{
-        url: '',
-        link: '',
-        title: '',
-        desc: '',
-      }, {
-        url: '',
-        link: '',
-        title: '',
-        desc: '',
-      }],
-    };
+    this.data = data.count ? {
+      ...defaultData,
+      ...data,
+    } : defaultData;
   }
 
   render() {
@@ -56,7 +63,7 @@ class AlbumWithTitle {
     const $editor = $(`<div class="ce-album-editor with-title ce-hidden-content">
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">
-        <div class="label">列数</div>
+        <div class="label v-count">列数</div>
         <select class="input">
           <option value="2" ${data.count === 2 ? 'selected' : ''}>2</option>
           <option value="3" ${data.count === 3 ? 'selected' : ''}>3</option>
@@ -66,7 +73,7 @@ class AlbumWithTitle {
         </select>
       </div>
       <div class="row">
-        <div class="label">图片URL</div>
+        <div class="label">图片信息</div>
         <div class="links input">
           ${data.images.map(img => `<div class="row-with-title">
             <div class="r1"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>
@@ -74,6 +81,17 @@ class AlbumWithTitle {
             <div class="r3"><textarea class="desc" rows="4" placeholder="图片说明">${img.desc}</textarea></div>
           </div>`).reduce((a, b) => a + b, '')}
         </div>
+      </div>
+      <div class="row">
+        <div class="label">样式</div>
+        <select class="input v-size">
+          <option value="cover" ${data.size === 'cover' ? 'selected' : ''}>图片覆盖整个容器</option>
+          <option value="contain" ${data.count === 'contain' ? 'selected' : ''}>容器包含整个图片</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="label">图片背景</div>
+        <input class="input v-background" placeholder="空缺为透明，RGB色值，例如 #3AFF22">
       </div>
     </div>`);
     $('.links .r1', $editor).each((i, row) => {
@@ -88,7 +106,7 @@ class AlbumWithTitle {
     </div>`);
     this.$editor = $editor;
     this.$album = $album;
-    $('select', $editor).change((e) => {
+    $('.v-count', $editor).change((e) => {
       const count = parseInt(e.target.value, 10);
       const $links = $('.links', $editor).children();
       if ($links.length > count) {
@@ -124,6 +142,9 @@ class AlbumWithTitle {
       }
       $album.attr('data-cols', count);
     });
+    $('.v-size', $editor).change(() => {
+      this._renderAlbum();
+    });
     $editor.delegate('input', 'change', () => {
       this._renderAlbum();
     });
@@ -138,6 +159,8 @@ class AlbumWithTitle {
 
   _getData() {
     const count = parseInt($('select', this.$editor).val(), 10);
+    const size = $('.v-size', this.$editor).val();
+    const background = $('.v-background', this.$editor).val();
     const images = [];
     $('.links>div', this.$editor).each((i, el) => {
       const url = $('.inline-uploader', $(el)).attr('data-url');
@@ -155,19 +178,25 @@ class AlbumWithTitle {
     return {
       count,
       images,
+      size,
+      background,
     };
   }
 
   _renderAlbum() {
     const data = this._getData();
-    const { images } = data;
+    const { images, size, background } = data;
     images.forEach((image, i) => {
       const { url, link, title, desc } = image;
       const $n = $(this.$album.children()[i]);
       $n.empty();
       $n.removeAttr('href');
       if (url && url.length > 0) {
-        $n.empty().append(`<div class="img" style="background-image: url(${url})"></div>`);
+        let css = `background-image: url(${url});`;
+        if (background && background.length) {
+          css += `background-color: ${background}`;
+        }
+        $n.empty().append(`<div class="img" style="${css}"></div>`);
         if (link && link.length > 0) {
           $n.attr('href', link);
         }
@@ -179,6 +208,11 @@ class AlbumWithTitle {
         }
       }
     });
+    if (size === 'cover') {
+      this.$album.removeClass('size-contain');
+    } else if (size === 'contain') {
+      this.$album.addClass('size-contain');
+    }
   }
 
   save() {

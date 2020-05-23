@@ -237,6 +237,7 @@
         width: 100%;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
       }
 
       &:empty {
@@ -252,6 +253,14 @@
           font-size: 40px;
           font-weight: 500;
           color: #777;
+        }
+      }
+    }
+
+    &.size-contain {
+      a {
+        .img {
+          background-size: contain;
         }
       }
     }

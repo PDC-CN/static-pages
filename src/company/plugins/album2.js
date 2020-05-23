@@ -2,6 +2,11 @@ import wrapper from './wrapper';
 
 const { $ } = window;
 
+const defaultData = {
+  background: '',
+  size: 'cover',
+};
+
 function repeat(count, str) {
   let ret = '';
   for (let i = 0; i < count; i += 1) {
@@ -11,8 +16,12 @@ function repeat(count, str) {
 }
 
 function render(data) {
-  const { count, images } = data;
-  const $album = $(`<div class="ce-album with-title" data-cols="${data.count}">
+  const useData = {
+    ...defaultData,
+    ...data,
+  };
+  const { count, images, background, size } = useData;
+  const $album = $(`<div class="ce-album with-title" data-cols="${count}">
     ${repeat(count, '<a></a>')}
   </div>`);
   images.forEach((image, i) => {
@@ -21,7 +30,11 @@ function render(data) {
     $n.empty();
     $n.removeAttr('href');
     if (url && url.length > 0) {
-      $n.empty().append(`<div class="img" style="background-image: url(${url})"></div>`);
+      let css = `background-image: url(${url});`;
+      if (background && background.length) {
+        css += `background-color: ${background};`;
+      }
+      $n.empty().append(`<div class="img" style="${css}"></div>`);
       if (link && link.length > 0) {
         $n.attr('href', link);
       }
@@ -33,6 +46,9 @@ function render(data) {
       }
     }
   });
+  if (size === 'contain') {
+    $album.addClass('size-contain');
+  }
   return $album[0].outerHTML;
 }
 
