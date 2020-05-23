@@ -61,9 +61,12 @@
         width: 205px;
         background-position: center;
         background-size: cover;
+        background-color: #fff;
+        border-radius: 6px;
+        overflow: hidden;
 
         &.active {
-          box-shadow: inset 0 0 0px 4px #03BEBF;
+          box-shadow: inset 0 0 0px 2px #03BEBF;
         }
       }
     }
@@ -96,13 +99,17 @@
 
     .detail {
       height: 470px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: relative;
+      border-radius: 6px;
+      overflow: hidden;
 
       .type-image {
         height: 100%;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #fff;
       }
 
       &::before {

@@ -11,7 +11,7 @@ function showCaseDetail(dom) {
   $detial.attr('data-name', name);
   if (type === 'image') {
     const cover = $dom.attr('data-cover');
-    $detial.append(`<div class="type-image" style="background: url(${cover})"></div>`);
+    $detial.append(`<div class="type-image" style="background-image: url(${cover})"></div>`);
   }
 }
 
@@ -30,7 +30,7 @@ $(() => {
 
   $('.owl-carousel').owlCarousel({
     loop: false,
-    margin: isMobile ? 10 : 20,
+    margin: isMobile ? 10 : 15,
     nav: true,
     autoWidth: true,
     dots: false,
