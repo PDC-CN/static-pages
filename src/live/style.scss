@@ -1,5 +1,6 @@
 #live {
   background: #f4f5f8;
+  min-width: 1320px;
 
   .page-subtitle span {
     background: #f4f5f8;
@@ -19,7 +20,6 @@
     .b1 {
       flex-grow: 1;
       flex-shrink: 1;
-      margin-right: 20px;
     }
     .b2 {
       flex-grow: 0;
@@ -34,6 +34,11 @@
     .b1, .b2 {
       background: #fff;
     }
+
+    .b2 {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
   }
 
   .bottom-block {
@@ -41,6 +46,14 @@
   }
 
   .video-block {
+    margin-right: 20px;
+    width: 840px;
+
+    &.b1 {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
     .info {
       padding: 10px;
       display: flex;
@@ -100,7 +113,7 @@
     }
 
     .video-container {
-      height: 500px;
+      height: 473px;
       background: #777;
     }
     .video-comment {
@@ -187,7 +200,7 @@
 
   .video-comment-block {
     padding: 10px;
-    height: 500px;
+    height: 473px;
 
     .comment {
       margin-bottom: 10px;
