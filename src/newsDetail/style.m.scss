@@ -8,7 +8,59 @@
       display: none;
     }
     .article {
-      padding: 20px;
+      padding: 10px;
+    }
+    #holder {
+      padding: 0 10px;
+    }
+    // 渲染为swiper
+    // .ce-album {
+    //   display: block;
+    //   overflow: hidden;
+    //   position: relative;
+
+    //   .swiper-pagination {
+    //     text-align: right;
+    //     padding-right: 10px;
+    //   }
+    //   .swiper-pagination-bullet {
+    //     background: #fff;
+    //   }
+
+    //   &.with-title .swiper-pagination {
+    //     bottom: auto;
+    //     top: 210px;
+    //   }
+    // }
+
+    // 渲染为排列
+    .ce-album {
+
+      &[data-cols] {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+      }
+
+      a {
+        height: 123px;
+      }
+
+      &.with-title {
+        a .img {
+          height: 200px;
+          margin-bottom: 16px;
+        }
+        a .title {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .image-tool__image {
+      .image-tool__image-picture {
+        max-width: 100%;
+      }
     }
   }
 }

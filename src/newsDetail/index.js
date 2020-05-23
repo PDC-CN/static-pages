@@ -2,6 +2,9 @@ import '../_lib/editor';
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header';
 import List from '@editorjs/list';
+import Checklist from '@editorjs/checklist';
+import Table from '@editorjs/table';
+import Image from '@editorjs/image';
 import plugins from '../company/plugins';
 
 const { $, PAGE_DATA } = window;
@@ -21,6 +24,9 @@ function init() {
       //   },
       // },
       List,
+      Checklist,
+      Table,
+      Image,
     },
   });
 
