@@ -1,0 +1,21 @@
+@media screen and (max-width: 600px) {
+  body.dashboard {
+    .main {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .main>.menu {
+      position: fixed;
+      top: 46px;
+      width: 100%;
+      height: calc(100% - 46px);
+      z-index: 100;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

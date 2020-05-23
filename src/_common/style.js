@@ -23,3 +23,24 @@ import '../dashboardCaseList/style.scss';
 import '../dashboardCase/style.scss';
 
 import '../_layout/header';
+
+// 后台移动端
+const { $ } = window;
+function initDashboardMobile() {
+  if (window.innerWidth > 600) return;
+  $('header.main-header .header-menu-btn').unbind('click');
+  $('header.main-header .header-menu-btn').click((e) => {
+    const $btn = $(e.currentTarget);
+    if ($btn.hasClass('active')) {
+      $btn.removeClass('active');
+      $('.main>.menu').removeClass('active');
+    } else {
+      $btn.addClass('active');
+      $('.main>.menu').addClass('active');
+    }
+  });
+}
+
+$(() => {
+  initDashboardMobile();
+});

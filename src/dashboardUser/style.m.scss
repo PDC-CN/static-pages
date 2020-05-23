@@ -1,0 +1,16 @@
+@media screen and (max-width: 600px) {
+  #dashboardUser {
+    .page .row {
+      display: block;
+
+      .label {
+        text-align: left;
+      }
+
+      &.submit button {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
