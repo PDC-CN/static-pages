@@ -64,10 +64,12 @@ footer.main-footer {
   }
 
   .footer-b3 {
-    flex-grow: 0;
-    flex-shrink: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 400px;
 
     .row {
+      display: flex;
       margin-bottom: 25px;
 
       &:last-child {
@@ -80,6 +82,8 @@ footer.main-footer {
     }
 
     .icon {
+      flex-grow: 0;
+      flex-shrink: 0;
       display: inline-block;
       width: 24px;
       height: 22px;
