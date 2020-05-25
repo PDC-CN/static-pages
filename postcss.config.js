@@ -1,7 +1,10 @@
 module.exports = {
   plugins: {
-    'autoprefixer': {
+    autoprefixer: {
       browsers: ['> 0.1%'],
+      options: {
+        grid: 'autoplace'
+      },
     },
   },
 };
