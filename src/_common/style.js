@@ -28,6 +28,7 @@ import '../_layout/header';
 const { $ } = window;
 function initDashboardMobile() {
   if (window.innerWidth > 600) return;
+  if (!$('body').hasClass('dashboard')) return;
   $('header.main-header .header-menu-btn').unbind('click');
   $('header.main-header .header-menu-btn').click((e) => {
     const $btn = $(e.currentTarget);

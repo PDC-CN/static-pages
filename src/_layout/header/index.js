@@ -5,6 +5,7 @@ $(() => {
 
   $('header.main-header .header-menu-btn').click((e) => {
     const $btn = $(e.currentTarget);
+    console.log(1);
     if ($btn.hasClass('active')) {
       $btn.removeClass('active');
       $menu.removeClass('active');
