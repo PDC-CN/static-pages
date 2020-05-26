@@ -3,6 +3,10 @@
     .pads {
       margin-bottom: 20px;
 
+      .r1 {
+        display: block;
+      }
+
       .r1 .t1 {
         font-size: 24px;
       }
@@ -15,6 +19,11 @@
         }
         .nine-palaces {
           width: auto;
+          padding-left: 0;
+
+          &::before {
+            display: none;
+          }
 
           .row {
             border-right: none;

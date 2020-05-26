@@ -35,6 +35,9 @@ function init9Banner() {
   setTimeout(() => {
     swiper.autoplay.start();
   }, 700);
+
+  // 标题
+  $('.nine-palaces').attr('data-title', $('#index .pads .r1').text());
 }
 
 // 活动banner

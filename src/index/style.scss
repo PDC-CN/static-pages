@@ -25,11 +25,11 @@
     .content {
       background: #3E3E58;
       color: #fff;
-
     }
     .r1 {
       text-align: center;
       padding: 16px 0;
+      display: none;
 
       .t1 {
         font-size: 38px;
@@ -43,6 +43,26 @@
       .pad-banner,
       .nine-palaces {
         width: 50%;
+      }
+
+      .nine-palaces {
+        position: relative;
+        padding-left: 60px;
+      }
+      .nine-palaces::before {
+        content: attr(data-title);
+        background: #3E3E58;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        writing-mode: vertical-lr;
+        text-align: center;
+        line-height: 60px;
       }
 
       .pad-banner {
