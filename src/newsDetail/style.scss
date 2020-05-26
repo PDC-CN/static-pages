@@ -210,6 +210,15 @@
       display: none;
     }
   }
+  .ce-video {
+    iframe {
+      height: 480px;
+      width: 640px;
+      margin: auto;
+      display: block;
+      max-width: 100%;
+    }
+  }
 }
 
 @import './style.m.scss';

@@ -345,6 +345,49 @@
   .cdx-format {
     box-shadow: inset 0 0 0px 1px rgba(153, 153, 153, 0.6);
   }
+
+  .ce-video-editor {
+    .row.v-size {
+      .input {
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 100px;
+        }
+
+        span {
+          padding: 0 10px;
+        }
+      }
+    }
+    .row.tip {
+      text-align: center;
+
+      .input {
+        line-height: 1.5;
+      }
+
+      .ce-video-tip {
+        line-height: 1.5;
+
+        img {
+          width: 100%;
+          max-width: 800px;
+        }
+      }
+    }
+  }
+
+  .ce-video {
+    iframe {
+      height: 480px;
+      width: 640px;
+      margin: auto;
+      display: block;
+      max-width: 100%;
+    }
+  }
 }
 
 #cdxFormat {

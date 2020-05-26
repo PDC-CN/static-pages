@@ -63,6 +63,7 @@ const i18n = {
       AlbumWithTitle: '带说明图集',
       Image: '图片',
       Format: '字体样式',
+      Video: '外链视频',
     },
 
     /**

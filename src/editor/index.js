@@ -11,6 +11,7 @@ import Config from './plugins/config';
 import Album from './plugins/album';
 import Album2 from './plugins/album2';
 import Format from './plugins/format';
+import Video from './plugins/video';
 import i18n from './i18n';
 
 const { PAGE_DATA, PAGE_SAVE, $ } = window;
@@ -90,6 +91,7 @@ const editor = new EditorJS({
     Quote,
     Table,
     Format,
+    Video,
   },
   i18n,
   data: initData,
