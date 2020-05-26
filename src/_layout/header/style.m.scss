@@ -1,8 +1,9 @@
 @media screen and (max-width: 600px) {
   header.main-header {
     height: 46px;
-
+    
     &>.container {
+      height: 46px;
       padding: 0;
       position: fixed;
       width: 100%;

@@ -1,8 +1,20 @@
 header.main-header {
   background: #fff;
+  height: 56px;
 
   &>.container {
     padding: 0 40px;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
+  }
+
+  &.not-on-top>.container {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   }
 
   .opts {
