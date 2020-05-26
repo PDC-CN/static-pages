@@ -79,6 +79,9 @@
           display: none;
         }
       }
+      .image-tool__link {
+        display: none;
+      }
       .cdx-format {
         box-shadow: none;
       }
@@ -340,6 +343,32 @@
       margin: auto;
       width: 100%;
     }
+  }
+
+  .image-tool__link {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+
+    &[contentEditable="true"][data-placeholder]:empty::before {
+      content: attr(data-placeholder);
+      color: #707684;
+      font-weight: normal;
+      white-space: nowrap;
+      pointer-events: none;
+      position: static;
+      display: block;
+      margin: auto;
+      width: 100%;
+    }
+    &[contentEditable="true"][data-placeholder]:empty:focus::before {
+      display: none;
+    }
+  }
+
+  .image-tool--empty .image-tool__link,
+  .image-tool--loading .image-tool__link {
+    display: none;
   }
 
   .cdx-format {
