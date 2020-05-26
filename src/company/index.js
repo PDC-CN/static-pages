@@ -65,6 +65,8 @@ function init() {
     // 渲染相册
     renderAlbum();
   }
+
+  plugins.afterRender();
 }
 
 $(() => {

@@ -1,28 +1,90 @@
 const { $ } = window;
 
 let $setting;
+let $mask;
 function initSettingTool() {
-  $setting = $('<div id="cdxFormat">1111</div>');
+  $setting = $(`<div id="cdxFormat">
+    <div class="row">
+      <div class="label">字体大小</div>
+      <input class="input font-size" type="number" placeholder="数字，默认14">
+    </div>
+    <div class="row">
+      <div class="label">颜色</div>
+      <input class="input font-color" placeholder="RGB色值，如 #3AFF22">
+    </div>
+    <div class="row">
+      <div class="label">底纹颜色</div>
+      <input class="input font-bg" placeholder="RGB色值，如 #3AFF22">
+    </div>
+  </div>`);
+  $mask = $('<div id="cdxFormatMask"></div>');
   $('body').append($setting);
+  $('body').append($mask);
+}
+
+function updateSettingPostion(el) {
+  const $el = $(el);
+  const offset = $el.offset();
+  $setting.css('top', offset.top - 6);
+  $setting.css('left', offset.left);
 }
 
 function showSetting(el) {
-  const offset = $(el).offset();
-  $setting.css('top', offset.top);
-  $setting.css('left', offset.left);
-  console.log(offset);
+  const $el = $(el);
+  updateSettingPostion(el);
+  $setting.css('display', 'block');
+  $mask.css('display', 'block');
+
+  const $fontSize = $('.font-size', $setting);
+  $fontSize.val($el.attr('data-font-size'));
+  $fontSize.change((e) => {
+    const { value } = e.target;
+    $el.css('fontSize', `${value}px`);
+    $el.attr('data-font-size', value);
+    updateSettingPostion(el);
+  });
+
+  const $fontColor = $('.font-color', $setting);
+  $fontColor.val($el.attr('data-font-color'));
+  $fontColor.change((e) => {
+    const { value } = e.target;
+    $el.css('color', value);
+    $el.attr('data-font-color', value);
+  });
+
+  const $fontBg = $('.font-bg', $setting);
+  $fontBg.val($el.attr('data-font-bg'));
+  $fontBg.change((e) => {
+    const { value } = e.target;
+    $el.css('backgroundColor', value);
+    $el.attr('data-font-bg', value);
+  });
 }
 
-function renderFormat(el) {
-  console.log(el);
+function hideSetting() {
+  $setting.css('display', 'none');
+  $mask.css('display', 'none');
+
+  $('.font-size', $setting).unbind('change');
 }
 
-
+let x;
+let y;
 $(() => {
   initSettingTool();
   $('body').delegate('.cdx-format', 'mousedown', (e) => {
-    showSetting(e.currentTarget);
+    x = e.pageX;
+    y = e.pageY;
   });
+  $('body').delegate('.cdx-format', 'mouseup', (e) => {
+    if (!x || !y) return;
+    if (Math.abs(x - e.pageX) < 3 && Math.abs(y - e.pageY) < 3) {
+      showSetting(e.currentTarget);
+    }
+    x = undefined;
+    y = undefined;
+  });
+  $mask.click(hideSetting);
 });
 
 // 组件
@@ -85,6 +147,8 @@ class Marker {
     range.insertNode(marker);
 
     this.api.selection.expandToTag(marker);
+
+    // showSetting(marker);
   }
 
   unwrap(termWrapper) {
@@ -115,8 +179,11 @@ class Marker {
 
   static get sanitize() {
     return {
-      mark: {
+      span: {
         class: Marker.CSS,
+        'data-font-size': true,
+        'data-font-color': true,
+        'data-font-bg': true,
       },
     };
   }

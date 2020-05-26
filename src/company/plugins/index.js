@@ -8,6 +8,7 @@ import Checklist from './checklist';
 import Quote from './quote';
 import Image from './image';
 import Table from './table';
+import format from './format';
 
 const plugins = {
   Header,
@@ -20,6 +21,9 @@ const plugins = {
   Quote,
   Image,
   Table,
+  afterRender: () => {
+    format();
+  },
 };
 
 export default plugins;

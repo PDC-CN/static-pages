@@ -62,6 +62,7 @@ const i18n = {
       Album: '图集',
       AlbumWithTitle: '带说明图集',
       Image: '图片',
+      Format: '字体样式',
     },
 
     /**
