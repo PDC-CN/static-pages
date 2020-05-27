@@ -63,8 +63,8 @@ class AlbumWithTitle {
     const $editor = $(`<div class="ce-album-editor with-title ce-hidden-content">
       <div class="desc">此配置部分不会出现在页面上</div>
       <div class="row">
-        <div class="label v-count">列数</div>
-        <select class="input">
+        <div class="label">列数</div>
+        <select class="input v-count">
           <option value="2" ${data.count === 2 ? 'selected' : ''}>2</option>
           <option value="3" ${data.count === 3 ? 'selected' : ''}>3</option>
           <option value="4" ${data.count === 4 ? 'selected' : ''}>4</option>
