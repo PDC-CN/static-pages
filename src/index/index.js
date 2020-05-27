@@ -42,7 +42,7 @@ function init9Banner() {
 
 // 活动banner
 function initEvent() {
-  const swiper = new Swiper('.events .content', {
+  const swiper = new Swiper('.events .content .left', {
     loop: true,
     // If we need pagination
     pagination: {

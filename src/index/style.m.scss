@@ -111,6 +111,12 @@
 
       .content {
         height: auto;
+        display: block;
+
+        .left,
+        .right {
+          width: 100%;
+        }
       }
 
       .event-title-img {
@@ -127,19 +133,20 @@
           width: auto;
           overflow: hidden;
         }
-        .b2 {
-          position: static;
-          width: auto;
-          padding: 15px;
-          padding-bottom: 40px;
-          
-          .t1 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            height: 64px;
-            overflow: hidden;
-            -webkit-line-clamp: 2;
-          }
+      }
+
+      .b2 {
+        position: static;
+        width: auto;
+        padding: 15px;
+        padding-bottom: 40px;
+        
+        .t1 {
+          font-size: 16px;
+          margin-bottom: 10px;
+          height: 64px;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
         }
       }
 
