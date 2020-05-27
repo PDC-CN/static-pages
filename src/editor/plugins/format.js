@@ -148,7 +148,7 @@ class Marker {
 
     this.api.selection.expandToTag(marker);
 
-    // showSetting(marker);
+    showSetting(marker);
   }
 
   unwrap(termWrapper) {
