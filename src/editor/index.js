@@ -14,6 +14,9 @@ import Format from './plugins/format';
 import Video from './plugins/video';
 import i18n from './i18n';
 
+import { fileSizeLimit } from './lib';
+import { injectEditor } from './lib/message';
+
 const { PAGE_DATA, PAGE_SAVE, $ } = window;
 
 let initData = PAGE_DATA;
@@ -57,6 +60,10 @@ const editor = new EditorJS({
            * @return {Promise.<{success, file: {url}}>}
            */
           uploadByFile(file) {
+            // 限制大小
+            if (!fileSizeLimit(file)) {
+              return Promise.resolve('SIZE_LIMIT');
+            }
             // your own uploading logic here
             const formData = new FormData();
             formData.append('image', file);
@@ -98,6 +105,8 @@ const editor = new EditorJS({
 });
 
 const saveButton = document.getElementById('save');
+
+injectEditor(editor);
 
 saveButton.addEventListener('click', () => {
   if (PAGE_SAVE) {

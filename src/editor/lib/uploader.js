@@ -1,3 +1,6 @@
+import { fileSizeLimit } from './index';
+import message from './message';
+
 const { $ } = window;
 
 // state:
@@ -40,6 +43,13 @@ export default class Uploader {
   _handleUpload() {
     if (this.state !== 'wait') return;
     const file = this.$input[0].files[0];
+    if (!fileSizeLimit(file)) {
+      message({
+        message: '图片大小限制为2MB，请压缩后上传',
+        style: 'error',
+      });
+      return;
+    }
     const formData = new FormData();
     formData.append('image', file);
     $.ajax({

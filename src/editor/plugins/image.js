@@ -34,4 +34,24 @@ export default class MyImage extends Image {
     }
     return data;
   }
+
+  uploadingFailed(errorText) {
+    // console.log('Image Tool: uploading failed because of ', errorText);
+
+    if (errorText === 'incorrect response: "SIZE_LIMIT"') {
+      this.api.notifier.show({
+        message: '图片大小限制为2MB，请压缩后上传',
+        style: 'error',
+      });
+    } else {
+      this.api.notifier.show({
+        message: '当前无法上传，请稍后重试',
+        style: 'error',
+      });
+    }
+
+    setTimeout(() => {
+      this.ui.hidePreloader();
+    }, 50);
+  }
 }
