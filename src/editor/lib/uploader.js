@@ -43,6 +43,7 @@ export default class Uploader {
   _handleUpload() {
     if (this.state !== 'wait') return;
     const file = this.$input[0].files[0];
+    if (!file) return;
     if (!fileSizeLimit(file)) {
       message({
         message: '图片大小限制为2MB，请压缩后上传',

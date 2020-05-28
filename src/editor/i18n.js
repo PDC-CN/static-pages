@@ -64,6 +64,7 @@ const i18n = {
       Image: '图片',
       Format: '字体样式',
       Video: '外链视频',
+      Attachment: '附件',
     },
 
     /**

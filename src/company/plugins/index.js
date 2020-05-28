@@ -8,6 +8,7 @@ import Checklist from './checklist';
 import Quote from './quote';
 import Image from './image';
 import Table from './table';
+import Attachment from './attachment';
 import format from './format';
 
 const plugins = {
@@ -21,6 +22,7 @@ const plugins = {
   Quote,
   Image,
   Table,
+  Attachment,
   afterRender: () => {
     format();
   },

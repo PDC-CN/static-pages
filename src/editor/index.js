@@ -12,6 +12,7 @@ import Album from './plugins/album';
 import Album2 from './plugins/album2';
 import Format from './plugins/format';
 import Video from './plugins/video';
+import Attachment from './plugins/attachment';
 import i18n from './i18n';
 
 import { fileSizeLimit } from './lib';
@@ -99,6 +100,7 @@ const editor = new EditorJS({
     Table,
     Format,
     Video,
+    Attachment,
   },
   i18n,
   data: initData,
@@ -113,6 +115,8 @@ saveButton.addEventListener('click', () => {
     editor.save().then(PAGE_SAVE);
   }
 });
+
+window.eee = editor;
 
 $('.alert .editor-btn').click(() => {
   $('.alert').removeClass('preview-mode');
