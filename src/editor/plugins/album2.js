@@ -86,7 +86,7 @@ class AlbumWithTitle {
         <div class="label">样式</div>
         <select class="input v-size">
           <option value="cover" ${data.size === 'cover' ? 'selected' : ''}>图片覆盖整个容器</option>
-          <option value="contain" ${data.count === 'contain' ? 'selected' : ''}>容器包含整个图片</option>
+          <option value="contain" ${data.size === 'contain' ? 'selected' : ''}>容器包含整个图片</option>
         </select>
       </div>
       <div class="row">
