@@ -112,7 +112,7 @@
         background-color: #fff;
       }
 
-      &::before {
+      &[data-name]::before {
         content: "";
         position: absolute;
         height: 30%;
@@ -122,7 +122,7 @@
         background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
       }
 
-      &::after {
+      &[data-name]::after {
         content: attr(data-name);
         position: absolute;
         left: 0;
