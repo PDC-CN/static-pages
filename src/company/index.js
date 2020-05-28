@@ -53,7 +53,7 @@ function init() {
     },
   });
 
-  const { blocks } = PAGE_DATA;
+  const blocks = PAGE_DATA.blocks || [];
   const $holder = $('#holder');
   blocks.forEach((block) => {
     if (plugins[block.type]) {
