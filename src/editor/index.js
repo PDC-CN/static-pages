@@ -102,7 +102,7 @@ const editor = new EditorJS({
     Video,
     Attachment,
   },
-  i18n,
+  i18n: i18n.zh,
   data: initData,
 });
 

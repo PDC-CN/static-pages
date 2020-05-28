@@ -23,18 +23,18 @@ const i18n = {
     ui: {
       blockTunes: {
         toggler: {
-          'Click to tune': '点击调整',
-          'or drag to move': '拖动',
+          'Click to tune': 'Click to tune',
+          'or drag to move': 'or drag to move',
         },
       },
       inlineToolbar: {
         converter: {
-          'Convert to': '转变为',
+          'Convert to': 'Convert to',
         },
       },
       toolbar: {
         toolbox: {
-          Add: '新增',
+          Add: 'Add',
         },
       },
     },
@@ -43,28 +43,28 @@ const i18n = {
     * Section for translation Tool Names: both block and inline tools
     */
     toolNames: {
-      Text: '文本',
-      Heading: '标题',
-      List: '列表',
-      Warning: '警告',
-      Checklist: '清单',
-      Quote: '引用',
-      Code: '代码',
-      Delimiter: '分割线',
-      'Raw HTML': 'HTML-фрагмент',
-      Table: '表格',
-      Link: '链接块',
-      Marker: '标记',
-      Bold: '粗体',
-      Italic: '斜体',
-      InlineCode: '行内代码',
-      HeaderWithSub: '标题带副标题',
-      Album: '图集',
-      AlbumWithTitle: '带说明图集',
-      Image: '图片',
-      Format: '字体样式',
-      Video: '外链视频',
-      Attachment: '附件',
+      Text: 'Text',
+      Heading: 'Heading',
+      List: 'List',
+      Warning: 'Warning',
+      Checklist: 'Checklist',
+      Quote: 'Quote',
+      Code: 'Code',
+      Delimiter: 'Delimiter',
+      'Raw HTML': 'Raw HTML',
+      Table: 'Table',
+      Link: 'Link',
+      Marker: 'Marker',
+      Bold: 'Bold',
+      Italic: 'Italic',
+      InlineCode: 'Inline Code',
+      HeaderWithSub: 'Header With Subtitle',
+      Album: 'Album',
+      AlbumWithTitle: 'Album With Title',
+      Image: 'Single Image',
+      Format: 'Format',
+      Video: 'Video',
+      Attachment: 'Attachment',
     },
 
     /**
@@ -76,21 +76,21 @@ const i18n = {
       * The name of a plugin should be equal the name you specify in the 'tool' section for that plugin
       */
       warning: { // <-- 'Warning' tool will accept this dictionary section
-        Title: '标题',
-        Message: '消息',
+        Title: 'Title',
+        Message: 'Message',
       },
 
       /**
       * Link is the internal Inline Tool
       */
       link: {
-        'Add a link': '增加一个链接',
+        'Add a link': 'Add a link',
       },
       /**
       * The "stub" is an internal block tool, used to fit blocks that does not have the corresponded plugin
       */
       stub: {
-        'The block can not be displayed correctly.': '这个内容块无法被正确显示',
+        'The block can not be displayed correctly.': 'The block can not be displayed correctly.',
       },
     },
 
@@ -105,13 +105,13 @@ const i18n = {
       * Also, there are few internal block tunes: "delete", "moveUp" and "moveDown"
       */
       delete: {
-        Delete: '删除',
+        Delete: 'Delete',
       },
       moveUp: {
-        'Move up': '上移',
+        'Move up': 'Move up',
       },
       moveDown: {
-        'Move down': '下移',
+        'Move down': 'Move down',
       },
     },
   },
