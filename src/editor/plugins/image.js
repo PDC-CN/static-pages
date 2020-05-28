@@ -5,7 +5,11 @@ const { $ } = window;
 export default class MyImage extends Image {
   constructor(...args) {
     super(...args);
-    this._link = decodeURIComponent(args[0].data.link);
+    if (!args[0].data.link || args[0].data.link === 'undefined') {
+      this._link = '';
+    } else {
+      this._link = decodeURIComponent(args[0].data.link);
+    }
   }
 
   render(...args) {
