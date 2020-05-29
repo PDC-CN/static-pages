@@ -427,10 +427,9 @@
         line-height: 1.6;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
+        -webkit-line-clamp: 3;
         overflow: hidden;
-        height: 125px;
-        margin-bottom: 50px;
+        height: 75px;
       }
       .info {
         display: flex;
@@ -453,7 +452,7 @@
         position: relative;
 
         .cover {
-          height: 577px;
+          height: 475px;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -486,7 +485,7 @@
         .cover {
           flex-grow: 0;
           flex-shrink: 0;
-          height: 260px;
+          height: 200px;
           width: 304px;
           background-repeat: no-repeat;
           background-position: center;
@@ -506,6 +505,11 @@
           margin-bottom: 12px;
           line-height: 1.6;
           height: 70px;
+        }
+
+        .desc {
+          font-size: 14px;
+          height: 66px;
         }
       }
     }
