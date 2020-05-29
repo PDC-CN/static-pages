@@ -1,4 +1,7 @@
 import { humanFileSize } from '../../_common/index';
+import getI18n from '../i18n';
+
+const i18n = getI18n().dic.attachment;
 
 function createElement(type, className = []) {
   const $d = document.createElement(type);
@@ -58,7 +61,7 @@ class Attachment {
           <rect x="4" y="1" width="5" height="2" rx="1" ry="1" transform="translate(0.44756 5.19939) rotate(-45)" />
           <rect x="7" y="1" width="5" height="2" rx="1" ry="1" transform="translate(4.23874 -6.11432) rotate(45)" />
         </svg>
-        <span>点击上传附件</span>
+        <span>${i18n.tip}</span>
       </div>
     </div>`);
     const $shower = $(`<div class="ce-attachment-shower">
@@ -157,7 +160,7 @@ class Attachment {
         this.size = size;
         this._updateUi();
       } else {
-        alert('上传失败，请重试');
+        alert(i18n.eFail);
       }
     });
   }

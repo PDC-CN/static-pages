@@ -1,6 +1,8 @@
 import Image from '@editorjs/image';
+import getI18n from '../i18n';
 
 const { $ } = window;
+const i18n = getI18n().dic.image;
 
 export default class MyImage extends Image {
   constructor(...args) {
@@ -15,7 +17,7 @@ export default class MyImage extends Image {
   render(...args) {
     const node = super.render(...args);
     const link = this._link || '';
-    const $insert = $(`<div class="cdx-input image-tool__link" contenteditable="true" data-placeholder="图片链接，默认为空">${link}</div>`);
+    const $insert = $(`<div class="cdx-input image-tool__link" contenteditable="true" data-placeholder="${i18n.linkPlaceholder}">${link}</div>`);
     const $btn = $('.cdx-button', node);
     $btn.before($insert);
     $(node).delegate('.image-tool__image-picture', 'click', () => {
@@ -46,12 +48,12 @@ export default class MyImage extends Image {
 
     if (errorText === 'incorrect response: "SIZE_LIMIT"') {
       this.api.notifier.show({
-        message: '图片大小限制为2MB，请压缩后上传',
+        message: i18n.eSize,
         style: 'error',
       });
     } else {
       this.api.notifier.show({
-        message: '当前无法上传，请稍后重试',
+        message: i18n.eNormal,
         style: 'error',
       });
     }

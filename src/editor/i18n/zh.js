@@ -115,6 +115,67 @@ const i18n = {
       },
     },
   },
+  dic: {
+    g: {
+      hiddenTip: '此配置部分不会出现在页面上',
+    },
+    image: {
+      captionPlaceholder: '图片小标题，不填为空',
+      linkPlaceholder: '图片链接，默认为空',
+      eSize: '图片大小限制为2MB，请压缩后上传',
+      eNormal: '当前无法上传，请稍后重试',
+    },
+    album: {
+      col: '列数',
+      info: '图片信息',
+      link: '图片点击链接',
+      style: '样式',
+      styleCover: '图片覆盖整个容器',
+      styleContain: '容器包含整个图片',
+      bg: '图片背景',
+      bgTip: '空缺为透明，RGB色值，例如 #3AFF22',
+      title: '图片标题',
+      desc: '图片说明',
+    },
+    attachment: {
+      tip: '点击上传附件',
+      eFail: '上传失败，请重试',
+    },
+    config: {
+      title: '全局配置',
+      bg: '页面背景',
+      bgTip: 'RGB色值，例如 #3AFF22',
+      color: '文本颜色',
+      colorTip: '空缺为默认，RGB色值，例如 #3AFF22',
+      width: '容器最大宽度',
+      widthTip: '像素，例如 1200',
+      tip: '点击下方空白处开始编辑',
+    },
+    format: {
+      size: '字体大小',
+      sizeTip: '数字，默认14',
+      color: '颜色',
+      colorTip: 'RGB色值，如 #3AFF22',
+      bg: '底纹颜色',
+      bgTip: 'RGB色值，如 #3AFF22',
+    },
+    video: {
+      size: '视频大小',
+      type: '选择平台',
+      typeYouku: '优酷',
+      typeQq: '腾讯视频',
+      typeB: 'Bilibili',
+      typeIqiyi: '爱奇艺',
+      code: '视频代码',
+      codeTip: '请输入视频通用代码，以 <iframe 开头',
+      howTo: '如何获取视频代码？',
+    },
+    uploader: {
+      eSize: '图片大小限制为2MB，请压缩后上传',
+      eNormal: '上传失败，请重试',
+      select: '选择图片',
+    },
+  },
 };
 
 export default i18n;

@@ -1,4 +1,8 @@
 import Uploader from '../lib/uploader';
+import getI18n from '../i18n';
+
+const i18ng = getI18n().dic.g;
+const i18n = getI18n().dic.album;
 
 function createElement(type, className = []) {
   const $d = document.createElement(type);
@@ -54,9 +58,9 @@ class Album {
     const { data } = this;
     const $wrapper = createElement('div', ['ce-album-container']);
     const $editor = $(`<div class="ce-album-editor ce-hidden-content">
-      <div class="desc">此配置部分不会出现在页面上</div>
+      <div class="desc">${i18ng.hiddenTip}</div>
       <div class="row">
-        <div class="label">列数</div>
+        <div class="label">${i18n.col}</div>
         <select class="input v-count">
           <option value="2" ${data.count === 2 ? 'selected' : ''}>2</option>
           <option value="3" ${data.count === 3 ? 'selected' : ''}>3</option>
@@ -66,21 +70,21 @@ class Album {
         </select>
       </div>
       <div class="row">
-        <div class="label">图片信息</div>
+        <div class="label">${i18n.info}</div>
         <div class="links input">
-          ${data.images.map(img => `<div class="row"><input type="text" class="link" placeholder="图片点击链接" value="${img.link}"></div>`).reduce((a, b) => a + b, '')}
+          ${data.images.map(img => `<div class="row"><input type="text" class="link" placeholder="${i18n.link}" value="${img.link}"></div>`).reduce((a, b) => a + b, '')}
         </div>
       </div>
       <div class="row">
-        <div class="label">样式</div>
+        <div class="label">${i18n.style}</div>
         <select class="input v-size">
-          <option value="cover" ${data.size === 'cover' ? 'selected' : ''}>图片覆盖整个容器</option>
-          <option value="contain" ${data.size === 'contain' ? 'selected' : ''}>容器包含整个图片</option>
+          <option value="cover" ${data.size === 'cover' ? 'selected' : ''}>${i18n.styleCover}</option>
+          <option value="contain" ${data.size === 'contain' ? 'selected' : ''}>${i18n.styleContain}</option>
         </select>
       </div>
       <div class="row">
-        <div class="label">图片背景</div>
-        <input class="input v-background" placeholder="空缺为透明，RGB色值，例如 #3AFF22">
+        <div class="label">${i18n.bg}</div>
+        <input class="input v-background" placeholder="${i18n.bgTip}">
       </div>
     </div>`);
 
@@ -107,7 +111,7 @@ class Album {
       } else if ($links.length < count) {
         const add = count - $links.length;
         for (let i = 0; i < add; i += 1) {
-          const $row = $('<div class="row"><input type="text" class="link" placeholder="图片点击链接"></div>');
+          const $row = $(`<div class="row"><input type="text" class="link" placeholder="${i18n.link}"></div>`);
           const uploader = new Uploader();
           uploader.onChange(() => {
             this._renderAlbum();

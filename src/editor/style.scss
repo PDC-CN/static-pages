@@ -592,3 +592,7 @@
     transform: rotate(360deg);
   }
 }
+
+[data-locale="en"] #editor .ce-album a:empty::after {
+  content: "Blank";
+}

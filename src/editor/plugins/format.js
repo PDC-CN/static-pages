@@ -1,3 +1,7 @@
+import getI18n from '../i18n';
+
+const i18n = getI18n().dic.format;
+
 const { $ } = window;
 
 let $setting;
@@ -5,16 +9,16 @@ let $mask;
 function initSettingTool() {
   $setting = $(`<div id="cdxFormat">
     <div class="row">
-      <div class="label">字体大小</div>
-      <input class="input font-size" type="number" placeholder="数字，默认14">
+      <div class="label">${i18n.size}</div>
+      <input class="input font-size" type="number" placeholder="${i18n.sizeTip}">
     </div>
     <div class="row">
-      <div class="label">颜色</div>
-      <input class="input font-color" placeholder="RGB色值，如 #3AFF22">
+      <div class="label">${i18n.color}</div>
+      <input class="input font-color" placeholder="${i18n.colorTip}">
     </div>
     <div class="row">
-      <div class="label">底纹颜色</div>
-      <input class="input font-bg" placeholder="RGB色值，如 #3AFF22">
+      <div class="label">${i18n.bg}</div>
+      <input class="input font-bg" placeholder="${i18n.bgTip}">
     </div>
   </div>`);
   $mask = $('<div id="cdxFormatMask"></div>');

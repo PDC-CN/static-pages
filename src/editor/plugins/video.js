@@ -1,4 +1,7 @@
-import Uploader from '../lib/uploader';
+import getI18n from '../i18n';
+
+const i18ng = getI18n().dic.g;
+const i18n = getI18n().dic.video;
 
 function createElement(type, className = []) {
   const $d = document.createElement(type);
@@ -8,13 +11,6 @@ function createElement(type, className = []) {
   return $d;
 }
 
-function repeat(count, str) {
-  let ret = '';
-  for (let i = 0; i < count; i += 1) {
-    ret += str;
-  }
-  return ret;
-}
 
 const tipMap = {
   youku: 'https://assets.zjzsxhy.com/upload/08042717-0b03-4f38-9df8-1f25e20edb97.png',
@@ -54,9 +50,9 @@ class Video {
     const { data } = this;
     const $wrapper = createElement('div', ['ce-album-container']);
     const $editor = $(`<div class="ce-hidden-content ce-video-editor">
-      <div class="desc">此配置部分不会出现在页面上</div>
+      <div class="desc">${i18ng.hiddenTip}</div>
       <div class="row v-size">
-        <div class="label">视频大小</div>
+        <div class="label">${i18n.size}</div>
         <div class="input">
           <input class="v-width" type="number" value="${data.width}">
           <span>X</span>
@@ -64,22 +60,22 @@ class Video {
         </div>
       </div>
       <div class="row">
-        <div class="label">选择平台</div>
+        <div class="label">${i18n.type}</div>
         <select class="input v-type">
-          <option value="youku" ${data.type === 'youku' ? 'selected' : ''}>优酷</option>
-          <option value="qq" ${data.type === 'qq' ? 'selected' : ''}>腾讯视频</option>
-          <option value="bilibili" ${data.type === 'bilibili' ? 'selected' : ''}>Bilibili</option>
-          <option value="iqiyi" ${data.type === 'iqiyi' ? 'selected' : ''}>爱奇艺</option>
+          <option value="youku" ${data.type === 'youku' ? 'selected' : ''}>${i18n.typeYouku}</option>
+          <option value="qq" ${data.type === 'qq' ? 'selected' : ''}>${i18n.typeQq}</option>
+          <option value="bilibili" ${data.type === 'bilibili' ? 'selected' : ''}>${i18n.typeB}</option>
+          <option value="iqiyi" ${data.type === 'iqiyi' ? 'selected' : ''}>${i18n.typeIqiyi}</option>
         </select>
       </div>
       <div class="row">
-        <div class="label">视频代码</div>
-        <input class="input v-code" placeholder="请输入视频通用代码，以 <iframe 开头">
+        <div class="label">${i18n.code}</div>
+        <input class="input v-code" placeholder="${i18n.codeTip}">
       </div>
       <div class="row tip">
         <div class="label">&nbsp;</div>
         <div class="input">
-          <div>如何获取视频代码？</div>
+          <div>${i18n.howTo}</div>
           <div class="ce-video-tip"></div>
         </div>
       </div>

@@ -1,17 +1,14 @@
+import getI18n from '../i18n';
+
+const i18ng = getI18n().dic.g;
+const i18n = getI18n().dic.config;
+
 function createElement(type, className = []) {
   const $d = document.createElement(type);
   className.forEach((c) => {
     $d.classList.add(c);
   });
   return $d;
-}
-
-function repeat(count, str) {
-  let ret = '';
-  for (let i = 0; i < count; i += 1) {
-    ret += str;
-  }
-  return ret;
 }
 
 const { $ } = window;
@@ -41,21 +38,21 @@ class Config {
     const { data } = this;
     const $wrapper = createElement('div', ['ce-config-container']);
     const $editor = $(`<div class="ce-hidden-content">
-      <div class="desc">此配置部分不会出现在页面上</div>
-      <div class="row">全局配置</div>
+      <div class="desc">${i18ng.hiddenTip}</div>
+      <div class="row">${i18n.title}</div>
       <div class="row">
-        <div class="label">页面背景</div>
-        <input class="input page-bg" value="${data.pageBackground}" placeholder="RGB色值，例如 #3AFF22" >
+        <div class="label">${i18n.bg}</div>
+        <input class="input page-bg" value="${data.pageBackground}" placeholder="${i18n.bgTip}" >
       </div>
       <div class="row">
-        <div class="label">文本颜色</div>
-        <input class="input text-color" value="${data.textColor}" placeholder="空缺为默认，RGB色值，例如 #3AFF22" >
+        <div class="label">${i18n.color}</div>
+        <input class="input text-color" value="${data.textColor}" placeholder="${i18n.colorTip}" >
       </div>
       <div class="row">
-        <div class="label">容器最大宽度</div>
-        <input class="input max-width" value="${data.maxContainerWidth}" placeholder="像素，例如 1200" >
+        <div class="label">${i18n.width}</div>
+        <input class="input max-width" value="${data.maxContainerWidth}" placeholder="${i18n.widthTip}" >
       </div>
-      <div class="tip">点击下方空白处开始编辑</div>
+      <div class="tip">${i18n.tip}</div>
     </div>`);
     this.$editor = $editor;
     // 事件

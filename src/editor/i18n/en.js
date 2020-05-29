@@ -115,6 +115,67 @@ const i18n = {
       },
     },
   },
+  dic: {
+    g: {
+      hiddenTip: 'This section will not appear on the page',
+    },
+    image: {
+      captionPlaceholder: 'Caption, default empty.',
+      linkPlaceholder: 'Click link, default empty',
+      eSize: 'Maximum 2MB, please compress',
+      eNormal: 'Unable to upload currently, please try again later',
+    },
+    album: {
+      col: 'Columns',
+      info: 'Images',
+      link: 'Click link',
+      style: 'Style',
+      styleCover: 'Cover',
+      styleContain: 'Contain',
+      bg: 'Container background',
+      bgTip: 'Default is transparent, RGB color value, e.g., #3AFF22',
+      title: 'Caption',
+      desc: 'Description',
+    },
+    attachment: {
+      tip: 'Click to upload',
+      eFail: 'Upload failed, please try again',
+    },
+    config: {
+      title: 'Global configuration',
+      bg: 'Page background color',
+      bgTip: 'RGB color value, e.g., #3AFF22',
+      color: 'Font color',
+      colorTip: 'Default will inherit page font color, RGB color value, e.g., #3AFF22',
+      width: 'Context max witdh',
+      widthTip: 'Pixel, e.g., 1200',
+      tip: 'Click the blank space below to start editing',
+    },
+    format: {
+      size: 'Size',
+      sizeTip: 'Number, default is 14',
+      color: 'Color',
+      colorTip: 'RGB color value, e.g., #3AFF22',
+      bg: 'Background color',
+      bgTip: 'RGB color value, e.g., #3AFF22',
+    },
+    video: {
+      size: 'Size',
+      type: 'Platform',
+      typeYouku: 'Youku',
+      typeQq: 'QQ',
+      typeB: 'Bilibili',
+      typeIqiyi: 'Iqiyi',
+      code: 'Code',
+      codeTip: 'Please enter the embed code for the video, starting with <iframe',
+      howTo: 'How to get the video embed code?',
+    },
+    uploader: {
+      eSize: 'Maximum 2MB, please compress',
+      eNormal: 'Unable to upload currently, please try again later',
+      select: 'Select image',
+    },
+  },
 };
 
 export default i18n;
