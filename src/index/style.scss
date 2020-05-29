@@ -211,12 +211,15 @@
       .b1 {
         width: 60%;
         overflow: hidden;
-        height: 405px;
+        position: relative;
 
         img {
           object-fit: cover;
           height: 100%;
           width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
         }
       }
       .b2 {
