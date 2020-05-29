@@ -9,6 +9,7 @@ import Quote from './quote';
 import Image from './image';
 import Table from './table';
 import Attachment from './attachment';
+import Video from './video';
 import format from './format';
 
 const plugins = {
@@ -22,6 +23,7 @@ const plugins = {
   Quote,
   Image,
   Table,
+  Video,
   Attachment,
   afterRender: () => {
     format();
