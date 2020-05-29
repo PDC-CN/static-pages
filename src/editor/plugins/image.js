@@ -58,6 +58,6 @@ export default class MyImage extends Image {
 
     setTimeout(() => {
       this.ui.hidePreloader();
-    }, 50);
+    }, 500);
   }
 }
