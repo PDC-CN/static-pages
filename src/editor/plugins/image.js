@@ -18,6 +18,12 @@ export default class MyImage extends Image {
     const $insert = $(`<div class="cdx-input image-tool__link" contenteditable="true" data-placeholder="图片链接，默认为空">${link}</div>`);
     const $btn = $('.cdx-button', node);
     $btn.before($insert);
+    $(node).delegate('.image-tool__image-picture', 'click', () => {
+      const lk = $insert.html();
+      if (lk) {
+        window.open(lk);
+      }
+    });
     return node;
   }
 
