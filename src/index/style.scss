@@ -61,6 +61,7 @@
         width: 60px;
         height: 100%;
         writing-mode: vertical-lr;
+        text-orientation: upright;
         text-align: center;
         line-height: 60px;
       }
@@ -545,6 +546,10 @@
       }
     }
   }
+}
+
+[data-locale="en"] #index .pads .r2 .nine-palaces::before {
+  text-orientation: mixed;
 }
 
 @import './style.m.scss';
