@@ -133,7 +133,7 @@ const i18n = {
       styleCover: '图片覆盖整个容器',
       styleContain: '容器包含整个图片',
       bg: '图片背景',
-      bgTip: '空缺为透明，RGB色值，例如 #3AFF22',
+      bgTip: '空缺为透明，RGB色值，例如 3AFF22',
       title: '图片标题',
       desc: '图片说明',
     },
@@ -144,9 +144,9 @@ const i18n = {
     config: {
       title: '全局配置',
       bg: '页面背景',
-      bgTip: 'RGB色值，例如 #3AFF22',
+      bgTip: 'RGB色值，例如 3AFF22',
       color: '文本颜色',
-      colorTip: '空缺为默认，RGB色值，例如 #3AFF22',
+      colorTip: '空缺为默认，RGB色值，例如 3AFF22',
       width: '容器最大宽度',
       widthTip: '像素，例如 1200',
       tip: '点击下方空白处开始编辑',
@@ -155,9 +155,9 @@ const i18n = {
       size: '字体大小',
       sizeTip: '数字，默认14',
       color: '颜色',
-      colorTip: 'RGB色值，如 #3AFF22',
+      colorTip: 'RGB色值，如 3AFF22',
       bg: '底纹颜色',
-      bgTip: 'RGB色值，如 #3AFF22',
+      bgTip: 'RGB色值，如 3AFF22',
     },
     video: {
       size: '视频大小',
@@ -174,6 +174,25 @@ const i18n = {
       eSize: '图片大小限制为2MB，请压缩后上传',
       eNormal: '上传失败，请重试',
       select: '选择图片',
+    },
+    colorPicker: {
+      // Strings visible in the UI
+      'ui:dialog': '颜色选择器对话框',
+      'btn:toggle': '切换颜色选择器对话框',
+      'btn:swatch': '色板',
+      'btn:last-color': '使用前一个颜色',
+      'btn:save': '保存',
+      'btn:cancel': '取消',
+      'btn:clear': '清除',
+
+      // Strings used for aria-labels
+      'aria:btn:save': '保存并关闭',
+      'aria:btn:cancel': '取消并关闭',
+      'aria:btn:clear': '清除并关闭',
+      'aria:input': '色值输入框',
+      'aria:palette': '颜色选择',
+      'aria:hue': '色调选择',
+      'aria:opacity': '透明度选择',
     },
   },
 };

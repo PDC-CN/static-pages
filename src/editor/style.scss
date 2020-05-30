@@ -1,5 +1,7 @@
 @import './editor.scss';
 @import './lib/uploader.scss';
+@import './lib/colorPicker.scss';
+@import '~@simonwep/pickr/dist/themes/monolith.min.css';
 
 #editor {
   h1,
@@ -440,9 +442,30 @@
     .label {
       width: 70px;
     }
-    .input {
+    input {
       padding: 4px 6px;
+    }
+
+    .input {
       width: 200px;
+    }
+
+    .color-picker {
+      .color-picker-input {
+        width: 100px;
+        margin-left: 6px;
+        padding-left: 18px !important;
+      }
+      .pickr .pcr-button {
+        height: 26px;
+        width: 26px;
+      }
+      .color-picker-sharp {
+        height: 26px;
+        line-height: 26px;
+        left: 36px;
+        font-size: 18px;
+      }
     }
   }
 }

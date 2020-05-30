@@ -133,7 +133,7 @@ const i18n = {
       styleCover: 'Cover',
       styleContain: 'Contain',
       bg: 'Container background',
-      bgTip: 'Default is transparent, RGB color value, e.g., #3AFF22',
+      bgTip: 'Default is transparent, RGB color value, e.g., 3AFF22',
       title: 'Caption',
       desc: 'Description',
     },
@@ -144,9 +144,9 @@ const i18n = {
     config: {
       title: 'Global configuration',
       bg: 'Page background color',
-      bgTip: 'RGB color value, e.g., #3AFF22',
+      bgTip: 'RGB color value, e.g., 3AFF22',
       color: 'Font color',
-      colorTip: 'Default will inherit page font color, RGB color value, e.g., #3AFF22',
+      colorTip: 'Default will inherit page font color, RGB color value, e.g., 3AFF22',
       width: 'Context max witdh',
       widthTip: 'Pixel, e.g., 1200',
       tip: 'Click the blank space below to start editing',
@@ -155,9 +155,9 @@ const i18n = {
       size: 'Size',
       sizeTip: 'Number, default is 14',
       color: 'Color',
-      colorTip: 'RGB color value, e.g., #3AFF22',
+      colorTip: 'RGB color value, e.g., 3AFF22',
       bg: 'Background color',
-      bgTip: 'RGB color value, e.g., #3AFF22',
+      bgTip: 'RGB color value, e.g., 3AFF22',
     },
     video: {
       size: 'Size',
@@ -174,6 +174,25 @@ const i18n = {
       eSize: 'Maximum 2MB, please compress',
       eNormal: 'Unable to upload currently, please try again later',
       select: 'Select image',
+    },
+    colorPicker: {
+      // Strings visible in the UI
+      'ui:dialog': 'color picker dialog',
+      'btn:toggle': 'toggle color picker dialog',
+      'btn:swatch': 'color swatch',
+      'btn:last-color': 'use previous color',
+      'btn:save': 'Save',
+      'btn:cancel': 'Cancel',
+      'btn:clear': 'Clear',
+
+      // Strings used for aria-labels
+      'aria:btn:save': 'save and close',
+      'aria:btn:cancel': 'cancel and close',
+      'aria:btn:clear': 'clear and close',
+      'aria:input': 'color input field',
+      'aria:palette': 'color selection area',
+      'aria:hue': 'hue selection slider',
+      'aria:opacity': 'selection slider',
     },
   },
 };

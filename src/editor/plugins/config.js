@@ -1,3 +1,4 @@
+import ColorPicker from '../lib/colorPicker';
 import getI18n from '../i18n';
 
 const i18ng = getI18n().dic.g;
@@ -42,11 +43,11 @@ class Config {
       <div class="row">${i18n.title}</div>
       <div class="row">
         <div class="label">${i18n.bg}</div>
-        <input class="input page-bg" value="${data.pageBackground}" placeholder="${i18n.bgTip}" >
+        <div class="input page-bg"></div>
       </div>
       <div class="row">
         <div class="label">${i18n.color}</div>
-        <input class="input text-color" value="${data.textColor}" placeholder="${i18n.colorTip}" >
+        <div class="input text-color"></div>
       </div>
       <div class="row">
         <div class="label">${i18n.width}</div>
@@ -56,16 +57,27 @@ class Config {
     </div>`);
     this.$editor = $editor;
     // 事件
-    $('input', this.$editor).change(this._setConfig.bind(this));
+    $('.max-width', this.$editor).change(this._setConfig.bind(this));
     $wrapper.appendChild($editor[0]);
+    // color
+    new ColorPicker($('.page-bg', this.$editor), {
+      placeholder: i18n.bgTip,
+      initialValue: data.pageBackground,
+      onChange: this._setConfig.bind(this),
+    });
+    new ColorPicker($('.text-color', this.$editor), {
+      placeholder: i18n.colorTip,
+      initialValue: data.textColor,
+      onChange: this._setConfig.bind(this),
+    });
     this._setConfig();
     return $wrapper;
   }
 
   _getData() {
-    const pageBackground = $('input.page-bg', this.$editor).val();
+    const pageBackground = $('.input.page-bg', this.$editor).attr('data-value');
+    const textColor = $('.input.text-color', this.$editor).attr('data-value');
     const maxContainerWidth = $('input.max-width', this.$editor).val();
-    const textColor = $('input.text-color', this.$editor).val();
     const ret = {
       ...defaultData,
       pageBackground,

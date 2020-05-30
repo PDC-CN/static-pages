@@ -1,3 +1,4 @@
+import ColorPicker from '../lib/colorPicker';
 import getI18n from '../i18n';
 
 const i18n = getI18n().dic.format;
@@ -6,6 +7,8 @@ const { $ } = window;
 
 let $setting;
 let $mask;
+let fontColorPicker;
+let bgColorPicker;
 function initSettingTool() {
   $setting = $(`<div id="cdxFormat">
     <div class="row">
@@ -14,13 +17,20 @@ function initSettingTool() {
     </div>
     <div class="row">
       <div class="label">${i18n.color}</div>
-      <input class="input font-color" placeholder="${i18n.colorTip}">
+      <div class="input font-color"></div>
     </div>
     <div class="row">
       <div class="label">${i18n.bg}</div>
-      <input class="input font-bg" placeholder="${i18n.bgTip}">
+      <div class="input font-bg"></div>
     </div>
   </div>`);
+  // color
+  fontColorPicker = new ColorPicker($('.font-color', $setting), {
+    placeholder: i18n.colorTip,
+  });
+  bgColorPicker = new ColorPicker($('.font-bg', $setting), {
+    placeholder: i18n.bgTip,
+  });
   $mask = $('<div id="cdxFormatMask"></div>');
   $('body').append($setting);
   $('body').append($mask);
@@ -33,11 +43,19 @@ function updateSettingPostion(el) {
   $setting.css('left', offset.left);
 }
 
+function cleanBind() {
+  $('.font-size', $setting).unbind('change');
+  fontColorPicker.onChange(null);
+  bgColorPicker.onChange(null);
+}
+
 function showSetting(el) {
   const $el = $(el);
   updateSettingPostion(el);
   $setting.css('display', 'block');
   $mask.css('display', 'block');
+
+  cleanBind();
 
   const $fontSize = $('.font-size', $setting);
   $fontSize.val($el.attr('data-font-size'));
@@ -48,18 +66,14 @@ function showSetting(el) {
     updateSettingPostion(el);
   });
 
-  const $fontColor = $('.font-color', $setting);
-  $fontColor.val($el.attr('data-font-color'));
-  $fontColor.change((e) => {
-    const { value } = e.target;
+  fontColorPicker.setColor($el.attr('data-font-color'));
+  fontColorPicker.onChange((value) => {
     $el.css('color', value);
     $el.attr('data-font-color', value);
   });
 
-  const $fontBg = $('.font-bg', $setting);
-  $fontBg.val($el.attr('data-font-bg'));
-  $fontBg.change((e) => {
-    const { value } = e.target;
+  bgColorPicker.setColor($el.attr('data-font-bg'));
+  bgColorPicker.onChange((value) => {
     $el.css('backgroundColor', value);
     $el.attr('data-font-bg', value);
   });
@@ -68,8 +82,7 @@ function showSetting(el) {
 function hideSetting() {
   $setting.css('display', 'none');
   $mask.css('display', 'none');
-
-  $('.font-size', $setting).unbind('change');
+  cleanBind();
 }
 
 let x;

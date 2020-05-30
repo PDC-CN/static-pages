@@ -1,4 +1,5 @@
 import Uploader from '../lib/uploader';
+import ColorPicker from '../lib/colorPicker';
 import getI18n from '../i18n';
 
 const i18ng = getI18n().dic.g;
@@ -84,7 +85,7 @@ class Album {
       </div>
       <div class="row">
         <div class="label">${i18n.bg}</div>
-        <input class="input v-background" placeholder="${i18n.bgTip}">
+        <div class="input v-background"></div>
       </div>
     </div>`);
 
@@ -139,6 +140,12 @@ class Album {
     $editor.delegate('input', 'change', () => {
       this._renderAlbum();
     });
+    // color
+    new ColorPicker($('.v-background', $editor), {
+      placeholder: i18n.bgTip,
+      initialValue: data.background,
+      onChange: this._renderAlbum.bind(this),
+    });
     this._renderAlbum();
     $wrapper.appendChild($editor[0]);
     $wrapper.appendChild($album[0]);
@@ -148,7 +155,7 @@ class Album {
   _getData() {
     const count = parseInt($('.v-count', this.$editor).val(), 10);
     const size = $('.v-size', this.$editor).val();
-    const background = $('.v-background', this.$editor).val();
+    const background = $('.v-background', this.$editor).attr('data-value');
 
     const images = [];
     $('.links>div', this.$editor).each((i, el) => {
