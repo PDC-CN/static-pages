@@ -2,16 +2,27 @@
   background: #f4f5f8;
   min-width: 1320px;
 
+  .ad-top {
+    height: 20.83333vw;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   .page-subtitle span {
     background: #f4f5f8;
   }
 
   &>.content {
-    padding: 375px 60px 0;
+    padding: 0 60px;
     margin-bottom: 80px;
-    background-size: 100%;
-    background-position: top center;
-    background-repeat: no-repeat;
+    background-size: 0;
   }
 
   .block {
@@ -29,6 +40,7 @@
   }
   
   .top-block {
+    margin-top: 20px;
     margin-bottom: 20px;
 
     .b1, .b2 {
@@ -260,6 +272,9 @@
         .guest {
           display: block;
           color: #000;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
 
           .cover {
             height: 114px;
