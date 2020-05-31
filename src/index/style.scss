@@ -20,6 +20,28 @@
       background: #03BEBF;
     }
   }
+  .live-ad-banner {
+    height: 20.83333vw;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 90px;
+
+    .swiper-slide {
+      height: 20.83333vw;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #03BEBF;
+    }
+  }
   .pads {
     .content {
       background: #3E3E58;
@@ -180,15 +202,15 @@
   }
 
   .live {
-    margin-bottom: 90px;
+    background-image: url(/assets/home_funshion_week-a5f808e18a35d925d9717564a3d72c76e8a0fb1f71ffc082009bfbeb4e888dd9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
 
     .title {
       color: #fff;
       padding-top: 45px;
-      background-image: url(https://assets.zjzsxhy.com/upload/82127cdb-1cc8-434f-a284-bf9d353a78c2.jpg);
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: top center;
+      background-size: 0;
       height: 488px;
       text-align: center;
 
