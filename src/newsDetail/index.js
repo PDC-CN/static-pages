@@ -37,6 +37,8 @@ function init() {
       $holder.append(plugins[block.type](block.data));
     }
   });
+
+  plugins.afterRender();
 }
 
 $(() => {

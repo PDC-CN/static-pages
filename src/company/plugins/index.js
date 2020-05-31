@@ -10,6 +10,7 @@ import Image from './image';
 import Table from './table';
 import Attachment from './attachment';
 import Video from './video';
+import Carousel, { afterCarouselRender } from './carousel';
 import format from './format';
 
 const plugins = {
@@ -25,8 +26,10 @@ const plugins = {
   Table,
   Video,
   Attachment,
+  Carousel,
   afterRender: () => {
     format();
+    afterCarouselRender();
   },
 };
 
