@@ -2,11 +2,31 @@ import initListBlock from './initListBlock';
 import initComment from './initComment';
 import initLive from './initLive';
 
-const { $ } = window;
+const { $, Swiper } = window;
+
+// 大banner
+function initBanner() {
+  new Swiper('.header-banner', {
+    loop: true,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  });
+}
 
 $(() => {
   if ($('body').attr('id') !== 'live') return;
   initListBlock();
   initComment();
   initLive();
+  initBanner();
 });

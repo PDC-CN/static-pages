@@ -2,6 +2,28 @@
   background: #f4f5f8;
   min-width: 1320px;
 
+  .header-banner {
+    height: 20.83333vw;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+
+    .swiper-slide {
+      height: 20.83333vw;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #03BEBF;
+    }
+  }
+
   .ad-top {
     height: 20.83333vw;
     position: relative;
