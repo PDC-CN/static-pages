@@ -65,6 +65,7 @@ const i18n = {
       Format: 'Format',
       Video: 'Video',
       Attachment: 'Attachment',
+      Carousel: 'Carousel',
     },
 
     /**
@@ -136,6 +137,10 @@ const i18n = {
       bgTip: 'Default is transparent, RGB color value, e.g., 3AFF22',
       title: 'Caption',
       desc: 'Description',
+      carouselStyle: 'Detail style',
+      carouselBg: 'Detail background',
+      carouselHeight: 'Detail height',
+      carouselHeightTip: 'Pixel, default 400, e.g., 1200',
     },
     attachment: {
       tip: 'Click to upload',

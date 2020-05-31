@@ -65,6 +65,7 @@ const i18n = {
       Format: '字体样式',
       Video: '外链视频',
       Attachment: '附件',
+      Carousel: '走马灯',
     },
 
     /**
@@ -136,6 +137,10 @@ const i18n = {
       bgTip: '空缺为透明，RGB色值，例如 3AFF22',
       title: '图片标题',
       desc: '图片说明',
+      carouselStyle: '大图样式',
+      carouselBg: '大图背景',
+      carouselHeight: '大图高度',
+      carouselHeightTip: '像素，默认 400，例如 1200',
     },
     attachment: {
       tip: '点击上传附件',

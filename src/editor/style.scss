@@ -162,6 +162,10 @@
           display: flex;
           margin-bottom: 12px;
 
+          &:last-child {
+            margin-bottom: 0;
+          }
+
           input,
           .inline-uploader {
             flex-grow: 1;
@@ -607,6 +611,150 @@
   }
 }
 
+#editor .ce-carousel {
+  position: relative;
+  margin-bottom: 20px;
+
+  &.empty {
+    .detail {
+      display: none;
+    }
+
+    &::before {
+      content: "请上传图片";
+      display: block;
+      font-size: 40px;
+      font-weight: 500;
+      color: #777;
+      border: dashed #ccc 1px;
+      text-align: center;
+      padding: 50px 0;
+      border-radius: 6px;
+    }
+  }
+
+  .owl-container {
+    width: 100%;
+
+    .case {
+      height: 110px;
+      width: 205px;
+      background-position: center;
+      background-size: cover;
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: all ease 0.15s;
+
+      &.active {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .owl-nav {
+    margin: 0;
+  }
+  .owl-nav button {
+    position: absolute;
+    top: 50%;
+    height: 51px;
+    width: 27px;
+    background-color: rgba($color: #000000, $alpha: 0.35);
+    margin: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: #fff;
+
+    span {
+      font-size: 40px;
+    }
+
+    &.owl-prev {
+      left: 0;
+    }
+    &.owl-next {
+      right: 0;
+    }
+  }
+
+  .detail {
+    height: 400px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &[data-size="cover"] img {
+      object-fit: cover;
+    }
+
+    &[data-name]::before {
+      content: "";
+      position: absolute;
+      height: 30%;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    &[data-name]::after {
+      content: attr(data-name);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      font-size: 32px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #fff;
+    }
+  }
+}
+
+#editor .ce-carousel-editor.ce-album-editor {
+  .row .links .row .inline-uploader {
+    margin-right: 0;
+  }
+  .add-image {
+    height: 38px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 24px;
+    cursor: pointer;
+    border: #ddd dashed 1px;
+    color: #666;
+    transition: ease all 0.15s;
+
+    &:hover {
+      color: #000;
+      border-color: #000;
+    }
+  }
+}
+
 @keyframes loading {
   0% {
     transform: rotate(0deg);
@@ -616,6 +764,11 @@
   }
 }
 
-[data-locale="en"] #editor .ce-album a:empty::after {
-  content: "Blank";
+[data-locale="en"] #editor {
+  .ce-album a:empty::after {
+    content: "Blank";
+  }
+  .ce-carousel.empty::before {
+    content: "Please upload images.";
+  }
 }

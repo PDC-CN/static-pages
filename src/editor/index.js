@@ -13,6 +13,7 @@ import Album2 from './plugins/album2';
 import Format from './plugins/format';
 import Video from './plugins/video';
 import Attachment from './plugins/attachment';
+import Carousel from './plugins/carousel';
 import getI18n from './i18n';
 
 import { fileSizeLimit } from './lib';
@@ -102,6 +103,7 @@ const editor = new EditorJS({
     Format,
     Video,
     Attachment,
+    Carousel,
   },
   i18n,
   data: initData,
