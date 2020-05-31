@@ -39,6 +39,7 @@ export default class Uploader {
     if (this.state === 'uploaded') {
       this.state = 'wait';
       this.url = '';
+      this.$input.val('');
     }
     this.render();
   }
