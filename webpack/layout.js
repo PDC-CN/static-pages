@@ -40,6 +40,12 @@ var pure = [{
 }, {
   template: './_pure/companies_en.html',
   filename: 'static_companies_en.html',
+}, {
+  template: './_pure/week_zh-cn.html',
+  filename: 'static_week_zh-cn.html',
+}, {
+  template: './_pure/week_en.html',
+  filename: 'static_week_en.html',
 }];
 
 module.exports = {

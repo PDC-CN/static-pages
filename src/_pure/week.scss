@@ -1,0 +1,218 @@
+.xxsb.static-week {
+  .static-week-img-c img {
+    width: 100%;
+    display: block;
+  }
+  .static-week-top {
+    font-size: 18px;
+    text-align: center;
+    padding: 60px 0;
+    line-height: 1.8;
+  }
+  .static-week-data {
+    background-image: url(https://assets.zjzsxhy.com/upload/9f0e66ef-a6bd-40dd-92e9-118c9ca6da4c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 70px 40% 50px 120px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+
+    .t1 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+    .t2 {
+      font-size: 18px;
+      font-weight: 300;
+      padding-bottom: 15px;
+      border-bottom: #fff solid 1px;
+      margin-bottom: 32px;
+    }
+    .row {
+      display: flex;
+      font-size: 19px;
+      font-weight: 200;
+
+      &>* {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 33.333%;
+      }
+
+      &.week-data {
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      &:not(.week-data) {
+        margin-bottom: 45px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .static-week-pads {
+    display: grid;
+    grid-template-columns: 3fr 2fr 4fr 3fr;
+    grid-template-rows: 142px 264px 229px 142px;
+    grid-template-areas:
+      ". . p1 p2"
+      "p3 logo p1 p2"
+      "p3 p4 p4 p2"
+      "p3 p4 p4 .";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-bottom: 120px;
+
+    &>* {
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .p1 {
+      grid-area: p1;
+    }
+    .p2 {
+      grid-area: p2;
+    }
+    .p3 {
+      grid-area: p3;
+    }
+    .p4 {
+      grid-area: p4;
+    }
+    .logo {
+      grid-area: logo;
+      text-align: center;
+
+      img {
+        width: 70%;
+        height: auto;
+      }
+    }
+  }
+  .static-week-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 993px 767px auto;
+    grid-template-areas:
+      "p1 p1 p2"
+      "p3 p4 p5"
+      ". p6 .";
+    font-size: 16px;
+    line-height: 1.8;
+
+    &>* {
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .p1 {
+      grid-area: p1;
+      padding-right: 20px;
+
+      .title {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+    }
+    .p2 {
+      grid-area: p2;
+    }
+    .p3 {
+      grid-area: p3;
+      padding-right: 20px;
+
+      .title {
+        font-size: 20px;
+        color: #9c0432;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+    }
+    .p4 {
+      grid-area: p4;
+    }
+    .p5 {
+      grid-area: p5;
+      padding-left: 20px;
+      padding-top: 70%;
+
+      .title {
+        font-size: 20px;
+        color: #9c0432;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+    }
+    .p6 {
+      grid-area: p6;
+      line-height: 2.5;
+    }
+  }
+}
+
+[data-locale="en"] .xxsb.static-week {
+  .static-week-data .row.week-data {
+    font-size: 19px;
+  }
+  .static-week-data .row {
+    font-size: 15px;
+  }
+  .static-week-text .p1 .title {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .xxsb.static-week .static-week-top {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .xxsb.static-week .static-week-data {
+    padding: 10px;
+  }
+  .xxsb.static-week .static-week-data .row.week-data {
+    font-size: 18px;
+  }
+  .xxsb.static-week .static-week-data .row {
+    font-size: 12px;
+  }
+  .xxsb.static-week .static-week-data .t2 {
+    margin-bottom: 12px;
+  }
+  .xxsb.static-week .static-week-data .row:not(.week-data) {
+    margin-bottom: 12px;
+  }
+  .xxsb.static-week .static-week-pads {
+    grid-template-rows: 30px 65px 80px 30px;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    margin-bottom: 40px;
+  }
+  .xxsb.static-week .static-week-text {
+    display: block;
+
+    .p1 {
+      padding-right: 0;
+    }
+    .p5 {
+      padding: 0;
+    }
+  }
+}
+
