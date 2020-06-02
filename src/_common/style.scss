@@ -222,4 +222,34 @@ ol, ul {
   }
 }
 
+a.contact-me {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background: #03BEBF;
+  color: #fff;
+  writing-mode: vertical-lr;
+  font-size: 16px;
+  padding: 72px 19px 8px;
+  transform: translate(0, -50%);
+  letter-spacing: 8px;
+  width: 56px;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
+    background-image: url(https://assets.zjzsxhy.com/upload/b2b8421f-13f3-4f56-9972-b72bf937739b.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+  }
+}
+
 @import './style.m.scss';
