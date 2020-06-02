@@ -7,6 +7,7 @@ function initBanner() {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     // Navigation arrows
     navigation: {
@@ -26,6 +27,7 @@ function init9Banner() {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     autoplay: {
       delay: 3000,
@@ -47,6 +49,7 @@ function initEvent() {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     autoplay: {
       delay: 3000,
@@ -65,6 +68,7 @@ function initLiveAds() {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     autoplay: {
       delay: 3000,
@@ -83,6 +87,7 @@ function initLiveBanner() {
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
     // Navigation arrows
     navigation: {
