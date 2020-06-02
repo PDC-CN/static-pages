@@ -202,7 +202,7 @@
   }
 
   .live {
-    background-image: url(/assets/home_funshion_week-a5f808e18a35d925d9717564a3d72c76e8a0fb1f71ffc082009bfbeb4e888dd9.jpg);
+    background-image: url(https://assets.zjzsxhy.com/upload/b53e01e4-b4d3-4bee-8e87-be8a031811d6.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -211,23 +211,69 @@
       color: #fff;
       padding-top: 45px;
       background-size: 0;
-      height: 488px;
       text-align: center;
 
+      .title-content {
+        background-image: linear-gradient(to bottom, rgba(106, 83, 251, 0.6) 0%, rgba(255, 117, 231, 0.6) 100%) !important;
+        background-size: cover;
+        padding-top: 30px;
+        padding-bottom: 20px;
+      }
+
       .t1 {
-        font-size: 38px;
+        font-size: 45px;
         font-weight: 600;
-        color: #278ACC;
-        margin-bottom: 40px;
       }
       .t2 {
-        font-size: 38px;
-        font-weight: 600;
-        color: #A7A9AC;
+        display: flex;
+        align-items: center;
+        width: 60%;
+        margin: auto;
+
+        .s1 {
+          width: 42%;
+          text-align: right;
+          font-size: 18px;
+
+          span {
+            background: #61a7ff;
+            padding: 3px 8px;
+          }
+        }
+        .s2 {
+          width: 58%;
+          text-align: left;
+          font-size: 38px;
+          font-weight: 600;
+          margin-left: 6px;
+        }
+      }
+      .t3 {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        margin: auto;
+
+        .s1 {
+          width: 42%;
+          text-align: right;
+          font-size: 30px;
+
+          span {
+            background: #61a7ff;
+            padding: 0 4px;
+          }
+        }
+        .s2 {
+          width: 58%;
+          text-align: left;
+          font-size: 38px;
+          font-weight: 600;
+          margin-left: 6px;
+        }
       }
     }
     .content {
-      margin-top: -283px;
       background: #fff;
       display: flex;
 
