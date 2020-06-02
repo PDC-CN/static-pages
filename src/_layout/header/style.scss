@@ -88,4 +88,9 @@ header.main-header {
   }
 }
 
+[data-locale="en"] header.main-header .b2 .menu a button {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
 @import './style.m.scss';
