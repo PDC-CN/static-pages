@@ -28,6 +28,17 @@ var plugins = routers.map(r => new HtmlWebpackPlugin({
     ...r.templateParameters,
   },
 }));
+layout.pure.forEach((de) => {
+  plugins.push(new HtmlWebpackPlugin({
+    template: de.template,
+    filename: de.filename,
+    chunks: ['style'],
+    inject: 'body',
+    templateParameters: {
+      ...layout.templateParameters,
+    },
+  }));
+});
 
 var config = {
   context: path.join(__dirname, '..', '/src'),
