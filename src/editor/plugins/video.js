@@ -40,7 +40,7 @@ class Video {
   }
 
   constructor({ data }) {
-    this.data = data.count ? {
+    this.data = data.code ? {
       ...defaultData,
       ...data,
     } : defaultData;

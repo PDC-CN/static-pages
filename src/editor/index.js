@@ -109,8 +109,6 @@ const editor = new EditorJS({
   data: initData,
 });
 
-window.aaa = editor;
-
 const saveButton = document.getElementById('save');
 
 injectEditor(editor);
