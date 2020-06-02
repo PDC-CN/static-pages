@@ -26,7 +26,7 @@ export default class ColorPicker {
     this.$wrapper = $wrapper;
     this.$wrapper.addClass('color-picker');
     this.$holder = $('<div class="color-picker-holder"></div>');
-    this.$input = $(`<input class="color-picker-input" value="${this.config.initialValue}" placeholder="${this.config.placeholder}">`);
+    this.$input = $(`<input type="text" class="color-picker-input" value="${this.config.initialValue}" placeholder="${this.config.placeholder}">`);
     this.$wrapper.append(this.$holder);
     this.$wrapper.append('<div class="color-picker-sharp">#</div>');
     this.$wrapper.append(this.$input);

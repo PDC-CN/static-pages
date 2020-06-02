@@ -73,7 +73,7 @@ class Carousel {
       </div>
       <div class="row">
         <div class="label">${i18n.carouselHeight}</div>
-        <input class="input v-height" value="${data.height}" placeholder="${i18n.carouselHeightTip}">
+        <input type="text" class="input v-height" value="${data.height}" placeholder="${i18n.carouselHeightTip}">
       </div>
     </div>`);
 

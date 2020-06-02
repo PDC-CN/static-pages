@@ -70,7 +70,7 @@ class Video {
       </div>
       <div class="row">
         <div class="label">${i18n.code}</div>
-        <input class="input v-code" placeholder="${i18n.codeTip}">
+        <input type="text" class="input v-code" placeholder="${i18n.codeTip}">
       </div>
       <div class="row tip">
         <div class="label">&nbsp;</div>

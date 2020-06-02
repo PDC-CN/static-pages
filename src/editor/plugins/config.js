@@ -51,7 +51,7 @@ class Config {
       </div>
       <div class="row">
         <div class="label">${i18n.width}</div>
-        <input class="input max-width" value="${data.maxContainerWidth}" placeholder="${i18n.widthTip}" >
+        <input type="text" class="input max-width" value="${data.maxContainerWidth}" placeholder="${i18n.widthTip}" >
       </div>
       <div class="tip">${i18n.tip}</div>
     </div>`);
