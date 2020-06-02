@@ -44,4 +44,16 @@
       }
     }
   }
+  a.contact-me {
+    font-size: 12px;
+    letter-spacing: 4px;
+    width: 33px;
+    padding: 45px 10px 8px;
+
+    &::before {
+      height: 33px;
+      width: 33px;
+      background-size: 16px 16px;
+    }
+  }
 }
