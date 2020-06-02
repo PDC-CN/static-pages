@@ -34,8 +34,17 @@ var templateParameters = {
   },
 };
 
+var pure = [{
+  template: './_pure/companies_zh-cn.html',
+  filename: 'static_companies_zh-cn.html',
+}, {
+  template: './_pure/companies_en.html',
+  filename: 'static_companies_en.html',
+}];
+
 module.exports = {
   entry,
   devEntry,
   templateParameters,
+  pure,
 };

@@ -21,6 +21,7 @@ import '../dashboardChangePassword/style.scss';
 import '../dashboardCompany/style.scss';
 import '../dashboardCaseList/style.scss';
 import '../dashboardCase/style.scss';
+import '../_pure/style.scss';
 
 import '../_layout/header';
 

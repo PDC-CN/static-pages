@@ -34,6 +34,17 @@ layout.devEntry.forEach((de) => {
     },
   }));
 })
+layout.pure.forEach((de) => {
+  plugins.push(new HtmlWebpackPlugin({
+    template: de.template,
+    filename: de.filename,
+    chunks: ['style'],
+    inject: 'body',
+    templateParameters: {
+      ...layout.templateParameters,
+    },
+  }));
+});
 var rewrites = routers.map(r => ({
   from: new RegExp('\\/' + r.name),
   to: '/' + r.filename,
