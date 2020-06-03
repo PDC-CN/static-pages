@@ -52,6 +52,12 @@ var pure = [{
 }, {
   template: './_pure/activities_en.html',
   filename: 'static_activities_en.html',
+}, {
+  template: './_pure/about_zh-cn.html',
+  filename: 'static_about_zh-cn.html',
+}, {
+  template: './_pure/about_en.html',
+  filename: 'static_about_en.html',
 }];
 
 module.exports = {
