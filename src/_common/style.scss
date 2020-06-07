@@ -237,6 +237,10 @@ a.contact-me {
   box-sizing: border-box;
   cursor: pointer;
 
+  &:hover {
+    opacity: 1;
+  }
+
   &::before {
     content: "";
     display: block;
@@ -250,6 +254,100 @@ a.contact-me {
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: center;
+  }
+}
+
+#contactIframe {
+  position: fixed;
+  top: 15%;
+  bottom: 15%;
+  right: 60px;
+  width: 50%;
+  height: 70%;
+  background: #fff;
+  border: #03BEBF solid 1px;
+  z-index: 10;
+  overflow: hidden;
+
+  .contact-if-title {
+    position: relative;
+    background: #03BEBF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 5px;
+    line-height: 1.5;
+    height: 36px;
+  }
+
+  .contact-if-title-opt {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    background: #03BEBF;
+
+    svg {
+      height: 20px;
+      width: 20px;
+      fill: #fff;
+      display: block;
+    }
+
+    .opt-btn {
+      padding: 8px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .max-btn {
+      display: none;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: calc(100% - 36px);
+  }
+
+  &.min {
+    right: 0;
+    width: 56px;
+    height: 56px;
+
+    .contact-if-title {
+      display: none;
+    }
+
+    .contact-if-title-opt {
+      position: relative;
+      height: 54px;
+      width: 54px;
+      
+      .max-btn {
+        display: block;
+        width: 54px;
+        padding: 14px;
+
+        svg {
+          height: 26px;
+          width: 26px;
+        }
+      }
+      .min-btn {
+        display: none;
+      }
+      .close-btn {
+        display: none;
+      }
+    }
+
+    iframe {
+      display: none;
+    }
   }
 }
 
