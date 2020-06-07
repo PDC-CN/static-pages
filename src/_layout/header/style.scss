@@ -88,6 +88,13 @@ header.main-header {
   }
 }
 
+#searchClick {
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  margin-left: -26px;
+}
+
 [data-locale="en"] header.main-header .b2 .menu a button {
   padding-left: 14px;
   padding-right: 14px;

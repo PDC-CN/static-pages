@@ -101,26 +101,10 @@ function initLiveBanner() {
 }
 
 
-// function t() {
-//   var a = $('.live-ad-banner')[0];
-//   var b = $('.live .content').parent()[0];
-//   b.appendChild(a);
-//   $('.live .title').addClass('container padding').removeAttr('style').html(`
-//     <div class="title-content">
-//       <div class="t1">CANTON FAIR </div>
-//       <div class="t2"><div class="s1"><span>SPRING | 春季</span></div><div class="s2">FASHION WEEK</div></div>
-//       <div class="t3"><div class="s1"><span>2020</span></div><div class="s2">广交会时尚周</div></div>
-//     </div>
-//   `);
-// }
-
 $(() => {
   initBanner();
   init9Banner();
   initEvent();
   initLiveAds();
   initLiveBanner();
-
-  // TEST
-  t();
 });
