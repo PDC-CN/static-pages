@@ -174,6 +174,10 @@
     .r3 {
       display: flex;
       padding: 30px 100px;
+      background-image: url(https://assets.zjzsxhy.com/upload/4e8a5764-c242-45a0-b67f-5d3caed54efe.jpg);
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
       .b1 {
         flex-grow: 1;
@@ -191,6 +195,7 @@
         }
       }
       .b2 {
+        display: none;
         flex-grow: 0;
         flex-shrink: 0;
 
