@@ -25,6 +25,8 @@ import '../_pure/style.scss';
 
 import '../_layout/header';
 
+import initContactIframe from './contactIframe';
+
 // 后台移动端
 const { $ } = window;
 function initDashboardMobile() {
@@ -45,4 +47,5 @@ function initDashboardMobile() {
 
 $(() => {
   initDashboardMobile();
+  initContactIframe();
 });
