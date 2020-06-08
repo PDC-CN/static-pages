@@ -124,6 +124,9 @@ class Video {
       $if.removeAttr('width');
       $if.css('width', width);
       $if.css('height', height);
+      const src = $if.attr('src');
+      const httpsSrc = src.replace('http://', 'https://');
+      $if.attr('src', httpsSrc);
       this.$video.empty().append($if);
     }
   }

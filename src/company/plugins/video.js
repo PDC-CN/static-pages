@@ -10,6 +10,9 @@ function render(data) {
     $if.removeAttr('width');
     $if.css('width', width);
     $if.css('height', height);
+    const src = $if.attr('src');
+    const httpsSrc = src.replace('http://', 'https://');
+    $if.attr('src', httpsSrc);
     return `<div class="ce-video">
       <div class="ce-video-container">${$if[0].outerHTML}</div>
     </div>`;
