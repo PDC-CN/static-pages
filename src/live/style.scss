@@ -376,10 +376,23 @@
     }
 
     .content {
+      &:empty {
+        padding: 45px 15px 45px 79px;
+        opacity: 0.5;
+
+        &::before {
+          content: "暂无评论";
+        }
+      }
+
       .comment {
         display: flex;
         padding: 15px;
         border-bottom: #eee solid 1px;
+
+        &.me {
+          background: rgba($color: #03BEBF, $alpha: 0.1);
+        }
 
         .avatar {
           flex-grow: 0;
@@ -441,6 +454,9 @@
         .row:last-child {
           justify-content: flex-end;
         }
+      }
+      button:disabled {
+        background: #ddd;
       }
     }
   }

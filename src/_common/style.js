@@ -29,6 +29,9 @@ import initContactIframe from './contactIframe';
 
 // 后台移动端
 const { $ } = window;
+
+window.LOCALE = $('html').attr('data-locale');
+
 function initDashboardMobile() {
   if (window.innerWidth > 600) return;
   if (!$('body').hasClass('dashboard')) return;
