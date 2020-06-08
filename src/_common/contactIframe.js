@@ -55,13 +55,23 @@ function createIframe(url) {
 // 联系我们iframe
 function initContactIframe() {
   const $contact = $('.contact-me');
-  const url = $contact.attr('href');
-  $contact.removeAttr('href');
-  if ($contact.length === 0 || !url) return;
+  if ($contact.length === 0) return;
 
-  $contact.click(() => {
-    createIframe(url);
-  });
+  // 判断是否登录
+  const $loginBtnA = $('.login-btn').parent();
+  if ($loginBtnA.attr('href').indexOf('dashboard') > 0) {
+    // 登录
+    const url = $contact.attr('href');
+    $contact.removeAttr('href');
+    if ($contact.length === 0 || !url) return;
+
+    $contact.click(() => {
+      createIframe(url);
+    });
+  } else {
+    // 未登录
+    $contact.attr('href', $loginBtnA.attr('href'));
+  }
 }
 
 export default initContactIframe;
