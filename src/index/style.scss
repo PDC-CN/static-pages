@@ -21,7 +21,8 @@
     }
   }
   .live-ad-banner {
-    height: 41.66666vw;
+    max-height: 41.66666vw;
+    height: 500px;
     position: relative;
     overflow: hidden;
     margin: auto;
