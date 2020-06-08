@@ -120,5 +120,11 @@
     "template": "./dashboardCase/templates/zh-cn.html",
     "filename": "dashboard_case_zh-cn.html",
     "layout": ["header", "footer"]
+  }, {
+    "name": "stlViewer",
+    "entry": "./stlViewer/index",
+    "template": "./stlViewer/templates/zh-cn.html",
+    "filename": "stlviewer_zh-cn.html",
+    "layout": ["header", "footer"]
   }]
 }
