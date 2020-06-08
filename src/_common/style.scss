@@ -351,4 +351,19 @@ a.contact-me {
   }
 }
 
+.fixed-ad {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 120px;
+  transform: translate(0, -50%);
+  border: #D1D3D4 solid 1px;
+  z-index: 20;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
 @import './style.m.scss';
