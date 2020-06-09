@@ -149,6 +149,21 @@
     .video-container {
       height: 473px;
       background: #777;
+      position: relative;
+
+      .danmaku-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: calc(100% - 50px);
+        width: 100%;
+        pointer-events: none;
+        line-height: 1.8;
+
+        &>div>div {
+          padding: 0 3px;
+        }
+      }
     }
     .video-comment {
       padding: 16px 30px;
