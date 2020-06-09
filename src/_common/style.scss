@@ -360,8 +360,13 @@ a.contact-me {
   bottom: 10%;
   right: 0;
   width: 120px;
-  border: #D1D3D4 solid 1px;
+  // border: #D1D3D4 solid 1px;
   z-index: 20;
+
+  &.left {
+    right: auto;
+    left: 0;
+  }
 
   img {
     width: 100%;
