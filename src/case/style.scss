@@ -112,6 +112,11 @@
         background-color: #fff;
       }
 
+      .type-model {
+        height: 100%;
+        width: 100%;
+      }
+
       &[data-name]::before {
         content: "";
         position: absolute;

@@ -1,3 +1,5 @@
+import { STLViewer } from '../stlViewer/viewer';
+
 const { $ } = window;
 
 const isMobile = window.innerWidth <= 600;
@@ -12,6 +14,10 @@ function showCaseDetail(dom) {
   if (type === 'image') {
     const cover = $dom.attr('data-cover');
     $detial.append(`<div class="type-image" style="background-image: url(${cover})"></div>`);
+  }
+  if (type === 'model') {
+    $detial.append('<div class="type-model" data-zdistance="2" data-rotate="x" data-color=""></div>');
+    STLViewer($('.carousel .detail .type-model')[0], $dom.attr('data-model'));
   }
 }
 

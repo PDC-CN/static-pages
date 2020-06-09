@@ -2,7 +2,7 @@ import '../_lib/webgl.min';
 
 const { WEBGL, THREE } = window;
 
-function STLViewer(elem, model) {
+export function STLViewer(elem, model) {
   if (!WEBGL.isWebGLAvailable()) {
     elem.appendChild(WEBGL.getWebGLErrorMessage());
     return;
@@ -62,8 +62,15 @@ function STLViewer(elem, model) {
     // Pull the camera away as needed
     const largestDimension = Math.max(geometry.boundingBox.max.x,
       geometry.boundingBox.max.y, geometry.boundingBox.max.z);
-    camera.position.z = largestDimension * elem.getAttribute('data-zdistance');
 
+    // 缩放到合适大小
+    let scale = 1;
+    while (largestDimension * scale > 10) {
+      scale *= 0.1;
+    }
+    mesh.scale.set(scale, scale, scale);
+
+    camera.position.z = largestDimension * scale * elem.getAttribute('data-zdistance');
 
     function animate() {
       requestAnimationFrame(animate);
