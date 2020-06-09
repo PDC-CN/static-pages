@@ -1,18 +1,18 @@
+import { getI18n } from '../_common/index';
+
 const { $ } = window;
 const $content = $('.comment-block .content');
 
 const commentUrl = window.location.pathname + '/comments';
 
-let i18n = {
+const i18n = getI18n({
   en: {
     success: 'Success',
   },
   'zh-CN': {
     success: '评论成功',
   },
-};
-
-i18n = i18n[$('html').attr('data-locale') || 'zh-CN'];
+});
 
 function addItem(item, me = false) {
   const $dom = `<div class="comment ${me === true ? 'me' : ''}">

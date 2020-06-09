@@ -1,6 +1,8 @@
 import initListBlock from './initListBlock';
 import initComment from './initComment';
 import initLive from './initLive';
+import initDanmaku from './initDanmaku';
+import initFileblock from './initFileblock';
 
 const { $, Swiper } = window;
 
@@ -30,4 +32,6 @@ $(() => {
   initComment();
   initLive();
   initBanner();
+  initDanmaku();
+  initFileblock();
 });

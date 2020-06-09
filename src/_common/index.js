@@ -1,3 +1,5 @@
+const { $ } = window;
+
 export function humanFileSize(bytes, si = true, dp = 1) {
   const thresh = si ? 1000 : 1024;
 
@@ -18,4 +20,13 @@ export function humanFileSize(bytes, si = true, dp = 1) {
 
 
   return bytes.toFixed(dp) + ' ' + units[u];
+}
+
+export function isLogin() {
+  const $loginBtnA = $('.login-btn').parent();
+  return $loginBtnA.attr('href').indexOf('dashboard') > 0;
+}
+
+export function getI18n(i18n) {
+  return i18n[$('html').attr('data-locale') || 'zh-CN'];
 }

@@ -1,16 +1,15 @@
+import { isLogin, getI18n } from './index';
 
 const { $ } = window;
 
-let i18n = {
+const i18n = getI18n({
   en: {
     title: 'Contact',
   },
   'zh-CN': {
     title: '联系公司',
   },
-};
-
-i18n = i18n[$('html').attr('data-locale') || 'zh-CN'];
+});
 
 const template = `<div id="contactIframe">
   <div class="contact-if-title">${i18n.title}</div>
@@ -58,8 +57,7 @@ function initContactIframe() {
   if ($contact.length === 0) return;
 
   // 判断是否登录
-  const $loginBtnA = $('.login-btn').parent();
-  if ($loginBtnA.attr('href').indexOf('dashboard') > 0) {
+  if (isLogin()) {
     // 登录
     const url = $contact.attr('href');
     $contact.removeAttr('href');
@@ -70,6 +68,7 @@ function initContactIframe() {
     });
   } else {
     // 未登录
+    const $loginBtnA = $('.login-btn').parent();
     $contact.attr('href', $loginBtnA.attr('href'));
   }
 }

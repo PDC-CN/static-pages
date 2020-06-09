@@ -229,6 +229,16 @@
           width: 15%;
         }
       }
+
+      .empty {
+        text-align: center;
+        opacity: 0.5;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translate(0, -50%);
+      }
     }
   }
 
@@ -454,9 +464,6 @@
         .row:last-child {
           justify-content: flex-end;
         }
-      }
-      button:disabled {
-        background: #ddd;
       }
     }
   }
