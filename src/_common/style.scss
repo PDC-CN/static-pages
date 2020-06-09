@@ -357,10 +357,9 @@ a.contact-me {
 
 .fixed-ad {
   position: fixed;
-  top: 50%;
-  left: 0;
+  bottom: 10%;
+  right: 0;
   width: 120px;
-  transform: translate(0, -50%);
   border: #D1D3D4 solid 1px;
   z-index: 20;
 
