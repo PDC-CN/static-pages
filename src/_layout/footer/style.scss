@@ -4,7 +4,7 @@ footer.main-footer {
   padding-top: 66px;
   padding-bottom: 42px;
 
-  &>.container {
+  &>.container:first-child {
     display: flex;
     align-items: center;
   }
@@ -94,6 +94,14 @@ footer.main-footer {
         height: 22px;
       }
     }
+  }
+
+  .copyright {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 40px;
   }
 }
 

@@ -3,7 +3,7 @@
     padding-top: 40px;
     padding-bottom: 35px;
 
-    &>.container {
+    &>.container:first-child {
       display: block;
       padding: 0 70px;
     }
@@ -34,6 +34,10 @@
       span {
         line-height: 1.5;
       }
+    }
+
+    .copyright {
+      display: none;
     }
   }
 }
