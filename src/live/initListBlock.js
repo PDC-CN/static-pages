@@ -29,14 +29,19 @@ function initReplay(page = 1) {
     url: window.location.pathname + '/history?page=' + page,
   }).done((data) => {
     data.forEach((item) => {
-      const $dom = `<a href="${item.url}" class="replay">
+      const $dom = $(`<a class="replay">
         <div class="cover" style="background-image: url(${item.image})"></div>
         <div class="title">${item.name}</div>
         <div class="info">
           <div class="name">${item.author || ''}</div>
           <div class="time">${item.tag || ''}</div>
         </div>
-      </a>`;
+      </a>`);
+      $dom.click(() => {
+        if (window.TCP) {
+          window.TCP.load(item.url);
+        }
+      });
       $grid.append($dom);
     });
     if (data.length > 0) {
