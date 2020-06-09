@@ -231,6 +231,7 @@ ol, ul {
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
+  z-index: 10;
 
   &>a {
     display: block;
