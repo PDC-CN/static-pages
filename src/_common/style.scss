@@ -226,16 +226,29 @@ ol, ul {
   }
 }
 
-a.contact-me {
+.fixed-opt {
   position: fixed;
   top: 50%;
   right: 0;
+  transform: translate(0, -50%);
+
+  &>a {
+    display: block;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+a.contact-me {
+  position: relative;
   background: #03BEBF;
   color: #fff;
   writing-mode: vertical-lr;
   font-size: 16px;
   padding: 72px 19px 8px;
-  transform: translate(0, -50%);
   letter-spacing: 8px;
   width: 56px;
   box-sizing: border-box;
@@ -261,7 +274,40 @@ a.contact-me {
   }
 }
 
-#contactIframe {
+a.translate-me {
+  position: relative;
+  background: #03BEBF;
+  color: #fff;
+  writing-mode: vertical-lr;
+  font-size: 16px;
+  padding: 72px 19px 8px;
+  letter-spacing: 8px;
+  width: 56px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+    border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
+    background-image: url(https://assets.zjzsxhy.com/upload/a7a11a86-7338-4eb2-9cd3-5ce70f3f06e5.svg);
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    background-position: center;
+  }
+}
+
+#contactIframe,
+#translateIframe {
   position: fixed;
   top: 15%;
   bottom: 15%;
@@ -270,7 +316,7 @@ a.contact-me {
   height: 70%;
   background: #fff;
   border: #03BEBF solid 1px;
-  z-index: 10;
+  z-index: 100;
   overflow: hidden;
 
   .contact-if-title {

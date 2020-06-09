@@ -4,14 +4,14 @@ const { $ } = window;
 
 const i18n = getI18n({
   en: {
-    title: 'Contact',
+    title: 'Translate',
   },
   'zh-CN': {
-    title: '联系公司',
+    title: '翻译',
   },
 });
 
-const template = `<div id="contactIframe">
+const template = `<div id="translateIframe">
   <div class="contact-if-title">${i18n.title}</div>
   <div class="contact-if-title-opt">
     <div class="min-btn opt-btn">
@@ -27,23 +27,23 @@ const template = `<div id="contactIframe">
 </div>`;
 
 function closeIframe() {
-  $('#contactIframe').remove();
+  $('#translateIframe').remove();
 }
 
 function minIframe() {
-  $('#contactIframe').addClass('min');
+  $('#translateIframe').addClass('min');
   const ch = $('.fixed-opt').height();
   const wh = window.innerHeight;
-  const top = (wh - ch) / 2;
-  $('#contactIframe').css('top', `${top - 61}px`);
+  const top = (wh - ch) / 2 + ch;
+  $('#translateIframe').css('top', `${top + 5}px`);
 }
 
 function maxIframe() {
-  $('#contactIframe').removeClass('min').removeAttr('style');
+  $('#translateIframe').removeClass('min').removeAttr('style');
 }
 
 function createIframe(url) {
-  let $t = $('#contactIframe');
+  let $t = $('#translateIframe');
   if ($t.length === 0) {
     $t = $(template);
     $('.close-btn', $t).click(closeIframe);
@@ -55,27 +55,27 @@ function createIframe(url) {
   $t.append($(`<iframe src="${url}" frameborder="0"></iframe>`));
 }
 
-// 联系我们iframe
-function initContactIframe() {
-  const $contact = $('.contact-me');
-  if ($contact.length === 0) return;
-  $contact.appendTo('.fixed-opt');
+// 翻译iframe
+function initTranslateIframe() {
+  const $translate = $('.translate-me');
+  if ($translate.length === 0) return;
+  $translate.appendTo('.fixed-opt');
 
   // 判断是否登录
   if (isLogin()) {
     // 登录
-    const url = $contact.attr('href');
-    $contact.removeAttr('href');
-    if ($contact.length === 0 || !url) return;
+    const url = $translate.attr('href');
+    $translate.removeAttr('href');
+    if ($translate.length === 0 || !url) return;
 
-    $contact.click(() => {
+    $translate.click(() => {
       createIframe(url);
     });
   } else {
     // 未登录
     const $loginBtnA = $('.login-btn').parent();
-    $contact.attr('href', $loginBtnA.attr('href'));
+    $translate.attr('href', $loginBtnA.attr('href'));
   }
 }
 
-export default initContactIframe;
+export default initTranslateIframe;

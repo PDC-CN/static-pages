@@ -26,6 +26,7 @@ import '../_pure/style.scss';
 import '../_layout/header';
 
 import initContactIframe from './contactIframe';
+import initTransIframe from './translateIframe';
 
 // 后台移动端
 const { $ } = window;
@@ -50,5 +51,7 @@ function initDashboardMobile() {
 
 $(() => {
   initDashboardMobile();
+  $('body').append('<div class="fixed-opt"></div>');
   initContactIframe();
+  initTransIframe();
 });
