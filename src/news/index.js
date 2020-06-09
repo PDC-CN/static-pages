@@ -8,16 +8,18 @@ function initBanner() {
   $w.appendTo($('.b1'));
   $('.b1').append('<div class="swiper-pagination"></div>');
 
+  const count = $('.b1 .swiper-wrapper').children().length;
+  const loop = count > 1;
   new Swiper('.b1', {
-    loop: true,
+    loop,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
-    autoplay: {
+    autoplay: loop ? {
       delay: 3000,
-    },
+    } : false,
   });
 }
 

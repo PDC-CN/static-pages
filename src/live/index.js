@@ -8,8 +8,10 @@ const { $, Swiper } = window;
 
 // 大banner
 function initBanner() {
+  const count = $('.header-banner .swiper-wrapper').children().length;
+  const loop = count > 1;
   new Swiper('.header-banner', {
-    loop: true,
+    loop,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
@@ -20,9 +22,9 @@ function initBanner() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    autoplay: {
+    autoplay: loop ? {
       delay: 3000,
-    },
+    } : false,
   });
 }
 
