@@ -44,16 +44,49 @@
       }
     }
   }
-  a.contact-me {
+  a.contact-me,
+  a.translate-me {
     font-size: 12px;
     letter-spacing: 4px;
     width: 33px;
     padding: 45px 10px 8px;
+  }
+  a.contact-me::before {
+    height: 33px;
+    width: 33px;
+    background-size: 16px 16px;
+  }
+  a.translate-me::before {
+    height: 33px;
+    width: 33px;
+    background-size: 20px 20px;
+  }
+  #contactIframe,
+  #translateIframe {
+    width: 100%;
+    top: 46px;
+    right: 0;
+    height: calc(100vh - 46px);
 
-    &::before {
-      height: 33px;
+
+    &.min {
       width: 33px;
-      background-size: 16px 16px;
+      height: 33px;
+
+      .contact-if-title-opt {
+        height: 31px;
+        width: 31px;
+
+        .max-btn {
+          width: 31px;
+          padding: 6px;
+
+          svg {
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
     }
   }
   .fixed-ad {

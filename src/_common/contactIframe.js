@@ -34,8 +34,8 @@ function minIframe() {
   $('#contactIframe').addClass('min');
   const ch = $('.fixed-opt').height();
   const wh = window.innerHeight;
-  const top = (wh - ch) / 2;
-  $('#contactIframe').css('top', `${top - 61}px`);
+  const bottom = (wh - ch) / 2 + ch;
+  $('#contactIframe').css('bottom', `${bottom + 5}px`).css('top', 'auto');
 }
 
 function maxIframe() {

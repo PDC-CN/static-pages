@@ -317,7 +317,7 @@ a.translate-me {
   height: 70%;
   background: #fff;
   border: #03BEBF solid 1px;
-  z-index: 100;
+  z-index: 200;
   overflow: hidden;
 
   .contact-if-title {
@@ -368,6 +368,7 @@ a.translate-me {
     right: 0;
     width: 56px;
     height: 56px;
+    z-index: 100;
 
     .contact-if-title {
       display: none;

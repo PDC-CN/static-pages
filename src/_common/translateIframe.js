@@ -35,7 +35,7 @@ function minIframe() {
   const ch = $('.fixed-opt').height();
   const wh = window.innerHeight;
   const top = (wh - ch) / 2 + ch;
-  $('#translateIframe').css('top', `${top + 5}px`);
+  $('#translateIframe').css('top', `${top + 5}px`).css('bottom', 'auto');
 }
 
 function maxIframe() {
