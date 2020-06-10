@@ -27,6 +27,7 @@ import '../_layout/header';
 
 import initContactIframe from './contactIframe';
 import initTransIframe from './translateIframe';
+import initChatIframe from './chatIframe';
 
 // 后台移动端
 const { $ } = window;
@@ -54,6 +55,7 @@ $(() => {
   $('body').append('<div class="fixed-opt"></div>');
   initContactIframe();
   initTransIframe();
+  initChatIframe();
   // 浮动广告
   $('.fixed-ad').append('<div class="close"></div>');
   $('.fixed-ad .close').click((e) => {

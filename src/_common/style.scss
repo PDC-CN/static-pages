@@ -243,16 +243,15 @@ ol, ul {
   }
 }
 
-a.contact-me {
-  position: relative;
+a.contact-me,
+a.translate-me,
+a.contact-index-me {
   background: #03BEBF;
   color: #fff;
-  writing-mode: vertical-lr;
-  font-size: 16px;
-  padding: 72px 19px 8px;
-  letter-spacing: 8px;
-  width: 56px;
-  box-sizing: border-box;
+  text-align: center;
+  width: 120px;
+  font-size: 14px;
+  padding-bottom: 4px;
   cursor: pointer;
 
   &:hover {
@@ -262,57 +261,94 @@ a.contact-me {
   &::before {
     content: "";
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 56px;
-    height: 56px;
+    height: 33px;
     border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
-    background-image: url(https://assets.zjzsxhy.com/upload/b2b8421f-13f3-4f56-9972-b72bf937739b.svg);
+    background-image: url(https://assets.zjzsxhy.com/upload/d63c5b98-32bb-4d11-9258-001ee3e77494.svg);
     background-repeat: no-repeat;
-    background-size: 24px 24px;
+    background-size: 23px 23px;
     background-position: center;
+    margin-bottom: 4px;
   }
 }
-
-a.translate-me {
-  position: relative;
-  background: #03BEBF;
-  color: #fff;
-  writing-mode: vertical-lr;
-  font-size: 16px;
-  padding: 72px 19px 8px;
-  letter-spacing: 8px;
-  width: 56px;
-  box-sizing: border-box;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 56px;
-    height: 56px;
-    border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
-    background-image: url(https://assets.zjzsxhy.com/upload/a7a11a86-7338-4eb2-9cd3-5ce70f3f06e5.svg);
-    background-repeat: no-repeat;
-    background-size: 28px 28px;
-    background-position: center;
-  }
+a.translate-me::before {
+  background-image: url(https://assets.zjzsxhy.com/upload/a7a11a86-7338-4eb2-9cd3-5ce70f3f06e5.svg);
+  background-size: 23px 23px;
 }
+a.contact-index-me::before {
+  background-image: url(https://assets.zjzsxhy.com/upload/b2b8421f-13f3-4f56-9972-b72bf937739b.svg);
+  background-size: 19px 19px;
+}
+
+// a.contact-me {
+//   position: relative;
+//   background: #03BEBF;
+//   color: #fff;
+//   writing-mode: vertical-lr;
+//   font-size: 16px;
+//   padding: 72px 19px 8px;
+//   letter-spacing: 8px;
+//   width: 56px;
+//   box-sizing: border-box;
+//   cursor: pointer;
+
+//   &:hover {
+//     opacity: 1;
+//   }
+
+//   &::before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 56px;
+//     height: 56px;
+//     border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
+//     background-image: url(https://assets.zjzsxhy.com/upload/b2b8421f-13f3-4f56-9972-b72bf937739b.svg);
+//     background-repeat: no-repeat;
+//     background-size: 24px 24px;
+//     background-position: center;
+//   }
+// }
+
+// a.translate-me {
+//   position: relative;
+//   background: #03BEBF;
+//   color: #fff;
+//   writing-mode: vertical-lr;
+//   font-size: 16px;
+//   padding: 72px 19px 8px;
+//   letter-spacing: 8px;
+//   width: 56px;
+//   box-sizing: border-box;
+//   cursor: pointer;
+
+//   &:hover {
+//     opacity: 1;
+//   }
+
+//   &::before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 56px;
+//     height: 56px;
+//     border-bottom: rgba($color: #fff, $alpha: 0.3) solid 1px;
+//     background-image: url(https://assets.zjzsxhy.com/upload/a7a11a86-7338-4eb2-9cd3-5ce70f3f06e5.svg);
+//     background-repeat: no-repeat;
+//     background-size: 28px 28px;
+//     background-position: center;
+//   }
+// }
 
 #contactIframe,
 #translateIframe {
   position: fixed;
   top: 15%;
   bottom: 15%;
-  right: 60px;
+  right: 130px;
   width: 50%;
   height: 70%;
   background: #fff;
@@ -453,12 +489,12 @@ a.translate-me {
   }
 }
 
-[data-locale="en"] {
-  a.contact-me,
-  a.translate-me {
-    letter-spacing: 2px;
-    padding: 72px 19px 14px;
-  }
-}
+// [data-locale="en"] {
+//   a.contact-me,
+//   a.translate-me {
+//     letter-spacing: 2px;
+//     padding: 72px 19px 14px;
+//   }
+// }
 
 @import './style.m.scss';

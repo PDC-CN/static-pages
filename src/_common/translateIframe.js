@@ -61,6 +61,8 @@ function initTranslateIframe() {
   if ($translate.length === 0) return;
   $translate.appendTo('.fixed-opt');
 
+  return;
+
   // 判断是否登录
   if (isLogin()) {
     // 登录

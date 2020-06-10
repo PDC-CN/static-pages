@@ -45,21 +45,22 @@
     }
   }
   a.contact-me,
-  a.translate-me {
+  a.translate-me,
+  a.contact-index-me {
+    width: 80px;
     font-size: 12px;
-    letter-spacing: 4px;
-    width: 33px;
-    padding: 45px 10px 8px;
   }
   a.contact-me::before {
     height: 33px;
-    width: 33px;
-    background-size: 16px 16px;
+    background-size: 20px 20px;
+  }
+  a.contact-index-me::before {
+    height: 33px;
+    background-size: 18px 18px;
   }
   a.translate-me::before {
     height: 33px;
-    width: 33px;
-    background-size: 20px 20px;
+    background-size: 22px 22px;
   }
   #contactIframe,
   #translateIframe {
@@ -93,10 +94,10 @@
     width: 60px;
   }
 
-  [data-locale="en"] {
-    a.contact-me,
-    a.translate-me {
-      padding: 45px 10px 14px;
-    }
-  }  
+  // [data-locale="en"] {
+  //   a.contact-me,
+  //   a.translate-me {
+  //     padding: 45px 10px 14px;
+  //   }
+  // }
 }
