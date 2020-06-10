@@ -92,4 +92,11 @@
   .fixed-ad {
     width: 60px;
   }
+
+  [data-locale="en"] {
+    a.contact-me,
+    a.translate-me {
+      padding: 45px 10px 14px;
+    }
+  }  
 }

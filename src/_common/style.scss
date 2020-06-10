@@ -422,4 +422,12 @@ a.translate-me {
   }
 }
 
+[data-locale="en"] {
+  a.contact-me,
+  a.translate-me {
+    letter-spacing: 2px;
+    padding: 72px 19px 14px;
+  }
+}
+
 @import './style.m.scss';
