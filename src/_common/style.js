@@ -54,4 +54,9 @@ $(() => {
   $('body').append('<div class="fixed-opt"></div>');
   initContactIframe();
   initTransIframe();
+  // 浮动广告
+  $('.fixed-ad').append('<div class="close"></div>');
+  $('.fixed-ad .close').click((e) => {
+    $(e.currentTarget).parent().remove();
+  });
 });
