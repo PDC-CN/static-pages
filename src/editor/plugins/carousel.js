@@ -39,7 +39,7 @@ class Carousel {
   }
 
   constructor({ data }) {
-    this.data = data.count ? {
+    this.data = data.images ? {
       ...defaultData,
       ...data,
     } : defaultData;
