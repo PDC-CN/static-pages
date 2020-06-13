@@ -7,7 +7,7 @@ const commentUrl = window.location.pathname + '/comments';
 
 const i18n = getI18n({
   en: {
-    needLogin: 'Please signin',
+    needLogin: 'Please sign in',
     success: 'Success',
   },
   'zh-CN': {

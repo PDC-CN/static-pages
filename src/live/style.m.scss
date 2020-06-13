@@ -1,5 +1,7 @@
 @media screen and (max-width: 600px) {
   #live {
+    min-width: 0;
+
     .block {
       display: block;
 
@@ -14,28 +16,36 @@
       margin-bottom: 20px;
     }
     .top-block {
+      margin-top: 0;
       margin-bottom: 0;
     }
     .top-block .b2 {
       display: none;
     }
-    .video-block .info {
-      .icon {
-        height: 40px;
-        width: 40px;
-      }
-      .text .t1 {
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 16px;
-      }
-      .text .t2 {
-        display: none;
-      }
-      .sub {
-        .div,
-        *>span:last-child {
+    .video-block {
+      width: auto;
+
+      .info {
+        padding: 5px;
+        .icon {
+          height: 30px;
+          width: 30px;
+        }
+        .text .t1 {
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: 12px;
+        }
+        .text .t2 {
           display: none;
+        }
+        .sub {
+          padding: 3px 10px;
+
+          .div,
+          *>span:last-child {
+            display: none;
+          }
         }
       }
     }
@@ -43,7 +53,11 @@
       height: 56.25vw;
     }
     .video-block .video-comment {
-      padding: 12px 15px;
+      padding: 5px;
+
+      .switch {
+        margin-right: 10px;
+      }
     }
     .list-block .tabs {
       white-space: nowrap;
