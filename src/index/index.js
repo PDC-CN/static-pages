@@ -1,4 +1,19 @@
+import { getI18n } from '../_common';
+
 const { $, Swiper } = window;
+
+const i18n = getI18n({
+  en: {
+    live: 'Fashion Week Lives',
+    live2url: '/en/lives?classify=activity',
+    live2: 'Design Forum Lives',
+  },
+  'zh-CN': {
+    live: '点击进入时尚周直播间',
+    live2url: '/zh-CN/lives?classify=activity',
+    live2: '点击PDC设计智汇直播间',
+  },
+});
 
 // 大banner
 function initBanner() {
@@ -115,6 +130,24 @@ function initLiveBanner() {
   });
 }
 
+// 几个直播按钮
+function initLiveBtns() {
+  $('#index .live .content .b1 a').append(`<div class="play-btn">
+    <div>
+      <div class="i"><img src="https://assets.zjzsxhy.com/upload/69bfc70d-e0d0-4b75-bc9a-03c5081e0334.svg" alt=""></div>
+      <div class="t">${i18n.live}</div>
+    </div>
+  </div>`);
+
+  $('#index .events .left .b1 img').wrap(`<a href="${i18n.live2url}"></a>`);
+  $('#index .events .left .b1 a').append(`<div class="play-btn">
+    <div>
+      <div class="i"><img src="https://assets.zjzsxhy.com/upload/69bfc70d-e0d0-4b75-bc9a-03c5081e0334.svg" alt=""></div>
+      <div class="t">${i18n.live2}</div>
+    </div>
+  </div>`);
+}
+
 
 $(() => {
   initBanner();
@@ -122,4 +155,5 @@ $(() => {
   initEvent();
   initLiveAds();
   initLiveBanner();
+  initLiveBtns();
 });
