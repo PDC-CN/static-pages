@@ -167,6 +167,9 @@
         &>div>div {
           padding: 0 3px;
         }
+        &.hide {
+          opacity: 0;
+        }
       }
     }
     .video-comment {

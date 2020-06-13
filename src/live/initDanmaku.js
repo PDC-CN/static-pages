@@ -130,4 +130,9 @@ export default function initDanmaku() {
   setInterval(cleanHistory, 60000);
   setInterval(queryDanmaku, 5000);
   $submit.click(submit);
+
+  $('.video-block .video-comment .switch').click((e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('.video-block .danmaku-holder').toggleClass('hide');
+  });
 }
