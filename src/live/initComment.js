@@ -1,4 +1,4 @@
-import { getI18n } from '../_common/index';
+import { getI18n, isLogin } from '../_common/index';
 
 const { $ } = window;
 const $content = $('.comment-block .content');
@@ -7,9 +7,11 @@ const commentUrl = window.location.pathname + '/comments';
 
 const i18n = getI18n({
   en: {
+    needLogin: 'Please signin',
     success: 'Success',
   },
   'zh-CN': {
+    needLogin: '请登录后评论',
     success: '评论成功',
   },
 });
@@ -41,8 +43,16 @@ function getPage(page = 1) {
 }
 
 function initSubmit() {
+  const $text = $('#submitComment textarea');
+  $text.attr('placeholder', '');
+  if (!isLogin()) {
+    $text.attr('disabled', 'disabled');
+    $text.attr('placeholder', i18n.needLogin);
+  }
+
   $('#submitComment button').click(() => {
-    const text = $('#submitComment textarea').val();
+    if (!isLogin()) return;
+    const text = $text.val();
     if (text.length === 0) return;
     $.ajax({
       url: commentUrl,
@@ -62,7 +72,7 @@ function initSubmit() {
       }
     });
   });
-  $('#submitComment textarea').keypress(() => {
+  $('#submitComment textarea').bind('input', () => {
     setInterval(() => {
       const text = $('#submitComment textarea').val();
       if (text.length === 0) {
