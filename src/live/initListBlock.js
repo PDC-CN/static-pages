@@ -13,10 +13,13 @@ const i18n = getI18n({
 });
 
 let livePage = 1;
-function initLive(page = 1) {
-  $.ajax({
+function getLive(page = 1) {
+  return $.ajax({
     url: window.location.pathname + '/lives?page=' + page,
-  }).done((data) => {
+  });
+}
+function initLive(page = 1) {
+  getLive().done((data) => {
     data.forEach((item) => {
       const $dom = `<a href="${item.url}" class="live">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -35,10 +38,13 @@ function initLive(page = 1) {
 }
 
 let replayPage = 1;
-function initReplay(page = 1) {
-  $.ajax({
+function getReplay(page = 1) {
+  return $.ajax({
     url: window.location.pathname + '/history?page=' + page,
-  }).done((data) => {
+  });
+}
+function initReplay(page = 1) {
+  getReplay(page).done((data) => {
     data.forEach((item) => {
       const $dom = $(`<a class="replay">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -62,10 +68,13 @@ function initReplay(page = 1) {
 }
 
 let productPage = 1;
-function initProduct(page = 1) {
-  $.ajax({
+function getProduct(page = 1) {
+  return $.ajax({
     url: window.location.pathname + '/cases?page=' + page,
-  }).done((data) => {
+  });
+}
+function initProduct(page = 1) {
+  getProduct().done((data) => {
     data.forEach((item) => {
       const $dom = `<a href="${item.url}" class="product">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -81,11 +90,13 @@ function initProduct(page = 1) {
 }
 
 let guestPage = 1;
-function initGuest(page = 1) {
-  $.ajax({
+function getGuest(page = 1) {
+  return $.ajax({
     url: window.location.pathname + '/guests?page=' + page,
-  }).done((data) => {
-    console.log(data);
+  });
+}
+function initGuest(page = 1) {
+  getGuest().done((data) => {
     data.forEach((item) => {
       const $dom = `<a class="guest">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -113,6 +124,11 @@ function initTab(tab) {
   if (tab === 'guest') initGuest();
 }
 function init() {
+  if (window.LIVE_TYPE === 'canton_fair') {
+    const $tab = $('.list-block .tab[data-tab="guest"]');
+    $tab.html(i18n.contact);
+    $tab.parent().prepend($tab);
+  }
   $('.list-block .tabs .tab').click((e) => {
     const $this = $(e.target);
     if ($this.hasClass('active')) return;
@@ -124,14 +140,16 @@ function init() {
     if (currentTab === 'product') initProduct(productPage + 1);
     if (currentTab === 'guest') initGuest(guestPage + 1);
   });
-  if (window.LIVE_TYPE === 'canton_fair') {
-    const $tab = $('.list-block .tab[data-tab="guest"]');
-    $tab.html(i18n.contact);
-    $tab.parent().prepend($tab);
-    initTab('guest');
-  } else {
-    initTab('live');
-  }
+  // 探测：
+  Promise.all([getProduct(), getGuest()]).then(([products, guests]) => {
+    if (products.length === 0) {
+      $('.list-block .tabs .tab[data-tab="product"]').remove();
+    }
+    if (guests.length === 0) {
+      $('.list-block .tabs .tab[data-tab="guest"]').remove();
+    }
+    initTab($('.list-block .tabs .tab').first().attr('data-tab'));
+  });
 }
 
 export default init;
