@@ -1,5 +1,16 @@
+import { getI18n } from '../_common';
+
 const { $ } = window;
 const $grid = $('.list-block .grid');
+
+const i18n = getI18n({
+  en: {
+    contact: 'Enterprises',
+  },
+  'zh-CN': {
+    contact: '联系企业',
+  },
+});
 
 let livePage = 1;
 function initLive(page = 1) {
@@ -94,6 +105,8 @@ let currentTab;
 function initTab(tab) {
   currentTab = tab;
   $grid.empty();
+  $('.list-block .tabs .tab').removeClass('active');
+  $(`.list-block .tabs .tab[data-tab="${tab}"]`).addClass('active');
   if (tab === 'live') initLive();
   if (tab === 'replay') initReplay();
   if (tab === 'product') initProduct();
@@ -103,10 +116,7 @@ function init() {
   $('.list-block .tabs .tab').click((e) => {
     const $this = $(e.target);
     if ($this.hasClass('active')) return;
-    const tab = $this.attr('data-tab');
-    $('.list-block .tabs .tab').removeClass('active');
-    $this.addClass('active');
-    initTab(tab);
+    initTab($this.attr('data-tab'));
   });
   $('.list-block .more').click(() => {
     if (currentTab === 'live') initLive(livePage + 1);
@@ -114,7 +124,14 @@ function init() {
     if (currentTab === 'product') initProduct(productPage + 1);
     if (currentTab === 'guest') initGuest(guestPage + 1);
   });
-  initTab('live');
+  if (window.LIVE_TYPE === 'canton_fair') {
+    const $tab = $('.list-block .tab[data-tab="guest"]');
+    $tab.html(i18n.contact);
+    $tab.parent().prepend($tab);
+    initTab('guest');
+  } else {
+    initTab('live');
+  }
 }
 
 export default init;

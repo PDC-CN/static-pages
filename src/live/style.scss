@@ -320,6 +320,16 @@
         margin-bottom: 24px;
         min-height: 157px;
 
+        &:empty::before {
+          content: "暂无内容";
+          display: block;
+          grid-column-start: 1;
+          grid-column-end: 5;
+          text-align: center;
+          opacity: 0.5;
+          padding: 45px 0;
+        }
+
         .live,
         .replay,
         .product,
