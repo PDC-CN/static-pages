@@ -426,11 +426,11 @@
           height: 50px;
           width: 50px;
           overflow: hidden;
-          border-radius: 50%;
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
           margin-right: 14px;
+          border: #ddd solid 1px;
         }
 
         .name,
@@ -465,11 +465,11 @@
         height: 50px;
         width: 50px;
         overflow: hidden;
-        border-radius: 50%;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         margin-right: 14px;
+        border: #ddd solid 1px;
       }
 
       .easy-form {
