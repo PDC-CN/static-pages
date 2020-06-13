@@ -63,7 +63,14 @@ export default function init() {
   // 视频类
   if (LIVE_SOURCE === 'video') {
     const $c = $('.video-block .video-container');
-    $c.append(`<div class="iframe-holder">${LIVE_SOURCE_URL}</div>`);
+    const $if = $(LIVE_SOURCE_URL);
+    $if.removeAttr('height');
+    $if.removeAttr('width');
+    $if.removeAttr('style');
+    const src = $if.attr('src');
+    const httpsSrc = src.replace('http://', 'https://');
+    $if.attr('src', httpsSrc);
+    $c.append(`<div class="iframe-holder">${$if[0].outerHTML}</div>`);
     $('.vcp-player', $c).css('display', 'none');
   }
 }
