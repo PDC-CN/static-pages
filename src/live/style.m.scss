@@ -51,6 +51,11 @@
     }
     .video-block .video-container {
       height: 56.25vw;
+
+      .iframe-holder {
+        height: 56.25vw;
+        width: 100%;
+      }
     }
     .video-block .video-comment {
       padding: 5px;

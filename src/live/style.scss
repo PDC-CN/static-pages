@@ -171,6 +171,15 @@
           opacity: 0;
         }
       }
+      .iframe-holder {
+        height: 473px;
+        width: 840px;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
     .video-comment {
       padding: 16px 30px;

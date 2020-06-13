@@ -56,6 +56,9 @@ function initReplay(page = 1) {
       </a>`);
       $dom.click(() => {
         if (window.TCP) {
+          const $c = $('.video-block .video-container');
+          $('.vcp-player', $c).css('display', 'block');
+          $('.iframe-holder', $c).css('display', 'none');
           window.TCP.load(item.url);
         }
       });

@@ -33,8 +33,10 @@ const i18n = getI18n({
   },
 });
 
+const { $ } = window;
+
 export default function init() {
-  const { LIVE_CONFIG, TcPlayer } = window;
+  const { LIVE_CONFIG, TcPlayer, LIVE_SOURCE, LIVE_SOURCE_URL } = window;
   if (LIVE_CONFIG && LIVE_CONFIG.m3u8 && LIVE_CONFIG.flv) {
     const $c = document.querySelector('.video-container');
     $c.id = 'tcp-c';
@@ -58,4 +60,10 @@ export default function init() {
     });
   }
   // console.log(LIVE_CONFIG, TcPlayer);
+  // 视频类
+  if (LIVE_SOURCE === 'video') {
+    const $c = $('.video-block .video-container');
+    $c.append(`<div class="iframe-holder">${LIVE_SOURCE_URL}</div>`);
+    $('.vcp-player', $c).css('display', 'none');
+  }
 }
