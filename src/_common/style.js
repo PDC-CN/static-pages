@@ -61,4 +61,13 @@ $(() => {
   $('.fixed-ad .close').click((e) => {
     $(e.currentTarget).parent().remove();
   });
+  // 点击统计
+  $('body').delegate('[data-track]', 'click', (e) => {
+    const data = $(e.currentTarget).attr('data-track').split('/');
+    if (window._hmt) {
+      // console.log(['_trackEvent'].concat(data));
+      window._hmt.push(['_trackEvent'].concat(data));
+    }
+  });
+  // console.log(1);
 });
