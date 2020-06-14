@@ -101,7 +101,7 @@ function getGuest(page = 1) {
 function initGuest(page = 1) {
   getGuest().done((data) => {
     data.forEach((item) => {
-      const $dom = `<a class="guest">
+      const $dom = `<a class="guest" href="${item.url}" target="_blank">
         <div class="cover" style="background-image: url(${item.image})"></div>
         <div class="name">${item.name}</div>
         <div class="desc">${item.author}</div>

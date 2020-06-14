@@ -387,6 +387,7 @@
           .cover {
             height: 235px;
             margin-bottom: 20px;
+            background-size: cover;
           }
           .name {
             text-align: center;
@@ -400,6 +401,7 @@
             overflow: hidden;
             text-align: center;
             white-space: nowrap;
+            text-overflow: ellipsis;
           }
         }
       }
