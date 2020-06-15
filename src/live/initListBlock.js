@@ -19,7 +19,7 @@ function getLive(page = 1) {
   });
 }
 function initLive(page = 1) {
-  getLive().done((data) => {
+  getLive(page).done((data) => {
     data.forEach((item) => {
       const $dom = `<a href="${item.url}" class="live">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -77,7 +77,7 @@ function getProduct(page = 1) {
   });
 }
 function initProduct(page = 1) {
-  getProduct().done((data) => {
+  getProduct(page).done((data) => {
     data.forEach((item) => {
       const $dom = `<a href="${item.url}" class="product">
         <div class="cover" style="background-image: url(${item.image})"></div>
@@ -99,7 +99,7 @@ function getGuest(page = 1) {
   });
 }
 function initGuest(page = 1) {
-  getGuest().done((data) => {
+  getGuest(page).done((data) => {
     data.forEach((item) => {
       const $dom = `<a class="guest" href="${item.url}" target="_blank">
         <div class="cover" style="background-image: url(${item.image})"></div>
