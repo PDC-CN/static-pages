@@ -6,7 +6,7 @@ const i18n = getI18n({
   en: {
     live: 'Fashion Week Lives',
     live2url: '/en/lives?classify=activity',
-    live2: 'Design Forum Lives',
+    live2: 'Design Forum Live',
   },
   'zh-CN': {
     live: '点击进入时尚周直播间',
